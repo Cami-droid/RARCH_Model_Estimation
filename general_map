@@ -1,0 +1,12 @@
+RARCH_Model_Estimation/
+├── data/                    # Carpeta para los archivos de datos
+│   └── datafile.mat         # Archivo de datos
+├── functions/               # Carpeta para las funciones de MATLAB
+│   ├── load_prepare_data.m
+│   ├── rotate_data.m
+│   ├── specificate_params.m
+│   ├── generate_table.m
+│   └── conditional_covariance.m
+├── results/                 # Carpeta para los resultados (opcional)
+│   └── results_table.xlsx   # Archivo de la tabla de resultados (opcional)
+└── main.m                   # Archivo principal que llama a todas las funciones
