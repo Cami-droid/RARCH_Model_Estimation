@@ -1,50 +1,74 @@
-% Archivo principal para ejecutar todas las funciones y generar la tabla final
+% Main file to run all the functions and generate the final table
+clear;clc;
+global outputs globals_var results
 
-% Añadir la carpeta de funciones al path
+
+% Add 'functions' folder to the path
 addpath('functions'); 
 
-% Cargar los datos
 data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\data\stock_prices_28_KFT_UTX_1.csv');
 
-% Extraer las columnas relevantes
+% Extract data from relevant columns
 dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
 AA = data.AA;
 XOM = data.XOM;
 
-% Calcular los log returns
+% Calculate log returns
 log_returns_AA = diff(log(AA)) * 100;
 log_returns_XOM = diff(log(XOM)) * 100;
 
-% Combinar log returns en una matriz
+% Combine log returns in a matriz
 log_returns = [log_returns_AA, log_returns_XOM];
 
-% Asegurar que el vector de fechas coincida con la longitud de los log returns
+
+d=size(log_returns,2);
+T=size(log_returns,1);
+
+
+% Assure  that the date vector equalize log returns's length
+
 dates = dates(2:end);
 
-% Modelo y especificaciones a evaluar
-modelos = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
-especificaciones = {'Scalar', 'Diagonal', 'CP'};
+models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
+specifications = {'Scalar', 'Diagonal', 'CP'};
+initials_thetaD = {[0.2 0.05], [0.05 0.05 0.2 0.2],[0.05 0.2 0.25]};
 
-% Iterar sobre cada modelo y especificación
-for m = 1:length(modelos)
-    model = modelos{m};
-    for s = 1:length(especificaciones)
-        specification = especificaciones{s};
+I=length(models);
+J=length(specifications);
+
+globals_var=struct('I',I,'J',J,'d',[],'T',[])
+results(I, J) = struct('model', [], 'specification', [], 'params', []);%, 'M_params', [], 'std_errors', [], 'totalLL', [], 'Copula', [], 'Margin', []);
+outputs(I,J)=struct('model',[],'specification',[],'P',[],'Lambda',[],'H_bar',[],'Gt',[],'returns',[],'rotated_returns',[],'Dt',[],'Ct',[])
+
+for i = 1:length(models)
+    model = models{i};
+    fprintf('Estimating model: %s\n', model);
+    % Load and prepare data
+    [returns,Dt] = prepare_data(log_returns, model);
         
-        % Paso 1: Preparar datos
-        returns = prepare_data(log_returns, model);
-
-        % Paso 2: Rotar datos
-        [rotated_returns, H_bar, Lambda, P] = rotate_data(returns, model);
-
-        % Paso 3: Optimizar logLikelihood
-        thetaD_initial = ones(numel(Lambda), 1);
+    % Rotate data
+    [rotated_returns, H_bar, Lambda, P] = rotate_data(returns, model);
+    
+    for j = 1:length(specifications)
+        specification = specifications{j};
+        fprintf('Estimating model: %s\n', model);
+        fprintf('Parameter specification: %s\n', specification);
+        
+        % Optimize logLikelihood
+        thetaD_initial= initials_thetaD{j};
+        fprintf('The initials thetaD are: %s\n', mat2str(initials_thetaD{j}));
+        
         [thetaD_opt, fval, exitflag, output] = optimizeThetaD(H_bar, thetaD_initial, rotated_returns, model, specification);
+                      
+                   
+        % Generate Table
+        
+        % Create the global structures
+        results(i,j) = struct('model', model, 'specification', specification, 'params', thetaD_opt,'totalLL',fval);
+        outputs(i,j)=struct('model',model,'specification',specification,'P',P,'Lambda',Lambda,'H_bar',H_bar,'Gt',Gt,'returns',returns,'rotated_returns',rotated_returns)
 
-        % Paso 4: Estimación de la Covarianza Condicional
-        cond_cov = conditional_covariance(thetaD_opt, rotated_returns, H_bar, model, specification);
-
-        % Paso 5: Generar Tabla
-        generate_table(struct('model', model, 'specification', specification, 'params', thetaD_opt, 'cond_cov', cond_cov));
+    % % Call the function
+    %  generate_table(results(i,j));
+         
     end
 end
