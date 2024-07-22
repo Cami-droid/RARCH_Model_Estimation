@@ -1,14 +1,13 @@
 function [rotated_data, H_bar, Lambda, P] = rotate_data(returns, model)
     T=size(returns,1)
-    global H_bar
+    
     H_bar = (1/T).*returns'*returns;
 
     disp('Unconditional Covariance Matrix H_bar');
     disp(H_bar)
 
     % Descomposicion en valores propios
-    global P
-    global Lambda
+    
     [P, Lambda] = eig(H_bar);
 
     % Matriz de eigenvectores P y matriz diagonal de eigenvalores Lambda

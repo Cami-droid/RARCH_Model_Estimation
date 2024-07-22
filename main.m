@@ -18,61 +18,67 @@ log_returns_XOM = diff(log(XOM)) * 100;
 % Combine log returns in a matriz
 log_returns = [log_returns_AA, log_returns_XOM];
 
+d = size(log_returns, 2);
+T = size(log_returns, 1);
 
-d=size(log_returns,2);
-T=size(log_returns,1);
-
-
-% Assure  that the date vector equalize log returns's length
-
+% Assure that the date vector equalizes log returns' length
 dates = dates(2:end);
 
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
-initials_thetaD = {[0.2 0.05], [0.05 0.05 0.2 0.2],[0.05 0.2 0.25]};
+initials_thetaD = {[0.2 0.05], [0.05 0.05 0.2 0.2], [0.05 0.2 0.25]};
 
-I=length(models);
-J=length(specifications);
+I = length(models);
+J = length(specifications);
 
-globals_var=struct('I',I,'J',J,'d',[],'T',[])
-results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', []);%, 'M_params', [], 'std_errors', [], 'fval', [], 'Copula', [], 'Margin', []);
-outputs(I,J)=struct('model',[],'specification',[],'P',[],'Lambda',[],'H_bar',[],'Gt',[],'returns',[],'rotated_returns',[],'Dt',[],'Ct',[])
+results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', []);
+outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [], 'returns', [], 'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
 
+for i = 1:I
+    for j = 1:J
+        outputs(i,j).I = I;
+        outputs(i,j).J = J;
+        outputs(i,j).d = d;
+        outputs(i,j).T = T;
+        outputs(i,j).Gt = NaN(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
+        outputs(i,j).Gt(:,:,1) = eye(d);
+    end
+end
 
 for i = 1:I
     model = models{i};
     fprintf('Estimating model: %s\n', model);
-    for j=1:J
-
-    % Load and prepare data
-    
-    [outputs(i,j).returns, outputs(i,j).Dt] = prepare_data(log_returns, model);
+    for j = 1:J
+        % Load and prepare data
+        [outputs(i,j).returns, outputs(i,j).Dt] = prepare_data(log_returns, model);
         
-    % Rotate data
-    
-    [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j).returns, model);
+        % Rotate data
+        [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j).returns, model);
     end
 
-    for j = 1:length(specifications)
+    for j = 1:J
         specification = specifications{j};
+        outputs(i,j).model = model;
+        outputs(i,j).specification = specification;
+
         fprintf('Estimating model: %s\n', model);
         fprintf('Parameter specification: %s\n', specification);
         
         % Optimize logLikelihood
-        thetaD_initial= initials_thetaD{j};
-        fprintf('The initials thetaD are: %s\n', mat2str(initials_thetaD{j}));
+        thetaD_initial = initials_thetaD{j};
+        fprintf('The initial thetaD are: %s\n', mat2str(initials_thetaD{j}));
         
-        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(outputs(i,j).H_bar, thetaD_initial, outputs(i,j), model, specification);
-                      
-                   
-        % Generate Table
+        % Estimate thetaD parameters
+        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), thetaD_initial);
         
-        % Create the global structures
-        results(i,j) = struct('model', model, 'specification', specification, 'thetaD_opt', thetaD_opt);
-        outputs(i,j)=struct('model',model,'specification',specification,'Gt',Gt)
-
-    % % Call the function
-    %  generate_table(results(i,j));
-         
+        % Calculate Qt and Qt_star
+        [results(i,j).L, outputs(i,j).Gt, outputs(i,j).Qt, outputs(i,j).Qt_star] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
+        
+        % Store the results
+        results(i,j).model = model;
+        results(i,j).specification = specification;
     end
 end
+
+% Generate Table
+generate_table(results);
