@@ -1,15 +1,21 @@
-function [L,Gt] = logLikelihood(thetaS, thetaD, rotated_returns, model, specification)
+function [L,Gt] = logLikelihood(thetaS, thetaD, outputs, model, specification)
     % Tamaño de los datos
+   
+    [i,j]=models_index(model, specification)
+    outputs
+    rotated_returns=outputs.rotated_returns
     T = size(rotated_returns, 1);
     d = size(rotated_returns, 2);
+    P = outputs.P
+    Lambda=outputs.Lambda
+    Dt= outputs.Dt
 
-       
-    fprintf('esta es la función logLikelihood y estoy probando si declarar global a Lambda me permite acceder a su valor desde aquí %d',Lambda)
-    Lambda
     % Prealocar Gt, Qt y Ct para eficiencia
     Gt = zeros(d, d, T+1); % T+1 para inicialización en t=0
-    Gt(:, :, 1) = eye(d); % Valor inicial de Gt para t=0
+    Gt(:, :, 1) = eye(d); % Valor inicial de Gt para t=0 %abajo sigue la iteraci�n hasta completar Gt
     Id = eye(d); % Identidad de tamaño d
+    
+    if i==3
 
     % Calcular Qt_star, Qt y Ct para la log-verosimilitud de RDCC
     Qt_star = calc_all_Gts(thetaS, thetaD, rotated_returns, Id, model, specification);
@@ -18,6 +24,7 @@ function [L,Gt] = logLikelihood(thetaS, thetaD, rotated_returns, model, specific
     
     Qt(:, :, 1) = P * sqrt(Lambda) * P' * Qt_star(:, :, 1) * P * sqrt(Lambda) * P';
     Ct(:, :, 1) = sqrt(inv(Qt(:, :, 1) .* Id)) * Qt(:, :, 1) * sqrt(inv(Qt(:, :, 1) .* Id));
+    end
     
     for t = 2:T+1
         Qt(:, :, t) = P * sqrt(Lambda) * P' * Qt_star(:, :, t) * P * sqrt(Lambda) * P';

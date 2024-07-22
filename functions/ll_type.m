@@ -6,7 +6,8 @@ U(delta)=1;
 
     switch model
         case 'RBEKK'
-
+            disp("este es Gt")
+            disp(Gt)
             ll =  -0.5 * (d * log(2*pi) + log(det(Gt)) + et(i-1, :) * inv(Gt) * et(i-1, :)');
 
         case 'OGARCH'

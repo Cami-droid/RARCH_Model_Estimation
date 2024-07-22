@@ -1,8 +1,5 @@
-function  [returns, Dt]= prepare_data(log_returns,model)
+function  [returns,Dt]= prepare_data(log_returns,model)
  % compute standarized returns series and diagonal variance matrices at every t
-
-    global d;
-    global T;
     
     % Calcular la media de los log returns
     mean_log_returns = mean(log_returns);
@@ -15,24 +12,25 @@ function  [returns, Dt]= prepare_data(log_returns,model)
         case 'RBEKK'
             % Specific preparation for RBEKK.
             prepared_data=demeaned_returns;
-            
+            Dt=NaN;
                         
         case 'OGARCH'
             % Specific preparation for OGARCH
 
             prepared_data=demeaned_returns;
+            Dt=NaN;
                         
         case 'GOGARCH'
             % Specific preparation for GOGARCH
 
             prepared_data=demeaned_returns;
-                        
+            Dt=NaN;
+                  
         case 'RDCC'
             % Specific preparation for RDCC
 
             std_returns = zeros(size(demeaned_returns));
             
-            global Dt
             Dt = zeros(d,d,T);
             
             cond_var = zeros(size(demeaned_returns));
