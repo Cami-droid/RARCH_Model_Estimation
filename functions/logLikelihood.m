@@ -6,7 +6,7 @@ function [L, Gt, Qt, Qt_star] = logLikelihood(model, specification, outputs, the
     d = outputs.d;
     thetaS=outputs.H_bar;
     P = outputs.P;
-    Gt =outputs.Gt;
+    Gt =outputs.Passenger_Gt;
     Lambda = outputs.Lambda;
     Dt = outputs.Dt;
 
@@ -18,13 +18,6 @@ function [L, Gt, Qt, Qt_star] = logLikelihood(model, specification, outputs, the
     L = ll_type(model, specification, outputs, 1);
     
     for t_count = 2:T+1
-        % Calcular Gt
-        Gt(:, :, t_count) = calcGt(model,specification, outputs, thetaD, Gt(:, :, t_count-1));
-        
-        % Agregar un pequeño término regularizador a Gt para evitar singularidades
-        reg_term = 1e-6 * eye(d);
-        Gt_reg = Gt(:, :, t_count) + reg_term;
-
         % Calcular log-verosimilitud
         ll = ll_type(model, specification, outputs, t_count-1);
         L = L + ll;

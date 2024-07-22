@@ -1,6 +1,7 @@
-function  [returns,Dt]= prepare_data(log_returns,model)
+function  [returns,Dt]= prepare_data(model,outputs,log_returns)
  % compute standarized returns series and diagonal variance matrices at every t
-    
+ d=outputs.d;
+ T=outputs.T;
     % Calcular la media de los log returns
     mean_log_returns = mean(log_returns);
 

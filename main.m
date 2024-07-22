@@ -8,8 +8,8 @@ data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estim
 
 % Extract data from relevant columns
 dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
-AA = data.AA(1:20); %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
-XOM = data.XOM(1:20);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
+AA = data.AA; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
+XOM = data.XOM;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
 %%%%%%%%%%%%%%%%%%%%%REMEMBER THAT IT LOOSES ONE POSITION AFTER DIFFERENTIATION
 
 % Calculate log returns
@@ -52,7 +52,7 @@ for i = 1:I
     fprintf('Estimating model: %s\n', model);
     for j = 1:J
         % Load and prepare data
-        [outputs(i,j).returns, outputs(i,j).Dt] = prepare_data(log_returns, model);
+        [outputs(i,j).returns, outputs(i,j).Dt] = prepare_data(model, outputs(i,j), log_returns);
         
         % Rotate data
         [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j).returns, model);
@@ -71,10 +71,11 @@ for i = 1:I
         fprintf('The initial thetaD are: %s\n', mat2str(initials_thetaD{j}));
         
         % Estimate thetaD parameters
+        outputs(i,j).Passenger_Gt= calc_all_Gts(model, specification, outputs(i,j), initials_thetaD{j}, outputs(i,j).Gt(:,:,1));
         [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), thetaD_initial);
         
         % Calculate Qt and Qt_star
-        [results(i,j).L, outputs(i,j).Gt, outputs(i,j).Qt, outputs(i,j).Qt_star] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
+        [outputs(i,j).Qt, outputs(i,j).Qt_star] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
         
         % Store the results
         results(i,j).model = model;
