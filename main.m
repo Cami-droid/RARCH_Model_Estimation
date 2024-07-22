@@ -8,8 +8,9 @@ data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estim
 
 % Extract data from relevant columns
 dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
-AA = data.AA;
-XOM = data.XOM;
+AA = data.AA(1:20); %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
+XOM = data.XOM(1:20);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
+%%%%%%%%%%%%%%%%%%%%%REMEMBER THAT IT LOOSES ONE POSITION AFTER DIFFERENTIATION
 
 % Calculate log returns
 log_returns_AA = diff(log(AA)) * 100;
@@ -26,13 +27,13 @@ dates = dates(2:end);
 
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
-initials_thetaD = {[0.2 0.05], [0.05 0.05 0.2 0.2], [0.05 0.2 0.25]};
+initials_thetaD = {[0.01 0.3], [0.05 0.05 0.1 0.1], [0.05 0.05 0.2]};
 
 I = length(models);
 J = length(specifications);
 
 results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', []);
-outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [], 'returns', [], 'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
+outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [], 'Passenger_Gt',[],'returns', [], 'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
 
 for i = 1:I
     for j = 1:J
@@ -40,10 +41,11 @@ for i = 1:I
         outputs(i,j).J = J;
         outputs(i,j).d = d;
         outputs(i,j).T = T;
-        outputs(i,j).Gt = NaN(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
+        outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).Gt(:,:,1) = eye(d);
     end
 end
+%% 
 
 for i = 1:I
     model = models{i};

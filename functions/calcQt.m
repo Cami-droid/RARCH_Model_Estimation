@@ -24,9 +24,9 @@ function [Qt, Qt_star] = calcQt(model, specification, outputs, thetaD_opt)
         Ct(:, :, 1) = sqrt(inv(Qt(:, :, 1) .* Id)) * Qt(:, :, 1) * sqrt(inv(Qt(:, :, 1) .* Id));
 
         % Calcular Qt y Ct para t >= 2
-        t=2:T+1
-        Qt(:, :, t) = P * sqrt(Lambda) * P' * Qt_star(:, :, t) * P * sqrt(Lambda) * P';
-        Ct(:, :, t) = sqrt(inv(Qt(:, :, t) .* Id)) * Qt(:, :, t) * sqrt(inv(Qt(:, :, t) .* Id));
+        t_count=2:T+1
+        Qt(:, :, t_count) = P * sqrt(Lambda) * P' * Qt_star(:, :, t_count) * P * sqrt(Lambda) * P';
+        Ct(:, :, t_count) = sqrt(inv(Qt(:, :, t_count) .* Id)) * Qt(:, :, t_count) * sqrt(inv(Qt(:, :, t_count) .* Id));
     else
         Qt = [];
         Qt_star = [];

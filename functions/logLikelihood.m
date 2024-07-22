@@ -1,5 +1,5 @@
 function [L, Gt, Qt, Qt_star] = logLikelihood(model, specification, outputs, thetaD)
-     % Inicialización de variables
+    % Inicialización de variables
     [i, j] = models_index(model, specification);
     rotated_returns = outputs.rotated_returns;
     T = outputs.T;
@@ -17,16 +17,16 @@ function [L, Gt, Qt, Qt_star] = logLikelihood(model, specification, outputs, the
     
     L = ll_type(model, specification, outputs, 1);
     
-    for t = 2:T+1
+    for t_count = 2:T+1
         % Calcular Gt
-        Gt(:, :, t) = calcGt(model,specification, outputs, thetaD, Gt(:, :, t-1));
+        Gt(:, :, t_count) = calcGt(model,specification, outputs, thetaD, Gt(:, :, t_count-1));
         
         % Agregar un pequeño término regularizador a Gt para evitar singularidades
         reg_term = 1e-6 * eye(d);
-        Gt_reg = Gt(:, :, t) + reg_term;
+        Gt_reg = Gt(:, :, t_count) + reg_term;
 
         % Calcular log-verosimilitud
-        ll = ll_type(model, specification, outputs, t);
+        ll = ll_type(model, specification, outputs, t_count-1);
         L = L + ll;
         
     end

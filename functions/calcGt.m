@@ -33,4 +33,13 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev)
         C = eye(d) - A * A' - B * B';
         Gt = C + A * (rotated_returns' * rotated_returns) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
     end
+
+    % Check for NaN values and correct them
+    if any(isnan(Gt(:)))
+        warning('NaN values detected in Gt, adding additional regularization.');
+        Gt = Gt + 1e-4 * eye(d);
+    end
+
+    % Ensure Gt is symmetric
+    Gt = (Gt + Gt') / 2;
 end
