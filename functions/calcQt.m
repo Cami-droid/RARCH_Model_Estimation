@@ -1,6 +1,6 @@
-function [Qt, Qt_star] = calcQt(model,specification, outputs, ~)
+function [Qt, Qt_star] = calcQt(model,specification, outputs, thetaD)
 
-     % Inicialización de variables
+    % Inicialización de variables
     [i, j] = models_index(model, specification);
     rotated_returns = outputs.rotated_returns;
     T = outputs.T;

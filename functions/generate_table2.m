@@ -15,7 +15,7 @@ function generate_table(results, outputs)
             % Extraer la información relevante de results y outputs
             model = results(i, j).model;
             specification = results(i, j).specification;
-%             thetaD_opt = mat2str(results(i, j).thetaD_opt);
+            thetaD_opt = mat2str(results(i, j).thetaD_opt);
             fval = results(i, j).fval;
             
             % Qt y Qt_star se almacenan como matrices 3D, se pueden promediar o sumar para un resumen

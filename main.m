@@ -27,8 +27,9 @@ dates = dates(2:end);
 
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
-initials_thetaD = {[0.01 0.3], [0.05 0.05 0.1 0.1], [0.05 0.05 0.2]};
 
+initials_thetaD = { [0.01 0.3]      , [0.05 0.05 0.1 0.1]       , [0.05 0.05 0.2]};
+                    
 I = length(models);
 J = length(specifications);
 
@@ -72,9 +73,18 @@ for i = 1:I
         
         % Estimate thetaD parameters
         outputs(i,j).Passenger_Gt= calc_all_Gts(model, specification, outputs(i,j), initials_thetaD{j}, outputs(i,j).Gt(:,:,1));
+        
         [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), thetaD_initial);
         
+        disp(results(i,j).thetaD_opt)
+
+        % calculate Gt at the optimum thetaD_opt
+
+        Id=eye(d)
+        output(i,j).Gt=calcGt(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id)
+        
         % Calculate Qt and Qt_star
+        
         [outputs(i,j).Qt, outputs(i,j).Qt_star] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
         
         % Store the results

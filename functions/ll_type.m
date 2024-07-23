@@ -7,11 +7,11 @@ function ll = ll_type(model, specification, outputs, t)
     Gt = outputs.Passenger_Gt;
     d = outputs.d;
 
-    fprintf('Calculando ll_type para el modelo %s en t_count = t+1=%d\n', model, t);
+    %fprintf('Calculando ll_type para el modelo %s en t_count = t+1=%d\n', model, t);
     
-    fprintf('Gt size: %s\n', mat2str(size(Gt(:,:,t_count))));
-    fprintf('et size: %s\n', mat2str(size(et)));
-    disp('Gt:'); disp(Gt(:,:,t));
+    %fprintf('Gt size: %s\n', mat2str(size(Gt(:,:,t_count))));
+    %fprintf('et size: %s\n', mat2str(size(et)));
+    %disp('Gt:'); disp(Gt(:,:,t));
 
     
     % Definir delta (puedes ajustar este valor según tus necesidades)
