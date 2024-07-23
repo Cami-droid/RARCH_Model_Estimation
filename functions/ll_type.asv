@@ -41,6 +41,14 @@ function [ll results]= ll_type(model, specification, outputs, t)
             %fprintf('Ct size: %s\n', mat2str(size(Ct(:,:,t))));
 
             ll_1 = -0.5 * (d * log(2*pi) + 2*log(det(Dt(:,:,t)))) + rt(t, :) * inv(Dt(:,:,t)^2) * rt(t, :)';
+            log(det(Ct(:,:,t)))
+            Ct(:,:,t)
+            -et(t, :)
+            inv(Ct(:,:,t))
+            -et(t, :)*et(t, :)'
+            log(det(Ct(:,:,t)))
+                et(t, :)* inv(Ct(:,:,t))*et(t, :)'
+           
             ll_2 = -0.5 * (-et(t, :)*et(t, :)' + log(det(Ct(:,:,t))) + et(t, :)* inv(Ct(:,:,t))*et(t, :)');
 
             ll = ll_1 + ll_2;

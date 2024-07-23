@@ -28,14 +28,14 @@ dates = dates(2:end);
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
 
-initials_thetaD = { [0.01 0.3]      , [0.05 0.05 0.1 0.1]       , [0.05 0.05 0.2]};
-                    
+             
 I = length(models);
 J = length(specifications);
 
-results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', []);
-outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [], 'Passenger_Gt',[],'returns', [], 'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
+results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[]);
+outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [], 'Passenger_Gt',[],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
 
+    
 for i = 1:I
     for j = 1:J
         outputs(i,j).I = I;
@@ -43,7 +43,10 @@ for i = 1:I
         outputs(i,j).d = d;
         outputs(i,j).T = T;
         outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
-        outputs(i,j).Gt(:,:,1) = eye(d);
+        outputs(i,j).initial_Gt = eye(d);
+        outputs(i,j).initials_thetaD = { [0.01 0.3]      , [0.05 0.05 0.1 0.1]       , [0.05 0.05 0.2]};
+        % Only for GOGARCH
+        outputs(3,j).initial_delta=1;
     end
 end
 %% 
@@ -68,11 +71,11 @@ for i = 1:I
         fprintf('Parameter specification: %s\n', specification);
         
         % Optimize logLikelihood
-        thetaD_initial = initials_thetaD{j};
-        fprintf('The initial thetaD are: %s\n', mat2str(initials_thetaD{j}));
+        thetaD_initial = outputs(i,j).initials_thetaD{j};
+        fprintf('The initial thetaD are: %s\n', mat2str(outputs(i,j).initials_thetaD{j}));
         
         % Estimate thetaD parameters
-        outputs(i,j).Passenger_Gt= calc_all_Gts(model, specification, outputs(i,j), initials_thetaD{j}, outputs(i,j).Gt(:,:,1));
+        outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD{j}, outputs(i,j).initial_Gt);
         
         [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), thetaD_initial);
         
@@ -83,9 +86,9 @@ for i = 1:I
         Id=eye(d)
         output(i,j).Gt=calcGt(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id)
         
-        % Calculate Qt and Qt_star
+        % Calculate Qt, Qt_star and Ct
         
-        [outputs(i,j).Qt, outputs(i,j).Qt_star] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
+        [outputs(i,j).Qt, outputs(i,j).Qt_star outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
         
         % Store the results
         results(i,j).model = model;

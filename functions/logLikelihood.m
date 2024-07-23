@@ -1,4 +1,4 @@
-function [L, Gt, Qt, Qt_star] = logLikelihood(model, specification, outputs, thetaD)
+function [LL, Gt, Qt, Qt_star L_matrix] = logLikelihood(model, specification, outputs, thetaD)
     % Inicialización de variables
     [i, j] = models_index(model, specification);
     rotated_returns = outputs.rotated_returns;
@@ -15,13 +15,14 @@ function [L, Gt, Qt, Qt_star] = logLikelihood(model, specification, outputs, the
     
     % function ll=ll_type(model,specification, d,thetaS,outputs,t)
     
-    L = ll_type(model, specification, outputs, 1);
     
-    for t_count = 2:T+1
+    
+    LL = 0;
+
+    for t= 1:T
         % Calcular log-verosimilitud
-        ll = ll_type(model, specification, outputs, t_count-1);
-        L = L + ll;
-        
+        ll = ll_type(model, specification, outputs, t);
+        LL = LL + ll;        
     end
           
 end

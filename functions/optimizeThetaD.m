@@ -1,4 +1,4 @@
-function [thetaD_opt, fval, exitflag, output] = optimizeThetaD(model,specification, outputs, thetaD_initial)
+function [thetaD_opt, fval, exitflag, output, L] = optimizeThetaD(model,specification, outputs, thetaD_initial)
 
     models_index(model, specification)
     %  fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options)
@@ -69,8 +69,10 @@ function [thetaD_opt, fval, exitflag, output] = optimizeThetaD(model,specificati
     % Run the optimization  x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options)
                            
     [thetaD_opt, fval, exitflag, output] = fmincon(logLikelihoodFunc, thetaD_initial, A, b, [], [], lb, ub, nonlcon, options);
-
     
+    disp(thetaD_opt)
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%results.(i,j).L=ll;
 end
 
 

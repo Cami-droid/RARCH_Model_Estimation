@@ -1,5 +1,5 @@
 function [rotated_data, H_bar, Lambda, P] = rotate_data(returns, model)
-    T=size(returns,1)
+    T=size(returns,1);
     
     H_bar = (1/T).*returns'*returns;
 
