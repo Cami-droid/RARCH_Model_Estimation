@@ -16,7 +16,7 @@ XOM = data.XOM;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO 
 log_returns_AA = diff(log(AA)) * 100;
 log_returns_XOM = diff(log(XOM)) * 100;
 
-% Combine log returns in a matriz
+% Combine log returns in a matrix
 log_returns = [log_returns_AA, log_returns_XOM];
 
 d = size(log_returns, 2);
