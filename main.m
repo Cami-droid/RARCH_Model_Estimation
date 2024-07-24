@@ -44,7 +44,7 @@ for i = 1:I
         outputs(i,j).T = T;
         outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).initial_Gt = eye(d);
-        outputs(i,j).initials_thetaD = { [0.01 0.3]      , [0.05 0.05 0.1 0.1]       , [0.05 0.05 0.2]};
+        outputs(i,j).initials_thetaD = { [0.3 0.3]      , [0.3 0.3 0.3 0.3]       , [0.3 0.3 0.3]};
         % Only for GOGARCH
         outputs(3,j).initial_delta=1;
     end
@@ -79,12 +79,13 @@ for i = 1:I
         
         [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), thetaD_initial);
         
+        fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
         disp(results(i,j).thetaD_opt)
 
         % calculate Gt at the optimum thetaD_opt
 
-        Id=eye(d)
-        output(i,j).Gt=calcGt(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id)
+        Id=eye(d);
+        output(i,j).Gt=calcGt(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id);
         
         % Calculate Qt, Qt_star and Ct
         
@@ -97,4 +98,4 @@ for i = 1:I
 end
 
 % Generate Table
-generate_table(results);
+generateTable;

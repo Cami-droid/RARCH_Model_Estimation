@@ -5,7 +5,7 @@ d=outputs.d;
 rotated_returns=outputs.rotated_returns;
 thetaS=outputs.H_bar;
 
-Gt(:,:,1) = calcGt(model,specification,outputs, thetaD, initial_Gt)
+Gt(:,:,1) = calcGt(model,specification,outputs, thetaD, initial_Gt);
 
 for t= 2:T % Adjusting loop to account for t starting from 1
         
@@ -13,7 +13,6 @@ for t= 2:T % Adjusting loop to account for t starting from 1
         
         % Adding a small regularization term to Gt to avoid singularity
         reg_term = 1e-6 * eye(d);
-        Gt_reg = Gt(:, :, t) + reg_term;
-
+        Gt(:,:,t) = Gt(:,:,t) + reg_term;
 end
 
