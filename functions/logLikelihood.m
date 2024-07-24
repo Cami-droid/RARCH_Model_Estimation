@@ -6,7 +6,7 @@ function [LL, Gt, Qt, Qt_star L_matrix] = logLikelihood(model, specification, ou
     d = outputs.d;
     thetaS=outputs.H_bar;
     P = outputs.P;
-    Gt =outputs.Passenger_Gt;
+    Gt =outputs.Gt;
     Lambda = outputs.Lambda;
     Dt = outputs.Dt;
 
@@ -14,7 +14,6 @@ function [LL, Gt, Qt, Qt_star L_matrix] = logLikelihood(model, specification, ou
     ll = 0;
     
     % function ll=ll_type(model,specification, d,thetaS,outputs,t)
-    
     
     
     LL = 0;

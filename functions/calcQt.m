@@ -1,4 +1,4 @@
-function [Qt, Qt_star Ct] = calcQt(model,specification, outputs, thetaD)
+function [Qt, Qt_star , Ct] = calcQt(model,specification, outputs, thetaD)
 
     % Inicialización de variables
     [i, j] = models_index(model, specification);

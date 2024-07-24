@@ -14,7 +14,6 @@ function [ll results]= ll_type(model, specification, outputs, t)
     %fprintf('Gt size: %s\n', mat2str(size(Gt(:,:,t))));
     %fprintf('et size: %s\n', mat2str(size(et)));
     %disp('Gt:'); disp(Gt(:,:,t));
-
     
     % Definir delta (puedes ajustar este valor según tus necesidades)
     delta = 1;
@@ -45,8 +44,7 @@ function [ll results]= ll_type(model, specification, outputs, t)
 
             ll = ll_1 + ll_2;
     end
-
-    
+ 
 end
 
 function U = U_delta(delta, d)

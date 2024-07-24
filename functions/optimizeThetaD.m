@@ -64,7 +64,7 @@ function [thetaD_opt, fval, exitflag, output, L] = optimizeThetaD(model,specific
     
     % Objective function for optimization
 
-    logLikelihoodFunc = @(thetaD) logLikelihood(model, specification, outputs, thetaD);
+    logLikelihoodFunc = @(thetaD) LogLikelihood_group(model, specification, outputs, thetaD);
     
     % Run the optimization  x = fmincon(fun,x0,A,b,Aeq,beq,lb,ub,nonlcon,options)
                            
