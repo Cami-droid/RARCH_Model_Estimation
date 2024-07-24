@@ -44,7 +44,7 @@ for i = 1:I
         outputs(i,j).T = T;
         outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).initial_Gt = eye(d);
-        outputs(i,j).initials_thetaD = { [0.3 0.3]      , [0.3 0.3 0.3 0.3]       , [0.3 0.3 0.3]};
+        outputs(i,j).initials_thetaD = { [0.05 0.8]      , [0.05 0.05 0.8 0.8]       , [0.05 0.05 0.9]};
         % Only for GOGARCH
         outputs(3,j).initial_delta=1;
     end
