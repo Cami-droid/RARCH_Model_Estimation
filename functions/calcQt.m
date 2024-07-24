@@ -18,7 +18,7 @@ function [Qt, Qt_star , Ct] = calcQt(model,specification, outputs, thetaD)
     if i == 4 % 4 is the model index for RDCC
         % Calcular Qt y Ct para t = 1 (sería t=0 en teoría)
         initial_Qt_star=Id
-        Qt_star = calc_all_Gts(model,specification,outputs, thetaD, initial_Qt_star); uso la función de G porque es la misma 
+        Qt_star = calc_all_Gts(model,specification,outputs, thetaD, initial_Qt_star); %%% uso la función de G porque es la misma 
         Qt = zeros(d, d, T);
         initial_Qt = P * sqrt(Lambda) * P' * initial_Qt_star * P * sqrt(Lambda) * P';
         
