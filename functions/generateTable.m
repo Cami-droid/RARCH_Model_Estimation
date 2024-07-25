@@ -1,4 +1,5 @@
-% Suponiendo que 'results' es la estructura que tienes con tama�o 4x3
+% Assuming that 'results' is the structure that you have with a size of 4x3
+
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
 

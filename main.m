@@ -8,9 +8,9 @@ data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estim
 
 % Extract data from relevant columns
 dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
-AA = data.AA; %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
-XOM = data.XOM;%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAMBIAR LO HAGO SOLO PARA REVISAR ERRORES
-%%%%%%%%%%%%%%%%%%%%%REMEMBER THAT IT LOOSES ONE POSITION AFTER DIFFERENTIATION
+AA = data.AA; 
+XOM = data.XOM;
+
 
 % Calculate log returns
 log_returns_AA = diff(log(AA)) * 100;
