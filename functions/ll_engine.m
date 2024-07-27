@@ -1,4 +1,4 @@
-function LL = LogLikelihood_fgroup(model, specification, outputs, thetaD)
+function LL = ll_engine(model, specification, outputs, thetaD)
     % Inicialización de variables
     [i, j] = models_index(model, specification);
     rt = outputs.returns;
@@ -61,7 +61,15 @@ function LL = LogLikelihood_fgroup(model, specification, outputs, thetaD)
         Ct = [];
     end
 
-    % Definir la función ll_type_internal
+        % Calcular la log-verosimilitud total
+    LL = 0;
+    for t = 1:T
+        ll = ll_type_internal(t);
+        LL = LL + ll;   
+    end
+
+    
+% Definir la función ll_type_internal
     function ll = ll_type_internal(t)
         U =@(delta,d) delta * eye(d);
         
@@ -79,10 +87,4 @@ function LL = LogLikelihood_fgroup(model, specification, outputs, thetaD)
         end
     end
 
-    % Calcular la log-verosimilitud total
-    LL = 0;
-    for t = 1:T
-        ll = ll_type_internal(t);
-        LL = LL + ll;   
-    end
 end

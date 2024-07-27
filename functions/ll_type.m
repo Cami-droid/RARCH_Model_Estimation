@@ -28,6 +28,7 @@ function [ll results]= ll_type(model, specification, outputs, t)
     switch model
         case 'RBEKK'
             ll =  -0.5 * (d * log(2*pi) + log(det(Gt(:,:,t))) + et(t, :) * inv(Gt(:,:,t)) * et(t, :)');
+            %% in the paper et has dimensions 1xd, whileas here the dimensions are dx1. That's why transpose comes first %%
 
         case 'OGARCH'
             ll = -0.5 * (d * log(2 * pi) + log(det(Gt(:,:,t))) + et(t, :) * U * inv(Gt(:,:,t)) * U' * et(t, :)');

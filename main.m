@@ -11,7 +11,6 @@ dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
 AA = data.AA; 
 XOM = data.XOM;
 
-
 % Calculate log returns
 log_returns_AA = diff(log(AA)) * 100;
 log_returns_XOM = diff(log(XOM)) * 100;
@@ -27,14 +26,12 @@ dates = dates(2:end);
 
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
-
              
 I = length(models);
 J = length(specifications);
 
 results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[]);
 outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
-
     
 for i = 1:I
     for j = 1:J
@@ -44,7 +41,7 @@ for i = 1:I
         outputs(i,j).T = T;
         outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).initial_Gt = eye(d);
-        outputs(i,j).initials_thetaD = { [0.05 0.8]      , [0.05 0.05 0.8 0.8]       , [0.05 0.05 0.9]};
+        outputs(i,j).initials_thetaD = { [0.01 0.3]      , [0.01 0.3 0.01 0.3]       , [0.01 0.3 0.3]};
         % Only for GOGARCH
         outputs(3,j).initial_delta=1;
     end
@@ -59,7 +56,16 @@ for i = 1:I
         [outputs(i,j).returns, outputs(i,j).Dt] = prepare_data(model, outputs(i,j), log_returns);
         
         % Rotate data
-        [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j).returns, model);
+        [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j), model);
+
+         %   disp('Unconditional Covariance Matrix H_bar valid for RBEKK, OGARCH and GOGARCH');
+         %   disp(outputs(i,j).H_bar);
+         %   % Matriz de eigenvectores P y matriz diagonal de eigenvalores Lambda
+         %   disp('Eigenvectors matrix P:');
+         %   disp(outputs(i,j).P);
+         %   disp('Eigenvalues Diagnonal matrix Lambda:');
+         %   disp(outputs(i,j).Lambda);
+
     end
 
     for j = 1:J
@@ -71,16 +77,18 @@ for i = 1:I
         fprintf('Parameter specification: %s\n', specification);
         
         % Optimize logLikelihood
-        thetaD_initial = outputs(i,j).initials_thetaD{j};
-        fprintf('The initial thetaD are: %s\n', mat2str(outputs(i,j).initials_thetaD{j}));
+        initial_thetaD = outputs(i,j).initials_thetaD{j};
+
+        fprintf('The initials thetaDs are: %s\n', mat2str(outputs(i,j).initials_thetaD{j}));
         
         % Estimate thetaD parameters
         outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD{j}, outputs(i,j).initial_Gt);
         
-        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), thetaD_initial);
+        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
         
         fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
         disp(results(i,j).thetaD_opt)
+        fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).fval));
 
         % calculate Gt at the optimum thetaD_opt
 
@@ -96,6 +104,27 @@ for i = 1:I
         results(i,j).specification = specification;
     end
 end
+%% Table Generation
 
 % Generate Table
-generateTable;
+generate_matlabTable;
+
+% Generar la tabla y guardarla en un archivo .txt
+thetaD_table_matlab = generate_pdfTable(results);
+
+% Crear y compilar el archivo LaTeX
+
+% Define the paths
+results_dir = 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results';
+report_file = fullfile(results_dir, 'report.tex');
+
+% Compile the LaTeX file to PDF, specifying the output directory
+command = sprintf('pdflatex -output-directory="%s" "%s"', results_dir, report_file);
+status = system(command);
+
+% Check if the command was successful
+if status == 0
+    disp('PDF generated successfully.');
+else
+    disp('Error generating PDF.');
+end 

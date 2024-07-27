@@ -1,38 +1,47 @@
-function [rotated_data, H_bar, Lambda, P] = rotate_data(returns, model)
-    T=size(returns,1);
-    
+function [rotated_data, H_bar, Lambda, P] = rotate_data(outputs, model)
+    T=outputs.T;
+    returns=outputs.returns;
+        
     H_bar = (1/T).*returns'*returns;
-
-    disp('Unconditional Covariance Matrix H_bar');
-    disp(H_bar);
-
     % Descomposicion en valores propios
-    
     [P, Lambda] = eig(H_bar);
-
-    % Matriz de eigenvectores P y matriz diagonal de eigenvalores Lambda
-    disp('Eigenvectors matrix P:');
-    disp(P);
-    disp('Eigenvalues Diagnonal matrix Lambda:');
-    disp(Lambda);
-
+    H_bar_inv_sqrt = P * sqrt(inv(Lambda)) * P';
+    
     switch model
-        case {'RBEKK', 'GOGARCH', 'RDCC'}
-            % Rotación para RBEKK, GOGARCH y RDCC
-            H_bar_inv_sqrt = P * sqrt(inv(Lambda)) * P';
+        case {'RBEKK'}
 
+            % Rotación para RBEKK y GOGARCH
             e_t = returns*H_bar_inv_sqrt;
 
              
         case {'OGARCH'}
-            % Rotación específica para OGARCH
 
-            H_bar_inv_sqrt = P * sqrt(inv(Lambda)) * P';
+            % Specific rotation for OGARCH;
+            e_t = returns*H_bar_inv_sqrt * P';
 
-            e_t = returns*sqrt(inv(Lambda)) * P';
+        case {'GOGARCH'}
+            
+            % Specific rotation for RBEKK and GOGARCH
+            e_t = returns*H_bar_inv_sqrt;
+            
+        case {'RDCC'}
+            PI_bar=H_bar; %% porque los returns que vienen del prepare_data están estandarizados ya para RDCC
+            %%% solo estoy dandole los nombres que están en el paper para evitar confusiones
+            
+            disp('Unconditional Covariance Matrix PI_bar valid for RDCC');
+            disp(PI_bar);
+            % Matriz de eigenvectores P y matriz diagonal de eigenvalores Lambda
+            disp('Eigenvectors matrix P:');
+            disp(P);
+            disp('Eigenvalues Diagnonal matrix Lambda:');
+            disp(Lambda);
+            
+            % specific rotation for RDCC
+            PI_bar_inv_sqrt = P * sqrt(inv(Lambda)) * P';        
+            e_t = returns*PI_bar_inv_sqrt;
+            
        
     end
-    
     % disp('Rotated returns e_t:');
     % disp(e_t);
     rotated_data = e_t;

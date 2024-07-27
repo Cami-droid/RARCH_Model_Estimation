@@ -1,5 +1,4 @@
-% Non linear restrictions function for Common Persistence specifiction
-
+% Non linear restrictions function for Common Persistence specification
 function [c, ceq] = nonlcon(params)
 
     alpha   =   params(1);
@@ -9,7 +8,8 @@ function [c, ceq] = nonlcon(params)
     % Restricciones de desigualdad (c <= 0)
     c = [max(alpha) - lambda; % \lambda >= max(\alpha_{ii})
          -lambda;             % \lambda > 0, se maneja con lb
-         lambda - 1];         % \lambda < 1, se maneja con ub y b
+         lambda - 1;          % \lambda < 1, se maneja con ub y b
+         -alpha];             % alpha > 0
     
     %% There isn't any equality restrictions (ceq = []) %%
     ceq = [];
