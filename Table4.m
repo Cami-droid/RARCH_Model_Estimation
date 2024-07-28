@@ -5,19 +5,42 @@ clear;clc;
 addpath('functions'); 
 
 data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\data\stock_prices_28_KFT_UTX_1.csv');
-
-% Extract data from relevant columns
+height(data)
+% Extract data from relevant columns, Calculate log returns and Combine them in a matrix
 dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
-AA = data.AA; 
-XOM = data.XOM;
-
-% Calculate log returns
-log_returns_AA = diff(log(AA)) * 100;
-log_returns_XOM = diff(log(XOM)) * 100;
+T=height(data)-1
+log_retrurns=zeros(1,28)
+log_ret_AA=diff(log(data.AA))*100;
+log_ret_AXP=diff(log(data.AXP))*100;
+log_ret_BA=diff(log(data.BA))*100;
+log_ret_BAC=diff(log(data.BAC))*100;
+log_ret_CAT=diff(log(data.CAT))*100;
+log_ret_CSCO=diff(log(data.CSCO))*100;
+log_ret_CVX=diff(log(data.CVX))*100;
+log_ret_DD=diff(log(data.DD))*100;
+log_ret_DIS=diff(log(data.DIS))*100;
+log_ret_GE=diff(log(data.GE))*100;
+log_ret_HD=diff(log(data.HD))*100;
+log_ret_HPQ=diff(log(data.HPQ))*100;
+log_ret_IBM=diff(log(data.IBM))*100;
+log_ret_INTC=diff(log(data.INTC))*100;
+log_ret_JNJ=diff(log(data.JNJ))*100;
+log_ret_JPM=diff(log(data.JPM))*100;
+log_ret_KO=diff(log(data.KO))*100;
+log_ret_MCD=diff(log(data.MCD))*100;
+log_ret_MMM=diff(log(data.MMM))*100;
+log_ret_MRK=diff(log(data.MRK))*100;
+log_ret_MSFT=diff(log(data.MSFT))*100;
+log_ret_PFE=diff(log(data.PFE))*100;
+log_ret_PG=diff(log(data.PG))*100;
+log_ret_T=diff(log(data.T))*100;
+log_ret_TRV=diff(log(data.TRV))*100;
+log_ret_VZ=diff(log(data.VZ))*100;
+log_ret_WMT=diff(log(data.WMT))*100;
+log_ret_XOM=diff(log(data.XOM))*100;
 
 % Combine log returns in a matrix
-log_returns = [log_returns_AA, log_returns_XOM];
-
+log_returns = [log_ret_AA, log_ret_XOM, log_ret_BA, log_ret_BAC,log_ret_CAT log_ret_CSCO log_ret_CVX log_ret_DD log_ret_DIS log_ret_GE log_ret_HD log_ret_HPQ log_ret_IBM log_ret_INTC log_ret_JNJ log_ret_JPM log_ret_KO log_ret_MCD log_ret_MMM log_ret_MRK log_ret_MSFT log_ret_PFE log_ret_PG log_ret_T log_ret_TRV log_ret_VZ log_ret_WMT log_ret_XOM ] ;
 d = size(log_returns, 2);
 T = size(log_returns, 1);
 
@@ -32,7 +55,13 @@ J = length(specifications);
 
 results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[]);
 outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
-    
+ 
+init_alpha_scalar=0.05
+init_beta_scalar=0.9
+init_alpha_diag=ones(1,d)*init_alpha_scalar
+init_beta_diag=ones(1,d)*init_beta_scalar
+
+
 for i = 1:I
     for j = 1:J
         outputs(i,j).I = I;
@@ -41,12 +70,16 @@ for i = 1:I
         outputs(i,j).T = T;
         outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).initial_Gt = eye(d);
+
+
         if i==3
         % Only for GOGARCH
         outputs(3,j).initial_delta=1;
-        outputs(i,j).initials_thetaD = { [0.05 0.943 outputs(3,j).initial_delta]      , [0.072 0.036 0.909 0.960 outputs(3,j).initial_delta]       , [0.055 0.043 0.993 outputs(3,j).initial_delta]};
+        
+        outputs(i,j).initials_thetaD = { [init_alpha_scalar init_beta_scalar outputs(3,j).initial_delta]      , [init_alpha_diag init_beta_diag outputs(3,j).initial_delta]       , [init_alpha_diag 0.993 outputs(3,j).initial_delta]};
+        
         else
-        outputs(i,j).initials_thetaD = { [0.01 0.3]      , [0.01 0.3 0.01 0.3]       , [0.01 0.3 0.3]};
+        outputs(i,j).initials_thetaD = { [init_alpha_scalar init_beta_scalar]      , [init_alpha_diag init_beta_diag]       , [init_alpha_diag 0.3]};
         end
         
     end

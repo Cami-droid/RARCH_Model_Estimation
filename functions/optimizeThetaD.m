@@ -1,5 +1,5 @@
 function [thetaD_opt, fval, exitflag, output, L] = optimizeThetaD(model, specification, outputs, thetaD_initial)
-    models_index(model, specification);
+    [i,j]=models_index(model, specification);
 
     % Opciones de optimización
     options = optimset('fmincon');
@@ -38,8 +38,18 @@ function [thetaD_opt, fval, exitflag, output, L] = optimizeThetaD(model, specifi
             ub = [0.11,0.99,0.99]; % No se necesita límite superior específico ya que \lambda < 1 está en A y b
             nonlcon = @nonlcon;
 
+    
+
     end
 
+    if i==3 
+    disp('linea 46 optimizeThetaD')
+    n_rowsA=size(A,1)
+    zeros_column=zeros(n_rowsA,1)
+    A=[A,zeros_column]
+    lb=[lb,-1]
+    ub=[ub,+1]
+    end
     % Definición de la función de log-verosimilitud negativa
     logLikelihoodFunc = @(thetaD) ll_engine(model, specification, outputs, thetaD);
 

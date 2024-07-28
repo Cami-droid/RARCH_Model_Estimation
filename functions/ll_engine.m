@@ -13,15 +13,16 @@ function LL = ll_engine(model, specification, outputs, thetaD)
     Id = eye(d);
 
     % Inicializar inputs iniciales
+
     initial_Gt = outputs.initial_Gt;
     initial_Qt_star = Id;
-    delta = 1;
+    delta = thetaD(end); %%%%%%%%%%%%%%%%%%%% falta desarrollar
 
     % Inicializar matrices de salida
     Gt = zeros(d, d, T);
     Gt(:,:,1) = calcGt(model, specification, outputs, thetaD, initial_Gt);
 
-    % Calcular Gt para t >= 2
+    % Calculate Gt for t >= 2
     for t = 2:T
         Gt(:,:,t) = calcGt(model, specification, outputs, thetaD, Gt(:,:,t-1));
         
@@ -68,7 +69,7 @@ function LL = ll_engine(model, specification, outputs, thetaD)
         LL = LL + ll;   
     end
 
-    
+
 % Definir la función ll_type_internal
     function ll = ll_type_internal(t)
         U =@(delta,d) delta * eye(d);
