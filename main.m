@@ -47,7 +47,7 @@ for i = 1:I
         outputs(i,j).initials_thetaD=initials_thetaD{j};
 
         if i==3
-        outputs(i,j).initials_thetaD=[initials_thetaD initial_delta];
+        outputs(i,j).initials_thetaD=[initials_thetaD{j} initial_delta];
         end
                         
     end
