@@ -42,7 +42,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
 
     % Verificar si hay valores NaN en Gt
     if any(isnan(Gt), 'all')
-        error('Gt contiene valores NaN');
+         error('Gt contiene valores NaN');
     end
 
     % Inicializar Qt y Qt_star si el modelo es RDCC

@@ -56,7 +56,7 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
     elseif  strcmp(model, 'GOGARCH')
 
         C = eye(d) - A * A' - B * B';
-        Gt = C + A * (1/delta)*(et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
+        Gt = C + A * (1/(delta).^2)*(et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
 
     elseif strcmp(model, 'RDCC')
 
