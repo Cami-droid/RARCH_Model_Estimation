@@ -31,9 +31,12 @@ I = length(models);
 J = length(specifications);
 
 results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[]);
-outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', []);
+outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[]);
     
+initials_thetaD= { [0.02 0.91]   ,  [0.02 0.02 0.91 0.91]    ,[0.02 0.02 0.91]};
+initial_delta=0.1; % only for 'GOGARCH' models
 for i = 1:I
+    
     for j = 1:J
         outputs(i,j).I = I;
         outputs(i,j).J = J;
@@ -41,18 +44,17 @@ for i = 1:I
         outputs(i,j).T = T;
         outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).initial_Gt = eye(d);
+        outputs(i,j).initials_thetaD=initials_thetaD{j};
         if i==3
-        % Only for GOGARCH
-        outputs(3,j).initial_delta=1;
-        outputs(i,j).initials_thetaD = { [0.05 0.943 outputs(3,j).initial_delta]      , [0.072 0.036 0.909 0.960 outputs(3,j).initial_delta]       , [0.055 0.043 0.993 outputs(3,j).initial_delta]};
-        else
-        outputs(i,j).initials_thetaD = { [0.01 0.3]      , [0.01 0.3 0.01 0.3]       , [0.01 0.3 0.3]};
+        outputs(i,j).initials_thetaD=[outputs(i,j).initials_thetaD initial_delta];
         end
-        
+                        
     end
 end
-%% 
+clear delta
 
+%% 
+ 
 for i = 1:I
     model = models{i};
     fprintf('Estimating model: %s\n', model);
@@ -82,14 +84,16 @@ for i = 1:I
         fprintf('Parameter specification: %s\n', specification);
         
         % Optimize logLikelihood
-        initial_thetaD = outputs(i,j).initials_thetaD{j};
+        initial_thetaD = outputs(i,j).initials_thetaD;
 
-        fprintf('The initials thetaDs are: %s\n', mat2str(outputs(i,j).initials_thetaD{j}));
+        fprintf('The initials thetaDs are: %s\n', mat2str(outputs(i,j).initials_thetaD));
         
         % Estimate thetaD parameters
-        outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD{j}, outputs(i,j).initial_Gt);
+        outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD, outputs(i,j).initial_Gt);
         
-        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
+        %%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
         
         fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
         disp(results(i,j).thetaD_opt)
@@ -98,7 +102,7 @@ for i = 1:I
         % calculate Gt at the optimum thetaD_opt
 
         Id=eye(d);
-        output(i,j).Gt=calcGt(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id);
+        output(i,j).Gt=calc_all_Gts(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id);
         
         % Calculate Qt, Qt_star and Ct
         
@@ -114,22 +118,8 @@ end
 % Generate Table
 generate_matlabTable;
 
-% Generar la tabla y guardarla en un archivo .txt
-thetaD_table_matlab = generate_pdfTable(results);
+% Generate pdf Table
 
-% Crear y compilar el archivo LaTeX
+generate_pdfTable
+generate_excelTable
 
-% Define the paths
-results_dir = 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results';
-report_file = fullfile(results_dir, 'report.tex');
-
-% Compile the LaTeX file to PDF, specifying the output directory
-command = sprintf('pdflatex -output-directory="%s" "%s"', results_dir, report_file);
-status = system(command);
-
-% Check if the command was successful
-if status == 0
-    disp('PDF generated successfully.');
-else
-    disp('Error generating PDF.');
-end 

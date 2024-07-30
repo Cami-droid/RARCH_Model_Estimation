@@ -5,11 +5,11 @@ d=outputs.d;
 rotated_returns=outputs.rotated_returns;
 thetaS=outputs.H_bar;
 
-Gt(:,:,1) = calcGt(model,specification,outputs, thetaD, initial_Gt);
+Gt(:,:,1) = calcGt(model,specification,outputs, thetaD, initial_Gt,1);
 
 for t= 2:T % Adjusting loop to account for t starting from 1
         
-        Gt(:, :, t) = calcGt(model,specification,outputs, thetaD, Gt(:, :, t-1)); % t_count-1=t for returns to match theory
+        Gt(:, :, t) = calcGt(model,specification,outputs, thetaD, Gt(:, :, t-1),t); 
         
         % Adding a small regularization term to Gt to avoid singularity
         reg_term = 1e-6 * eye(d);

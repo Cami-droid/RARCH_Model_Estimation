@@ -1,34 +1,44 @@
 \documentclass{article}
-\usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{longtable}
-\usepackage{geometry}
-\geometry{a4paper, margin=1in}
 
 \begin{document}
 
-\begin{center}
-    \textbf{Tabla de Parámetros Estimados}
-\end{center}
+\title{Optimization Results Report}
+\author{Your Name}
+\date{\today}
+\maketitle
 
-\begin{longtable}{l*{12}{c}}
-\toprule
-& \multicolumn{3}{c}{RBEKK} & \multicolumn{3}{c}{OGARCH} & \multicolumn{3}{c}{GOGARCH} & \multicolumn{3}{c}{RDCC} \\
-\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
-Parámetro & Scalar & Diagonal & CP & Scalar & Diagonal & CP & Scalar & Diagonal & CP & Scalar & Diagonal & CP \\
-\midrule
+\section{Introduction}
+This report contains the results of the optimization process, including the final parameter estimates and likelihood values for various models and specifications.
+
+\section{Optimization Results}
+
+\subsection{Parameter Estimates}
+Below is the table showing the optimized parameters for different models and specifications.
+
+\begin{longtable}{|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\textbf{Parameter} & \textbf{RBEKK\_Scalar} & \textbf{RBEKK\_Diagonal} & \textbf{RBEKK\_CP} & \textbf{OGARCH\_Scalar} & \textbf{OGARCH\_Diagonal} & \textbf{OGARCH\_CP} & \textbf{GOGARCH\_Scalar} & \textbf{GOGARCH\_Diagonal} & \textbf{GOGARCH\_CP} & \textbf{RDCC\_Scalar} & \textbf{RDCC\_Diagonal} & \textbf{RDCC\_CP} \\
+\hline
 \endfirsthead
 
-\toprule
-& \multicolumn{3}{c}{RBEKK} & \multicolumn{3}{c}{OGARCH} & \multicolumn{3}{c}{GOGARCH} & \multicolumn{3}{c}{RDCC} \\
-\cmidrule(lr){2-4} \cmidrule(lr){5-7} \cmidrule(lr){8-10} \cmidrule(lr){11-13}
-Parámetro & Scalar & Diagonal & CP & Scalar & Diagonal & CP & Scalar & Diagonal & CP & Scalar & Diagonal & CP \\
-\midrule
+\hline
+\textbf{Parameter} & \textbf{RBEKK\_Scalar} & \textbf{RBEKK\_Diagonal} & \textbf{RBEKK\_CP} & \textbf{OGARCH\_Scalar} & \textbf{OGARCH\_Diagonal} & \textbf{OGARCH\_CP} & \textbf{GOGARCH\_Scalar} & \textbf{GOGARCH\_Diagonal} & \textbf{GOGARCH\_CP} & \textbf{RDCC\_Scalar} & \textbf{RDCC\_Diagonal} & \textbf{RDCC\_CP} \\
+\hline
 \endhead
 
-\bottomrule
+\hline
 \endfoot
 
-\input{thetaD_table.txt}
+\input{thetaD_table.tex}
+
 \end{longtable}
 
+\subsection{Likelihood Values}
+Below are the likelihood values for each model and specification.
+
+% Add likelihood values here, you can use a similar table structure or any other format you prefer.
+
 \end{document}
+

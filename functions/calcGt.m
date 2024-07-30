@@ -1,6 +1,9 @@
-function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev)
-
-    et = outputs.rotated_returns;
+function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
+    if t>=2
+        et = outputs.rotated_returns(t-1,:);
+    else
+        et=0;
+    end
     thetaS = outputs.H_bar;
     d=outputs.d;
 
@@ -39,7 +42,8 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev)
 
     if strcmp(model, 'RBEKK')
 
-        C = thetaS - A * thetaS * A' - B * thetaS * B';
+        %C = thetaS - A * thetaS * A' - B * thetaS * B'; % ese estaba antes
+        C = eye(d) - A * A' - B * B';
         Ht = C + A * (et' * et) * A' + B * Gt_prev * B';
 
         Gt = Ht + reg_term; % Adding regularization term
@@ -57,14 +61,14 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev)
     elseif strcmp(model, 'RDCC')
 
         C = eye(d) - A * A' - B * B';
-        Gt = C + A * (et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
+        Gt = C + A * (et' * et) * A' + B * Gt_prev * B' + reg_term ;% Adding regularization term
     end
 
     % Check for NaN values and correct them
-    if any(isnan(Gt(:)))
-        warning('NaN values detected in Gt, adding additional regularization.');
-        Gt = Gt + 1e-4 * eye(d);
-    end
+   % if any(isnan(Gt(:)))
+   %     warning('NaN values detected in Gt, adding additional regularization.');
+   %     Gt = Gt + 1e-4 * eye(d);
+   % end
 
     % Ensure Gt is symmetric
     Gt = (Gt + Gt') / 2;

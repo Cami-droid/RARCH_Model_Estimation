@@ -41,7 +41,7 @@ function  [returns,Dt]= prepare_data(model,outputs,log_returns)
                 garch_fit = estimate(garch_model, demeaned_returns(:, i), 'display', 'off');
                 cond_var(:, i) = infer(garch_fit, demeaned_returns(:, i));
                 std_returns(:, i) = demeaned_returns(:, i) ./ sqrt(cond_var(:, i));
-                summarize(garch_fit);
+                %summarize(garch_fit);
 
             end
                 

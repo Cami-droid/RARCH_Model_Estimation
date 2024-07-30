@@ -1,37 +1,45 @@
-%Assuming that 'results' is the structure that you have with a size of 4x3
+% Assuming that 'results' is the structure with a size of 4x3
 
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
 
-% Definir los nombres de todos los par�metros posibles sin caracteres especiales
+% Define all possible parameter names without special characters
 all_params = {'alpha', 'beta', 'alpha_11', 'alpha_22', 'beta_11', 'beta_22', 'lambda_cp', 'delta'};
 
-% Inicializar una celda para almacenar la tabla
-thetaD_table = cell(numel(all_params), numel(models) * numel(specifications));
+% Initialize a cell array to store the table
+thetaD_table = cell(numel(all_params) + 1, numel(models) * numel(specifications));
 
-% Rellenar la tabla con los vectores thetaD_opt transpuestos
+% Fill the table with transposed thetaD_opt vectors
 for i = 1:4
     for j = 1:3
-        % Obtener el vector de par�metros transpuesto
+        % Get the vector of transposed parameters
         thetaD_opt = results(i, j).thetaD_opt';
         
-        % Identificar qu� par�metros deben ser llenados para esta combinaci�n de modelo y especificaci�n
+        % Identify which parameters should be included for this
+        % combination of model and specification
         param_idx = false(size(all_params));
         switch specifications{j}
             case 'Scalar'
-                param_idx(1:2) = true; % alpha y beta
+                param_idx(1:2) = true; % alpha and beta
             case 'Diagonal'
                 param_idx(3:6) = true; % alpha_11, alpha_22, beta_11, beta_22
             case 'CP'
                 param_idx([1 2 7]) = true; % alpha, beta, lambda_cp
         end
         
-        % Llenar las celdas correspondientes con los valores de los par�metros
+        if i == 3
+            param_idx(8) = true; % delta
+        end
+        
+        % Fill the cells with the parameter values
         thetaD_table(param_idx, (i-1)*3 + j) = num2cell(thetaD_opt);
+        
+        % Add the likelihood value
+        thetaD_table{numel(all_params) + 1, (i-1)*3 + j} = results(i, j).fval;
     end
 end
 
-% Crear nombres de las columnas
+% Create column names
 col_names = cell(1, numel(models) * numel(specifications));
 for i = 1:numel(models)
     for j = 1:numel(specifications)
@@ -39,8 +47,12 @@ for i = 1:numel(models)
     end
 end
 
-% Crear una tabla en MATLAB para visualizar los resultados
+% Add the row name for likelihood
+all_params{end + 1} = 'likelihood';
+
+% Create a table in MATLAB to visualize the results
 thetaD_table_matlab = cell2table(thetaD_table, 'VariableNames', col_names, 'RowNames', all_params);
 
-% Mostrar la tabla
+% Display the table
 disp(thetaD_table_matlab);
+

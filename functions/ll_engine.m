@@ -1,5 +1,14 @@
-function LL = ll_engine(model, specification, outputs, thetaD)
+function L = ll_engine(model, specification, outputs, thetaD)
+    % devuelve un vector columna L con las log-verosimilitudes en cada periodo t=1...T
+    % recuerda que en la entrada de outputs en realidad entra outputs(i,j)
     % Inicialización de variables
+    % Imprime la frase y el vector en un solo renglón
+    %sentence='trying ';
+    %fprintf('%s ', sentence);
+    %fprintf('%d ', thetaD);
+    %fprintf('\n'); % line jump
+
+
     [i, j] = models_index(model, specification);
     rt = outputs.returns;
     et = outputs.rotated_returns;
@@ -20,11 +29,11 @@ function LL = ll_engine(model, specification, outputs, thetaD)
 
     % Inicializar matrices de salida
     Gt = zeros(d, d, T);
-    Gt(:,:,1) = calcGt(model, specification, outputs, thetaD, initial_Gt);
-
+    Gt(:,:,1) = calcGt(model, specification, outputs, thetaD, initial_Gt,1);
+ 
     % Calculate Gt for t >= 2
     for t = 2:T
-        Gt(:,:,t) = calcGt(model, specification, outputs, thetaD, Gt(:,:,t-1));
+        Gt(:,:,t) = calcGt(model, specification, outputs, thetaD, Gt(:,:,t-1),t);
         
         % Agregar un término de regularización pequeño a Gt para evitar singularidad
         reg_term = 1e-6 * eye(d);
@@ -42,7 +51,7 @@ function LL = ll_engine(model, specification, outputs, thetaD)
         Qt_star(:,:,1) = initial_Qt_star;
 
         for t = 2:T
-            Qt_star(:,:,t) = calcGt(model, specification, outputs, thetaD, Qt_star(:,:,t-1));
+            Qt_star(:,:,t) = calcGt(model, specification, outputs, thetaD, Qt_star(:,:,t-1),t);
             Qt_star(:,:,t) = Qt_star(:,:,t) + reg_term;
         end
 
@@ -62,11 +71,11 @@ function LL = ll_engine(model, specification, outputs, thetaD)
         Ct = [];
     end
 
-        % Calcular la log-verosimilitud total
-    LL = 0;
-    for t = 1:T
+        % Calcular el vector columna de log-verosimilitud en cada período t
+        L=zeros(T,1);
+     for t = 1:T
         ll = ll_type_internal(t);
-        LL = LL + ll;   
+        L(t,1)=ll;
     end
 
 

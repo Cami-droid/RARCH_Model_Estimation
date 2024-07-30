@@ -33,5 +33,5 @@ function [Qt, Qt_star , Ct] = calcQt(model,specification, outputs, thetaD)
     else
         Qt = [];
         Qt_star = [];
-        Ct=[]
+        Ct=[];
     end

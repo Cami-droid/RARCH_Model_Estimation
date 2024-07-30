@@ -21,5 +21,5 @@ mD_rdcc_t=diff(log(ll(thetaM,thetaS,thetaD),thetaD))
 
 J=var(1/sqrt(T))
 
-u
+
 
