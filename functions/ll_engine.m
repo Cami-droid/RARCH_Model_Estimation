@@ -87,7 +87,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
             case 'RBEKK'
                 ll = -0.5 * (d * log(2*pi) + log(det(Gt(:,:,t))) + et(t, :) * inv(Gt(:,:,t)) * et(t, :)');
             case 'OGARCH'
-                ll = -0.5 * (d * log(2 * pi) + log(det(Gt(:,:,t))) + et(t, :) * U(delta, d) * inv(Gt(:,:,t)) * U(delta, d)' * et(t, :)');
+                ll = -0.5 * (d * log(2 * pi) + log(det(Gt(:,:,t))) + et(t, :)*inv(Gt(:,:,t))*et(t, :)');
             case 'GOGARCH'
                 ll = -0.5 * (d * log(2 * pi) + log(det(Gt(:,:,t))) + et(t, :) * U(delta, d) * inv(Gt(:,:,t)) * U(delta, d)' * et(t, :)');
             case 'RDCC'
