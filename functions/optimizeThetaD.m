@@ -1,4 +1,4 @@
-function [thetaD_opt, fval, exitflag, output, L] = optimizeThetaD(model, specification, outputs, thetaD_initial)
+function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(model, specification, outputs, thetaD_initial)
 %%% fval: log-verosimilitud final
 
     [i,j] = models_index(model, specification);
@@ -70,10 +70,19 @@ function [thetaD_opt, fval, exitflag, output, L] = optimizeThetaD(model, specifi
      % Obtén el vector L con el thetaD optimizado
     L = ll_engine(model, specification, outputs, thetaD_opt);
 
+    % Getting the vector L_marginal (Txd)
+
+    L_marginal = ll_marginal_engine(model, outputs, thetaD_opt);
+
     %%
     function LL = ll_engine_wrapper(model, specification, outputs, thetaD)
         L = ll_engine(model, specification, outputs, thetaD);
         LL = sum(L);
+    end
+
+    function LL_marginal=ll_marginal_engine_wrapper(model,outputs, thetaD)
+        L= ll_marginal_engine(model,outputs,thetaD);
+        LL= sum(LL_marginal);
     end
 
 end

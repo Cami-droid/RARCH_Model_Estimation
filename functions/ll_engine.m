@@ -91,9 +91,11 @@ function L = ll_engine(model, specification, outputs, thetaD)
             case 'GOGARCH'
                 ll = -0.5 * (d * log(2 * pi) + log(det(Gt(:,:,t))) + et(t, :) * U(delta, d) * inv(Gt(:,:,t)) * U(delta, d)' * et(t, :)');
             case 'RDCC'
-                ll_1 = -0.5 * (d * log(2*pi) + 2*log(det(Dt(:,:,t)))) + rt(t, :) * inv(Dt(:,:,t)^2) * rt(t, :)';
-                ll_2 = -0.5 * (-et(t, :)*et(t, :)' + log(det(Ct(:,:,t))) + et(t, :) * inv(Ct(:,:,t)) * et(t, :)');
-                ll = ll_1 + ll_2;
+                    
+                ll_M = -0.5 * (d * log(2*pi) + 2*log(det(Dt(:,:,t)))) + rt(t, :) * inv(Dt(:,:,t)^2) * rt(t, :)';
+                ll_C = -0.5 * (-et(t, :)*et(t, :)' + log(det(Ct(:,:,t))) + et(t, :) * inv(Ct(:,:,t)) * et(t, :)');
+
+                ll = ll_M + ll_C;
         end
     end
 

@@ -30,8 +30,8 @@ specifications = {'Scalar', 'Diagonal', 'CP'};
 I = length(models);
 J = length(specifications);
 
-results(I, J) = struct('model', [], 'specification', [], 'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[]);
-outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[]);
+results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
+outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
     
 initials_thetaD= { [0.02 0.91]   ,  [0.02 0.02 0.91 0.91]    ,[0.02 0.02 0.04]};
 initial_delta=0.1; % only for 'GOGARCH' models
@@ -61,7 +61,7 @@ for i = 1:I
     fprintf('*********************************** Estimating model: %s ****************************************\n', model);
     for j = 1:J
         % Load and prepare data
-        [outputs(i,j).returns, outputs(i,j).Dt] = prepare_data(model, outputs(i,j), log_returns);
+        [outputs(i,j).returns, outputs(i,j).Dt, results(i,j).thetaM] = prepare_data(model, outputs(i,j), log_returns);
         
         % Rotate data
         [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j), model);
@@ -92,10 +92,16 @@ for i = 1:I
         % Estimate thetaD parameters
         outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD, outputs(i,j).initial_Gt);
         
-        %%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
+        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L,outputs(i,j).L_marginal] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
         
+        % Storing LL_marginals in results
+
+        results(i,j).LL_marginal=sum(outputs(i,j).L_marginal)';
+        results(i,j).LL_copula=results(i,j).fval-sum(results(i,j).LL_marginal);
+
+
         fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
         fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).fval));
 
@@ -114,8 +120,6 @@ for i = 1:I
     end
 end
 %% Table Generation
-
-% Generate Table
 generate_matlabTable;
 
 
