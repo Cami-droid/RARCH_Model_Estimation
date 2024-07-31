@@ -29,7 +29,7 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
             ];
             b = [1; 1];
          	   lb = [0.0001, 0.0001, 0.9, 0.9]; % \alpha_{11}, \alpha_{22}, \beta_{11}, \beta_{22} >= 0
-               %ub = [0.99,0.99,0.99,0.99];
+               ub = [0.99,0.99,0.99,0.99];
             nonlcon = [];
 
         % Restricciones para el caso Common Persistence (CP)
@@ -39,7 +39,7 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
                  0, 0, 1]; % Asegurar \alpha < 1, \beta < 1, \lambda < 1
             b = [1; 1; 1];
              lb = [0.0001, 0.0001, 0.0001]; % Asegurar 0 < \lambda
-             ub = [0.99,0.99,inf]; % No se necesita limite superior specific ya que \lambda < 1 está en A y b
+             ub = [0.99,0.99,1]; % No se necesita limite superior specific ya que \lambda < 1 está en A y b
             nonlcon = @nonlcon;
    
     end
@@ -49,7 +49,7 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
         zeros_column = zeros(n_rowsA, 1);
         A = [A, zeros_column];
        lb = [lb, 0.01];
-       ub = [ub, +1];
+       ub = [ub, 1];
     end
 
     % Definicion de la funcion de log-verosimilitud negativa

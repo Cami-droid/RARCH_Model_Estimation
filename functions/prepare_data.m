@@ -38,7 +38,7 @@ function  [returns,Dt, thetaM]= prepare_data(model,outputs,log_returns)
             Dt = zeros(d,d,T);
             
             cond_var = zeros(size(demeaned_returns));
-            thetaM=zeros(d*2,1)   
+            thetaM=zeros(d*2,1); 
             for i = 1:d
 
                 omega = 0.01; % Valor inicial para omega
