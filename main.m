@@ -90,8 +90,9 @@ for i = 1:I
         % calculate Gt at the optimum theta_vec
 
         Id=eye(d);
+        thetaD=results(i,j).theta_vec(((d+1)*d/2)+1:end)'
         output(i,j).Gt_artesanal=calc_all_Gts(model, specification, outputs(i,j),results(i,j).theta_vec,Id);
-        
+        clear thetaD
         % Calculate Qt, Qt_star and Ct
         
         [outputs(i,j).Qt, outputs(i,j).Qt_star, outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).theta_vec);

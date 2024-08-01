@@ -17,7 +17,8 @@ function [theta_vec, fval, Gt, VCV,Scores] = optimizeThetaD(model, specification
         
         case 'RDCC'
 
-        [theta_vec, fval, Gt, VCV,Scores] = dcc(et, 1, 1,[], model);
+        [theta_vec, fval, Gt, VCV,Scores] = dcc(et,[], 1, [],1,1,0,1,2,'3-stage','Scalar',[],[]);
+        %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
     end
 
 
