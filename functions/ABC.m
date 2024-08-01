@@ -1,7 +1,10 @@
 function [A,B,C]=ABC(model, specification, outputs)
 d=outputs.d
-[i,j] = models_index(model, specification);
-
+et=outputs.rotated_returns(end)
+mean_et=mean(outputs.rodated_returns)
+models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
+specifications = {'Scalar', 'Diagonal', 'CP'};
+[i, j] = models_index(model, specification)
 
 switch specification
 case 'Scalar'

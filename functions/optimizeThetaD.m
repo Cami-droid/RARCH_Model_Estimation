@@ -1,9 +1,14 @@
 function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(model, specification, outputs, thetaD_initial)
 %%% fval: log-verosimilitud final
+    d=outputs.d;
 
     [i,j] = models_index(model, specification);
-    lb=[];
-    ub=[];
+    alpha_lb=0.001;
+    alpha_ub=0.999;
+    beta_lb=0.85;
+    beta_ub=0.99;
+    lambda_cp_lb=0.001;
+    lambda_cp_ub=0.99;
 
     % Opciones de optimización
     options = optimset('fmincon');
@@ -23,23 +28,22 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
 
         % Restricciones para el caso Diagonal
         case 'Diagonal'
-            A = [
-                1, 0, 1, 0;  % \alpha_{11} + \beta_{11} <= 1
-                0, 1, 0, 1   % \alpha_{22} + \beta_{22} <= 1
-            ];
-            b = [1; 1];
-         	   lb = [0.0001, 0.0001, 0.9, 0.9]; % \alpha_{11}, \alpha_{22}, \beta_{11}, \beta_{22} >= 0
-               ub = [0.99,0.99,0.99,0.99];
+            A = [eye(d),eye(d)];      %\alpha_{11} + \beta_{11} <= 1
+                                   % \alpha_{22} + \beta_{22} <= 1
+            
+            b = ones(d,1);
+            
+            
+            lb=[alpha_lb*ones(1,d),beta_lb*ones(1,d)]; % \alpha_{11},..., \alpha_{dd}, \beta_{11},..., \beta_{dd} >= 0
+            ub = [alpha_ub*ones(1,d),beta_ub*ones(1,d)]; % \alpha_{11},..., \alpha_{dd}, \beta_{11},..., \beta_{dd} < 1
             nonlcon = [];
 
         % Restricciones para el caso Common Persistence (CP)
         case 'CP'
-            A = [1, 0, 0;
-                 0, 1, 0;
-                 0, 0, 1]; % Asegurar \alpha < 1, \beta < 1, \lambda < 1
-            b = [1; 1; 1];
-             lb = [0.0001, 0.0001, 0.0001]; % Asegurar 0 < \lambda
-             ub = [0.99,0.99,1]; % No se necesita limite superior specific ya que \lambda < 1 está en A y b
+            A = eye(d+1); % Asegurar \alpha11 < 1, \alpha22 < 1, \lambda < 1
+            b = ones(d+1,1);
+             lb = [alpha_lb*ones(1,d), lambda_cp_lb]; % Asegurar 0 < \lambda
+             ub = [alpha_ub*ones(1,d), lambda_cp_ub]; % No se necesita limite superior specific ya que \lambda < 1 está en A y b
             nonlcon = @nonlcon;
    
     end
@@ -54,12 +58,6 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
 
     % Definicion de la funcion de log-verosimilitud negativa
     logLikelihoodFunc = @(thetaD) ll_engine_wrapper(model, specification, outputs, thetaD);
-
-    % Ejecutar la optimización
-    %fprintf('This is thetaD_initial\n');
-    %disp(thetaD_initial);
-    %disp('This is ll_engine value at thetaD_initial\n');
-    %ll_engine(model, specification, outputs, thetaD_initial);
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     

@@ -62,7 +62,7 @@ function  [returns,Dt, thetaM]= prepare_data(model,outputs,log_returns)
             end
             
             prepared_data=std_returns;
-                         
+                      
                         
     end
     

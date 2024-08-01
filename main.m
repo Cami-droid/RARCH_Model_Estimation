@@ -1,28 +1,7 @@
 % Main file to run all the functions and generate the final table
-clear;clc;
 
 % Add 'functions' folder to the path
 addpath('functions'); 
-
-data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\data\stock_prices_28_KFT_UTX_1.csv');
-
-% Extract data from relevant columns
-dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
-AA = data.AA; 
-XOM = data.XOM;
-
-% Calculate log returns
-log_returns_AA = diff(log(AA)) * 100;
-log_returns_XOM = diff(log(XOM)) * 100;
-
-% Combine log returns in a matrix
-log_returns = [log_returns_AA, log_returns_XOM];
-
-d = size(log_returns, 2);
-T = size(log_returns, 1);
-
-% Assure that the date vector equalizes log returns' length
-dates = dates(2:end);
 
 models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
 specifications = {'Scalar', 'Diagonal', 'CP'};
@@ -32,8 +11,11 @@ J = length(specifications);
 
 results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
 outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
-    
-initials_thetaD= { [0.02 0.91]   ,  [0.02 0.02 0.91 0.91]    ,[0.02 0.02 0.04]};
+alpha_init=0.02;
+beta_init=0.85;
+
+initials_thetaD= { [alpha_init, beta_init], [alpha_init*ones(1,d),beta_init*ones(1,d)],[alpha_init*ones(1,d), alpha_init+beta_init]};
+
 initial_delta=0.1; % only for 'GOGARCH' models
 for i = 1:I
     
