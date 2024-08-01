@@ -1,4 +1,4 @@
-function [theta_vec, fval, Gt, VCV,scores] = optimizeThetaD(model, specification, outputs, thetaD_initial)
+function [theta_vec, fval, Gt, VCV,Scores] = optimizeThetaD(model, specification, outputs, thetaD_initial)
 %%% fval: log-verosimilitud final
     d=outputs.d;
     et=outputs.rotated_returns;
@@ -8,20 +8,16 @@ function [theta_vec, fval, Gt, VCV,scores] = optimizeThetaD(model, specification
     switch model
         case 'RBEKK'
         
-        [theta_vec,fval,Gt,VCV,Scores] = rarch(et,1,1,'Scalar','2-stage');
-
-        [theta_vec,fval,Gt,VCV,Scores] = rarch(et,1,1,'Diagonal','2-stage');
-
-        [theta_vec,fval, Gt,VCV,Scores] = rarch(et,1,1,'CP','2-stage');
+        [theta_vec,fval,Gt,VCV,Scores] = rarch(et,1,1,specification,'2-stage');
 
         case 'OGARCH' || 'GOGARCH'
 
-        [theta_vec, fval, Gt, VCV,Scores] = gogarch(e_t, p, q,[], model);
+        [theta_vec, fval, Gt, VCV,Scores] = gogarch(et, 1, 1,[], model);
 
         
         case 'RDCC'
 
-        [theta_vec, fval, Gt, VCV,Scores] = gogarch(e_t, p, q,[], model);
+        [theta_vec, fval, Gt, VCV,Scores] = dcc(et, 1, 1,[], model);
     end
 
 
