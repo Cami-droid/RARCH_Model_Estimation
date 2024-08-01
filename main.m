@@ -9,8 +9,8 @@ specifications = {'Scalar', 'Diagonal', 'CP'};
 I = length(models);
 J = length(specifications);
 
-results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
-outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
+results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'theta_vec', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
+outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'VCV',[],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
 alpha_init=0.02;
 beta_init=0.85;
 
@@ -76,7 +76,7 @@ for i = 1:I
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-        [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L,outputs(i,j).L_marginal] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
+        [results(i,j).theta_vec, results(i,j).fval, outputs.Gt, outputs.VCV] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
         
         % Storing LL_marginals in results
 
@@ -84,17 +84,17 @@ for i = 1:I
         results(i,j).LL_copula=results(i,j).fval-sum(results(i,j).LL_marginal);
 
 
-        fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
+        fprintf('The optimal vector theta found is: %s\n', mat2str(results(i,j).theta_vec));
         fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).fval));
 
-        % calculate Gt at the optimum thetaD_opt
+        % calculate Gt at the optimum theta_vec
 
         Id=eye(d);
-        output(i,j).Gt=calc_all_Gts(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id);
+        output(i,j).Gt=calc_all_Gts(model, specification, outputs(i,j),results(i,j).theta_vec,Id);
         
         % Calculate Qt, Qt_star and Ct
         
-        [outputs(i,j).Qt, outputs(i,j).Qt_star outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
+        [outputs(i,j).Qt, outputs(i,j).Qt_star outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).theta_vec);
         
         % Store the results
         results(i,j).model = model;

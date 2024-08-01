@@ -1,86 +1,29 @@
-function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(model, specification, outputs, thetaD_initial)
+function [theta_vec, fval, Gt, VCV,scores] = optimizeThetaD(model, specification, outputs, thetaD_initial)
 %%% fval: log-verosimilitud final
     d=outputs.d;
-
-    [i,j] = models_index(model, specification);
-    alpha_lb=0.001;
-    alpha_ub=0.999;
-    beta_lb=0.85;
-    beta_ub=0.99;
-    lambda_cp_lb=0.001;
-    lambda_cp_ub=0.99;
-
-    % Opciones de optimización
-    options = optimset('fmincon');
-    options.Display = 'off'; % 'iter'
-    options.Diagnostics = 'off'; % 'on'
-    options.Algorithm = 'interior-point';
-
-    % Configuración de restricciones
-    switch specification
-        % Restricciones para el caso Scalar
-        case 'Scalar'
-            A = [1, 1]; % alpha + beta <= 1
-            b = 1; % <=1
-              lb = [0.0001, 0.9]; % alpha>=0, beta>=0
-              ub = [0.99,0.99]; % No hay límite superior
-            nonlcon = [];
-
-        % Restricciones para el caso Diagonal
-        case 'Diagonal'
-            A = [eye(d),eye(d)];      %\alpha_{11} + \beta_{11} <= 1
-                                   % \alpha_{22} + \beta_{22} <= 1
-            
-            b = ones(d,1);
-            
-            
-            lb=[alpha_lb*ones(1,d),beta_lb*ones(1,d)]; % \alpha_{11},..., \alpha_{dd}, \beta_{11},..., \beta_{dd} >= 0
-            ub = [alpha_ub*ones(1,d),beta_ub*ones(1,d)]; % \alpha_{11},..., \alpha_{dd}, \beta_{11},..., \beta_{dd} < 1
-            nonlcon = [];
-
-        % Restricciones para el caso Common Persistence (CP)
-        case 'CP'
-            A = eye(d+1); % Asegurar \alpha11 < 1, \alpha22 < 1, \lambda < 1
-            b = ones(d+1,1);
-             lb = [alpha_lb*ones(1,d), lambda_cp_lb]; % Asegurar 0 < \lambda
-             ub = [alpha_ub*ones(1,d), lambda_cp_ub]; % No se necesita limite superior specific ya que \lambda < 1 está en A y b
-            nonlcon = @nonlcon;
-   
-    end
-
-    if i == 3  % when the model is 'GOGARCH' add one restriction to delta
-        n_rowsA = size(A, 1);
-        zeros_column = zeros(n_rowsA, 1);
-        A = [A, zeros_column];
-       lb = [lb, 0.01];
-       ub = [ub, 1];
-    end
-
-    % Definicion de la funcion de log-verosimilitud negativa
-    logLikelihoodFunc = @(thetaD) ll_engine_wrapper(model, specification, outputs, thetaD);
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    et=outputs.rotated_returns;
+    rt=outputs.returns;
     
-    [thetaD_opt, fval, exitflag, output] = fmincon(logLikelihoodFunc, thetaD_initial, A, b, [], [], lb, ub, nonlcon, options);
-    %fprintf('Finalizing optimizeThetaD for model %s and specification %s\n', model, specification);
-    % disp(thetaD_opt);
 
-     % Obtén el vector L con el thetaD optimizado
-    L = ll_engine(model, specification, outputs, thetaD_opt);
+    switch model
+        case 'RBEKK'
+        
+        [theta_vec,fval,Gt,VCV,Scores] = rarch(et,1,1,'Scalar','2-stage');
 
-    % Getting the vector L_marginal (Txd)
+        [theta_vec,fval,Gt,VCV,Scores] = rarch(et,1,1,'Diagonal','2-stage');
 
-    L_marginal = ll_marginal_engine(model, outputs, thetaD_opt);
+        [theta_vec,fval, Gt,VCV,Scores] = rarch(et,1,1,'CP','2-stage');
 
-    %%
-    function LL = ll_engine_wrapper(model, specification, outputs, thetaD)
-        L = ll_engine(model, specification, outputs, thetaD);
-        LL = sum(L);
+        case 'OGARCH' || 'GOGARCH'
+
+        [theta_vec, fval, Gt, VCV,Scores] = gogarch(e_t, p, q,[], model);
+
+        
+        case 'RDCC'
+
+        [theta_vec, fval, Gt, VCV,Scores] = gogarch(e_t, p, q,[], model);
     end
 
-    function LL_marginal=ll_marginal_engine_wrapper(model,outputs, thetaD)
-        L= ll_marginal_engine(model,outputs,thetaD);
-        LL= sum(LL_marginal);
-    end
 
-end
+
+
