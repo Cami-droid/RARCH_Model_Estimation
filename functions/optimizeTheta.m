@@ -1,4 +1,4 @@
-function [theta_vec, fval, Gt, VCV,Scores] = optimizeThetaD(model, specification, outputs, thetaD_initial)
+function [theta_vec, fval, Gt, VCV,Scores] = optimizeTheta(model, specification, outputs, thetaD_initial)
 %%% fval: log-verosimilitud final
     d=outputs.d;
     et=outputs.rotated_returns;

@@ -31,8 +31,8 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
 
     end
     
-    A = diag(sqrt(alpha_vec));
-    B = diag(sqrt(beta_vec));
+    A = diag(sqrt(alpha_vec))
+    B = diag(sqrt(beta_vec))
     
     % Small regularization term to avoid singularity
 
@@ -42,7 +42,7 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
 
     if strcmp(model, 'RBEKK')
 
-        %C = thetaS - A * thetaS * A' - B * thetaS * B'; % ese estaba antes
+        %C = thetaS - A * thetaS * A' - B * thetaS * B' % ese estaba antes
         C = eye(d) - A * A' - B * B';
         Ht = C + A * (et' * et) * A' + B * Gt_prev * B';
 

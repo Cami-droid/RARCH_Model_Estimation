@@ -71,12 +71,10 @@ for i = 1:I
 
         fprintf('The initials thetaDs are: %s\n', mat2str(outputs(i,j).initials_thetaD));
         
-        % Estimate thetaD parameters
-        outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD, outputs(i,j).initial_Gt);
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-        [results(i,j).theta_vec, results(i,j).fval, outputs(i,j).Gt, outputs(i,j).VCV, outputs(i,j).Scores] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD)
+        [results(i,j).theta_vec, results(i,j).fval, outputs(i,j).Gt, outputs(i,j).VCV, outputs(i,j).Scores] = optimizeTheta(model, specification, outputs(i,j), initial_thetaD)
         
         % Storing LL_marginals in results
 % 
@@ -89,14 +87,13 @@ for i = 1:I
 
         % calculate Gt at the optimum theta_vec
 
-        Id=eye(d);
         thetaD=results(i,j).theta_vec(((d+1)*d/2)+1:end)'
-        output(i,j).Gt_artesanal=calc_all_Gts(model, specification, outputs(i,j),results(i,j).theta_vec,Id);
-        clear thetaD
+        
         % Calculate Qt, Qt_star and Ct
         
         [outputs(i,j).Qt, outputs(i,j).Qt_star, outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).theta_vec);
         
+        clear thetaD
         % Store the results
         results(i,j).model = model;
         results(i,j).specification = specification;
