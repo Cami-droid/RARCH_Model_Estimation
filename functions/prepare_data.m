@@ -25,8 +25,14 @@ function  [returns,Dt, thetaM]= prepare_data(model,outputs,log_returns)
                         
         case 'GOGARCH'
             % Specific preparation for GOGARCH
+            for i=1:d
+                garch_model = garch('GARCHLags', 1, 'ARCHLags', 1);
+                garch_fit = estimate(garch_model, demeaned_returns(:, i), 'display', 'off');
+                cond_var(:, i) = infer(garch_fit, demeaned_returns(:, i));
+                std_returns(:, i) = demeaned_returns(:, i) ./ sqrt(cond_var(:, i));
+            end
 
-            prepared_data=demeaned_returns;
+            prepared_data=std_returns;
             Dt=NaN;
             thetaM=[];
                   
