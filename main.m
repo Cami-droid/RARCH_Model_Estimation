@@ -24,7 +24,7 @@ for i = 1:I
         outputs(i,j).J = J;
         outputs(i,j).d = d;
         outputs(i,j).T = T;
-        outputs(i,j).Gt = zeros(d, d, T + 1); % T+1 because the first matrix is index 0 in theory
+        outputs(i,j).Gt = zeros(d, d, T); % T+1 because the first matrix is index 0 in theory
         outputs(i,j).initial_Gt = eye(d);
         outputs(i,j).initials_thetaD=initials_thetaD{j};
 
