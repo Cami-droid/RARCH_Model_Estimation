@@ -58,7 +58,7 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
         C = eye(d) - A * A' - B * B';
         Gt = C + A *(et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
 
-        %%%%%%%%%%%%%%% mi aplicación de formulas me genera esta expresión  algebráica, pero se ll se va muy alto%%%
+        %%%%%%%%%%%%%%% my formulas generate this algebraic expression, reminder:check why ll goes too high%%%
         Gt = C + A * (1/(delta).^2)*(et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
 
     elseif strcmp(model, 'RDCC')

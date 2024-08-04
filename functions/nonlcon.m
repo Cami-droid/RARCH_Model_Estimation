@@ -5,10 +5,10 @@ function [c, ceq] = nonlcon(params)
     beta    =   params(2);
     lambda  =   params(3);
     
-    % Restricciones de desigualdad (c <= 0)
+    % Inequality restrictions (c <= 0)
     c = [max(alpha) - lambda; % \lambda >= max(\alpha_{ii})
-         -lambda;             % \lambda > 0, se maneja con lb
-         lambda - 1;          % \lambda < 1, se maneja con ub y b
+         -lambda;             % \lambda > 0, as lb
+         lambda - 1;          % \lambda < 1, as ub y b
          -alpha];             % alpha > 0
     
     %% There isn't any equality restrictions (ceq = []) %%

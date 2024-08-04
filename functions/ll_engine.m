@@ -1,14 +1,7 @@
 function L = ll_engine(model, specification, outputs, thetaD)
-    % devuelve un vector columna L con las log-verosimilitudes en cada periodo t=1...T
-    % recuerda que en la entrada de outputs en realidad entra outputs(i,j)
-    % Inicialización de variables
-    % Imprime la frase y el vector en un solo renglón
-    %sentence='trying ';
-    %fprintf('%s ', sentence);
-    %fprintf('%d ', thetaD);
-    %fprintf('\n'); % line jump
-
-
+    % returns the column vector L with log-likelihoods en each periodo t=1...T
+    % remind that in the input argument for 'outputs', actually is outputs(i,j)
+    
     [i, j] = models_index(model, specification);
     rt = outputs.returns;
     et = outputs.rotated_returns;
@@ -21,13 +14,13 @@ function L = ll_engine(model, specification, outputs, thetaD)
     Lambda = outputs.Lambda;
     Id = eye(d);
 
-    % Inicializar inputs iniciales
+    % Inicialize initial inputs
 
     initial_Gt = outputs.initial_Gt;
     initial_Qt_star = Id;
     delta = thetaD(end); %%%%%%%%%%%%%%%%%%%% falta desarrollar
 
-    % Inicializar matrices de salida
+    % Inicialize output matrices
     Gt = zeros(d, d, T);
     Gt(:,:,1) = calcGt(model, specification, outputs, thetaD, initial_Gt,1);
  
@@ -35,18 +28,18 @@ function L = ll_engine(model, specification, outputs, thetaD)
     for t = 2:T
         Gt(:,:,t) = calcGt(model, specification, outputs, thetaD, Gt(:,:,t-1),t);
         
-        % Agregar un término de regularización pequeño a Gt para evitar singularidad
+        % Add a small regulation term to Gt to avoid singularity
         reg_term = 1e-6 * eye(d);
         Gt(:,:,t) = Gt(:,:,t) + reg_term;
     end
 
-    % Verificar si hay valores NaN en Gt
+    % Verify NaN values in Gt
     if any(isnan(Gt), 'all')
-         error('Gt contiene valores NaN');
+         error('Gt contains NaN values');
     end
 
-    % Inicializar Qt y Qt_star si el modelo es RDCC
-    if i == 4 % 4 es el índice del modelo para RDCC
+    % Inicialize Qt y Qt_star when the model is RDCC
+    if i == 4 % 4 is the model index for RDCC
         Qt_star = zeros(d, d, T);
         Qt_star(:,:,1) = initial_Qt_star;
 
@@ -71,7 +64,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
         Ct = [];
     end
 
-        % Calcular el vector columna de log-verosimilitud en cada período t
+        % Calculate the log-likelihood column vector x in every t period 
         L=zeros(T,1);
      for t = 1:T
         ll = ll_type_internal(t);
@@ -79,7 +72,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
     end
 
 
-% Definir la función ll_type_internal
+% Define the ll_type_internal function
     function ll = ll_type_internal(t)
         U =@(delta,d) delta * eye(d);
         

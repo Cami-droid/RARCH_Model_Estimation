@@ -2,13 +2,13 @@ function  [returns,Dt, thetaM]= prepare_data(model,outputs,log_returns)
  % compute standarized returns series and diagonal variance matrices at every t
  d=outputs.d;
  T=outputs.T;
-    % Calcular la media de los log returns
+    % Calculate the mean of  log returns
     mean_log_returns = mean(log_returns);
 
-    % Calcular los residuales (media cero)
+    % Calculate residuals (zero mean)
     demeaned_returns = log_returns - mean_log_returns;
     thetaM=NaN(d*2,1);  
-    % Preparar los datos segun el modelo
+    % Prepare data according to the model
     switch model
         case 'RBEKK'
             % Specific preparation for RBEKK.

@@ -5,12 +5,19 @@ function [rotated_data, H_bar, Lambda, P] = rotate_data(outputs, model)
     H_bar = (1/T).*returns'*returns;
     % Descomposicion en valores propios
     [P, Lambda] = eig(H_bar);
-    H_bar_inv_sqrt = P * sqrt(inv(Lambda)) * P';
+    
+    % Ensure that Lambda does not have elements close to zero to avoid numerical stability issues
+    epsilon = 1e-10;
+    Lambda_inv_sqrt = diag(1 ./ sqrt(max(diag(Lambda), epsilon)));
+
+    % Calculate the inverse square root matrix of H_bar
+    H_bar_inv_sqrt = P * Lambda_inv_sqrt * P';
+
     
     switch model
         case {'RBEKK'}
 
-            % Rotación para RBEKK y GOGARCH
+            % Rotation for RBEKK y GOGARCH
             e_t = returns*H_bar_inv_sqrt;
 
              
@@ -25,24 +32,16 @@ function [rotated_data, H_bar, Lambda, P] = rotate_data(outputs, model)
             e_t = returns*H_bar_inv_sqrt;
             
         case {'RDCC'}
-            PI_bar=H_bar; %% porque los returns que vienen del prepare_data están estandarizados ya para RDCC
-            %%% solo estoy dandole los nombres que están en el paper para evitar confusiones
+            PI_bar=H_bar; %%  returns tha income from prepare_data are actually standarized for RDCC
+            %%% i'm just giving it the names that are on the paper to avoid confusions
             
-            %disp('Unconditional Covariance Matrix PI_bar valid for RDCC');
-            %disp(PI_bar);
-            % Matriz de eigenvectores P y matriz diagonal de eigenvalores Lambda
-            %disp('Eigenvectors matrix P:');
-            %disp(P);
-            %disp('Eigenvalues Diagnonal matrix Lambda:');
-            %disp(Lambda);
-            
+                        
             % specific rotation for RDCC
             PI_bar_inv_sqrt = P * sqrt(inv(Lambda)) * P';        
             e_t = returns*PI_bar_inv_sqrt;
             
        
     end
-    % disp('Rotated returns e_t:');
-    % disp(e_t);
+    
     rotated_data = e_t;
 end

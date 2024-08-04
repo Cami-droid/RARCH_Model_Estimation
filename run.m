@@ -17,6 +17,5 @@ else
     error('El archivo %s no existe.', data_import_file);
 end
 
-
-% Ejecutar el script principal
 main;
+

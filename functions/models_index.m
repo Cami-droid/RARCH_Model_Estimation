@@ -1,20 +1,20 @@
 function [i, j] = models_index(model, specification)
-    % Definir los nombres de los modelos y especificaciones
+    % Define model names and specificacions
     models = {'RBEKK', 'OGARCH', 'GOGARCH', 'RDCC'};
     specifications = {'Scalar', 'Diagonal', 'CP'};
     
-    % Encontrar el índice del modelo
+    % To find the model index
     i = find(strcmp(models, model));
     
-    % Encontrar el índice de la especificación
+    % to fin the specification index
     j = find(strcmp(specifications, specification));
     
-    % Verificar que ambos índices sean válidos
+    % Verify both indexes are valid
     if isempty(i)
-        error('Modelo no válido.');
+        error('Invalid model.');
     end
     
     if isempty(j)
-        error('Especificación no válida.');
+        error('Invalid specification.');
     end
 end

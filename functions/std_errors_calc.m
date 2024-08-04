@@ -19,7 +19,4 @@ mS_rdcc_t=thetaS_rdcc-vech8(et*et')
 
 mD_rdcc_t=diff(log(ll(thetaM,thetaS,thetaD),thetaD))
 
-J=var(1/sqrt(T))
-
-
-
+J=var(1/sqrt(T)) 

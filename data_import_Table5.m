@@ -2,11 +2,10 @@
 clear;clc;
 
 data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\data\stock_prices_28_KFT_UTX_1.csv');
-height(data)
 % Extract data from relevant columns, Calculate log returns and Combine them in a matrix
 dates = datetime(data.Date, 'InputFormat', 'yyyy-MM-dd');
-T=height(data)-1
-log_retrurns=zeros(1,28)
+T=height(data)-1;
+log_retrurns=zeros(1,28);
 log_ret_AA=diff(log(data.AA))*100;
 log_ret_AXP=diff(log(data.AXP))*100;
 log_ret_BA=diff(log(data.BA))*100;
