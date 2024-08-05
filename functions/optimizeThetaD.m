@@ -5,34 +5,34 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
     Lambda=outputs.Lambda;
 
     [i,j] = models_index(model, specification);
-    alpha_lb    =0.001;                         alpha_ub=0.99;
-    beta_lb     =0.80;                          beta_ub=0.99;
+    alpha_lb    =0.001;                         
+    beta_lb     =0;                          
     lambda_cp_lb=alpha_lb+beta_lb;              lambda_cp_ub=0.99;
 
     %  optimization options
     options = optimset('fmincon');
     options.Display = 'off'; % 'iter'
     options.Diagnostics = 'off'; % 'on'
-    options.Algorithm ='interior-point';%'sqp';% 
+    options.Algorithm ='interior-point';%'sqp'
 
     % restriccions configuration
     switch specification
         % Restricciones para el caso Scalar
         case 'Scalar'
             A = [1, 1]; % alpha + beta <= 1
-            b = 1; % <=1
+            b = 0.9999; % <=1
 
-            lb = [alpha_lb, alpha_ub]; % alpha>=0, beta>=0
-            ub = [alpha_lb,alpha_ub]; 
+            lb = [alpha_lb, beta_lb]; % alpha>0, beta>=0
+            
             nonlcon = [];
 
         % Restriccions for Diagonal specification
         case 'Diagonal'
             A = [eye(d),eye(d)];      %\alpha_{ii} + \beta_{ii} <= 1
-            b = ones(d,1);
+            b = 0.9999*ones(d,1);
                     
             lb= [alpha_lb*ones(1,d),beta_lb*ones(1,d)];         % \alpha_{11},..., \alpha_{dd}, \beta_{11},..., \beta_{dd} >= 0
-            ub =[alpha_ub*ones(1,d),beta_ub*ones(1,d)];         % \alpha_{11},..., \alpha_{dd}, \beta_{11},..., \beta_{dd} < 1
+                 
             nonlcon = [];
 
         % Restriccions for Common Persistence (CP) specification
@@ -41,8 +41,8 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
             b = ones(d+1,1);
             
             lb = [alpha_lb*ones(1,d), lambda_cp_lb]; % Assure that 0 < \lambda
-            ub = [alpha_ub*ones(1,d), lambda_cp_ub]; % 
-            nonlcon = @nonlcon;
+            
+            nonlcon = [];
    
     end
 
@@ -50,8 +50,8 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
         n_rowsA = size(A, 1);
         zeros_column = zeros(n_rowsA, 1);
         A =  [A, zeros_column];
-        lb = [lb, -0.5];
-        ub = [ub, 1];
+        lb = [lb, -180];
+        ub = [inf(size(lb)), 180];
     end
 
     %&&&&&&&&&&&&&&&&&&&&&&&&& Negative log-likelihood function %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -60,7 +60,8 @@ function [thetaD_opt, fval, exitflag, output, L, L_marginal] = optimizeThetaD(mo
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
     %[thetaD_opt, fval, exitflag, output] = fminunc(logLikelihoodFunc, thetaD_initial, options);
-    [thetaD_opt, fval, exitflag, output] = fmincon(logLikelihoodFunc, thetaD_initial, A, b, [], [], lb, ub, nonlcon ,options);
+    %[thetaD_opt, fval, exitflag, output] = fmincon(logLikelihoodFunc, thetaD_initial, A, b, [], [], lb, ub, nonlcon ,options);
+    [thetaD_opt, fval, exitflag, output] = fmincon(logLikelihoodFunc, thetaD_initial, A, b, [], [],lb,[], [],options);
    
      % Get vector L with optimized thetaD
     L = ll_engine(model, specification, outputs, thetaD_opt);

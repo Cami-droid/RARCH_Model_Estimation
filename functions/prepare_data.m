@@ -38,7 +38,6 @@ function  [std_returns,Dt, thetaM]= prepare_data(model,outputs,log_returns)
             % Specific preparation for RDCC
 
             std_returns = zeros(size(rt));
-            
             Dt = zeros(d,d,T);
             
             cond_var = zeros(size(rt));

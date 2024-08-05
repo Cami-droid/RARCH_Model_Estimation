@@ -37,7 +37,7 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
     
     % Small regularization term to avoid singularity
 
-    reg_term = 1e-6 * eye(d); % regularization term
+    %reg_term = 1e-6 * eye(d); % regularization term
     C = eye(d) - A * A' - B * B';
 
     % Compute Gt based on the model
@@ -45,12 +45,12 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
     if strcmp(model, 'RBEKK')
 
         
-        Gt = C + (A * A').*(et' * et)  + (B * B').* Gt_prev + reg_term; % Adding regularization term;
+        Gt = C + (A * A').*(et' * et)  + (B * B').* Gt_prev; % Adding regularization term;
       
     elseif  strcmp(model, 'OGARCH')
 
         
-        Gt = C + A * A'.*(et' * et)  + B * B'.* Gt_prev + reg_term; % Adding regularization term
+        Gt = C + A * A'.*(et' * et)  + B * B'.* Gt_prev; % Adding regularization term
 
     elseif  strcmp(model, 'GOGARCH')
         et=delta*et;
@@ -58,11 +58,11 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
                
         %%%%%%%%%%%%%%% my formulas generate this algebraic expression, reminder:check why ll goes too high%%%
 
-        Gt = C + A  * A'.*(et' * et)  + B * B'.* Gt_prev + reg_term; % Adding regularization term
+        Gt = C + A  * A'.*(et' * et)  + B * B'.* Gt_prev; % Adding regularization term
 
     elseif strcmp(model, 'RDCC')
 
-        Gt = C +A * A'.*(et' * et)  +B * B'.* Gt_prev + reg_term ;% Adding regularization term
+        Gt = C +A * A'.*(et' * et)  +B * B'.* Gt_prev ;% Adding regularization term
     end
 
     % Ensure Gt is symmetric

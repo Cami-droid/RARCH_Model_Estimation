@@ -21,7 +21,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
 
 
     % Add a small regulation term to Gt to avoid singularity
-    reg_term = 1e-6 * eye(d);
+    %reg_term = 1e-6 * eye(d);
 
     % Inicialize initial inputs
 
@@ -45,7 +45,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
 
     % Inicialize Qt y Qt_star when the model is RDCC
 
-    Lambda_C_inv_sqrt = diag(1 ./ sqrt(max(diag(Lambda_C))));
+    Lambda_C_inv_sqrt = diag(1 ./ sqrt(diag(Lambda_C)));
                             
     % specific rotation for RDCC
      PI_bar_inv_sqrt = P_C * Lambda_C_inv_sqrt * P_C';        
@@ -56,7 +56,7 @@ function L = ll_engine(model, specification, outputs, thetaD)
         Qt_star(:,:,1) = initial_Qt_star;
 
         for t = 2:T
-            Qt_star(:,:,t) = calcGt(model, specification, outputs, thetaD, Qt_star(:,:,t-1),t) + reg_term;           
+            Qt_star(:,:,t) = calcGt(model, specification, outputs, thetaD, Qt_star(:,:,t-1),t);           
         end
 
         initial_Qt = P_C * sqrt(Lambda_C) * P_C' * initial_Qt_star * P_C * sqrt(Lambda_C) * P_C';

@@ -16,8 +16,8 @@ try
 
     results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
     outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [],'std_returns',[], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
-    alpha_init=0.04;
-    beta_init=0.85;
+    alpha_init=0.01;
+    beta_init=0.98;
 
     initials_thetaD= { [alpha_init, beta_init], [alpha_init*ones(1,d),beta_init*ones(1,d)],[alpha_init*ones(1,d), alpha_init+beta_init]};
 
@@ -53,7 +53,7 @@ try
             % Calculate the mean of  log returns
             mean_log_returns = mean(log_returns);
 
-            % Calculate residuals (zero mean)
+            % Calculate residuals rt (zero mean)
             outputs(i,j).returns= log_returns - mean_log_returns;
 
             [outputs(i,j).std_returns, outputs(i,j).Dt, results(i,j).thetaM] = prepare_data(model, outputs(i,j), log_returns);
