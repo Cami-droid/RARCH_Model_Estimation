@@ -15,8 +15,8 @@ try
     J = length(specifications);
 
     results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
-    outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
-    alpha_init=0.02;
+    outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [],'std_returns',[], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
+    alpha_init=0.04;
     beta_init=0.85;
 
     initials_thetaD= { [alpha_init, beta_init], [alpha_init*ones(1,d),beta_init*ones(1,d)],[alpha_init*ones(1,d), alpha_init+beta_init]};
@@ -50,10 +50,16 @@ try
         fprintf('*********************************** Estimating model: %s ****************************************\n', model);
         for j = 1:J
             % Load and prepare data
-            [outputs(i,j).returns, outputs(i,j).Dt, results(i,j).thetaM] = prepare_data(model, outputs(i,j), log_returns);
+            % Calculate the mean of  log returns
+            mean_log_returns = mean(log_returns);
+
+            % Calculate residuals (zero mean)
+            outputs(i,j).returns= log_returns - mean_log_returns;
+
+            [outputs(i,j).std_returns, outputs(i,j).Dt, results(i,j).thetaM] = prepare_data(model, outputs(i,j), log_returns);
 
             % Rotate data
-            [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P] = rotate_data(outputs(i,j), model);
+            [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P,  outputs(i,j).PI_bar, outputs(i,j).Lambda_C, outputs(i,j).P_C] = rotate_data(outputs(i,j), model);
 
         end
 

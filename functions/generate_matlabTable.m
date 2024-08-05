@@ -133,7 +133,8 @@ complete_table_matlab = cell2table(complete_table, 'VariableNames', col_names);
 disp(complete_table_matlab);
 
 % Define the path and file name for the Excel file
-results_dir = 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results';
+% Define the relative path to the results directory
+results_dir = fullfile(pwd, 'results');
 file_name = sprintf('complete_%s.xlsx', Task); % Incluye el valor de Task en el nombre del archivo
 excel_file = fullfile(results_dir, file_name);
 
@@ -143,10 +144,14 @@ excel_file = fullfile(results_dir, file_name);
 % Write the complete table in the Excel file
 writetable(complete_table_matlab, excel_file, 'WriteVariableNames', true, 'WriteRowNames', false);
 
-% Guardar las estructuras 'outputs' y 'results' en archivos MAT.
+% Save structs 'outputs' and 'results' in MAT files
 
-save(results_dir, 'outputs');
-save(results_dir, 'results');
+% Save 'outputs' variable in a file named 'outputs.mat' in the results folder
+save(fullfile(results_dir, 'outputs.mat'), 'outputs');
+
+% Save 'results' variable in a file named 'results.mat' in the results folder
+save(fullfile(results_dir, 'results.mat'), 'results');
+
 
 fprintf('Outputs and results saved successfully in the "results" folder.\n');
 

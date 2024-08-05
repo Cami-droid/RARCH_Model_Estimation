@@ -8,14 +8,17 @@ function L_marginal = ll_marginal_engine(model, outputs, thetaD)
     %   L_marginal: Txd size matrix with marginal log-likelihoods
 
     % Initial variables
-    rt = outputs.returns; % Retornos originales, matriz Txd
-    et = outputs.rotated_returns; % Retornos rotados, matriz Txd
+    rt = outputs.returns; % Centered return,  Txd matrix
+    et = outputs.rotated_returns; % Rotated returns,  Txd matrix
+    Et=outputs.std_returns; %standarized returns Txd matrix
     T = outputs.T; % Number of observations
     d = outputs.d; % Number of asset
     Dt = outputs.Dt; % Diagonal Matrices  with standard deviations , matrix dxdxT
     Lambda = outputs.Lambda; % eigenvalues for OGARCH y GOGARCH
     P = outputs.P; % eigenvectors OGARCH y GOGARCH
-    delta = thetaD(end); % delta parameter for  OGARCH y GOGARCH
+
+    % delta parameter for  OGARCH y GOGARCH
+    delta = thetaD(end); 
 
     % Inicialize output matrices
     L_marginal = zeros(T, d);

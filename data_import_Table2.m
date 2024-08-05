@@ -1,5 +1,7 @@
 % Main file to run all the functions and generate the final table
-clear;clc;
+clearvars -except table_number;
+
+;clc;
 
 data = readtable('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\data\stock_prices_28_KFT_UTX_1.csv');
 

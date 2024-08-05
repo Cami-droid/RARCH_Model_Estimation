@@ -2,22 +2,22 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
     if t>=2
         et = outputs.rotated_returns(t-1,:);
     else
-        et=0;
+        et=0; % backCast
     end
     thetaS = outputs.H_bar;
     d=outputs.d;
 
     if strcmp(model, 'GOGARCH')
-        delta = thetaD(end); % when the model is GOGARCH, 
+        delta = thetaD(end); % when the model is GOGARCH δ is the last element of thetaD vector;
     else
-        delta=1;  % pongo 1 para que no moleste nomás    
+        delta=1;  % put 1 to don't affect   
     end
 
     % Extract dynamic parameters based on specification
     if strcmp(specification, 'Scalar')
 
-        alpha_vec = thetaD(1) * ones(d, 1); 
-        beta_vec = thetaD(2) * ones(d, 1);
+        alpha_vec = thetaD(1) * ones(1, d); 
+        beta_vec = thetaD(2) * ones(1, d);
 
     elseif strcmp(specification, 'Diagonal')
 
@@ -27,7 +27,8 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
     elseif strcmp(specification, 'CP')
 
         alpha_vec = thetaD(1:d) ;
-        beta_vec = sqrt((thetaD(d+1)*ones(1,d) - thetaD(1:d))); %% thetaD(d+1) is lambda and the thetaD(1:d) are alphas, all term root squared
+        lambda_cp = thetaD(d+1) ;
+        beta_vec =(lambda_cp*ones(1,d) - alpha_vec); %% thetaD(d+1) is lambda and the thetaD(1:d) are alphas, all term root squared
 
     end
     
@@ -36,42 +37,33 @@ function Gt = calcGt(model, specification, outputs, thetaD, Gt_prev,t)
     
     % Small regularization term to avoid singularity
 
-    reg_term = 1e-6 * eye(d);
+    reg_term = 1e-6 * eye(d); % regularization term
+    C = eye(d) - A * A' - B * B';
 
     % Compute Gt based on the model
 
     if strcmp(model, 'RBEKK')
 
-        %C = thetaS - A * thetaS * A' - B * thetaS * B'; % ese estaba antes
-        C = eye(d) - A * A' - B * B';
-        Ht = C + A * (et' * et) * A' + B * Gt_prev * B';
-
-        Gt = Ht + reg_term; % Adding regularization term
-
+        
+        Gt = C + (A * A').*(et' * et)  + (B * B').* Gt_prev + reg_term; % Adding regularization term;
+      
     elseif  strcmp(model, 'OGARCH')
 
-        C = eye(d) - A * A' - B * B';
-        Gt = C + A * (et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
+        
+        Gt = C + A * A'.*(et' * et)  + B * B'.* Gt_prev + reg_term; % Adding regularization term
 
     elseif  strcmp(model, 'GOGARCH')
+        et=delta*et;
 
-        C = eye(d) - A * A' - B * B';
-        Gt = C + A *(et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
-
+               
         %%%%%%%%%%%%%%% my formulas generate this algebraic expression, reminder:check why ll goes too high%%%
-        Gt = C + A * (1/(delta).^2)*(et' * et) * A' + B * Gt_prev * B' + reg_term; % Adding regularization term
+
+        Gt = C + A  * A'.*(et' * et)  + B * B'.* Gt_prev + reg_term; % Adding regularization term
 
     elseif strcmp(model, 'RDCC')
 
-        C = eye(d) - A * A' - B * B';
-        Gt = C + A * (et' * et) * A' + B * Gt_prev * B' + reg_term ;% Adding regularization term
+        Gt = C +A * A'.*(et' * et)  +B * B'.* Gt_prev + reg_term ;% Adding regularization term
     end
-
-    % Check for NaN values and correct them
-   % if any(isnan(Gt(:)))
-   %     warning('NaN values detected in Gt, adding additional regularization.');
-   %     Gt = Gt + 1e-4 * eye(d);
-   % end
 
     % Ensure Gt is symmetric
     Gt = (Gt + Gt') / 2;
