@@ -1,13 +1,13 @@
-function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification, outputs, thetaD_initial)
+function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specification, outputs, initial_thetaD)
     % Function to optimize theta parameters for different models
     % Inputs:
     %   model          - The model name ('RBEKK', 'OGARCH', 'GOGARCH', 'RDCC')
     %   specification  - The specification type
     %   outputs        - The structure containing necessary data and parameters
-    %   thetaD_initial - Initial thetaD parameters
+    %   initial_thetaD - Initial thetaD parameters
     % Outputs:
-    %   theta_vec      - Optimized theta parameters
-    %   fval           - Final log-likelihood value
+    %   theta_opt      - Optimized theta parameters vector
+    %   LL_total           - Final log-likelihood value
     %   Gt             - Estimated Gt matrices
     %   VCV            - Variance-covariance matrix
     %   Scores         - Scores
@@ -25,8 +25,8 @@ function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification
 
     % Initialize outputs
     
-    theta_vec = [];
-    fval = [];
+    theta_opt = [];
+    LL_total = [];
     Gt = [];
     VCV = [];
     Scores = [];
@@ -35,15 +35,15 @@ function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification
     try
         switch model
             case 'RBEKK'
-                [theta_vec, fval, Gt, VCV, Scores] = rarch(et, 1, 1, specification, '2-stage',[],options);
+                [theta_opt, LL_total, Gt, VCV, Scores] = rarch(et, 1, 1, specification, '2-stage',[],options);
                 %rarch(data,p,q,type,method,startingVals,options)
 
             case {'OGARCH', 'GOGARCH'}
-                [theta_vec, fval, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
+                [theta_opt, LL_total, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
                 %gogarch(data,p,q,gjrType,type,startingVals,options)
 
             case 'RDCC'
-                [theta_vec, fval, Gt, VCV, Scores]             = dcc(rt, []     , 1,[],1,1,0,1,2,'2-stage', 'None', [], options);
+                [theta_opt, LL_total, Gt, VCV, Scores]             = dcc(rt, []  ,1,[],1,1,0,1,2,'2-stage', 'None', [], options);
                 %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
 
             otherwise

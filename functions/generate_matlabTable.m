@@ -72,7 +72,7 @@ end
 % fill results data in the table
 for i = 1:4
     for j = 1:3
-        thetaD_opt = results(i, j).thetaD_opt';
+        thetaD = results(i, j).thetaD';
         thetaM = results(i, j).thetaM; % Vector columna [alpha1;beta1;alpha2;beta2;...;alphad;betad]
 
         % "Marginal Parameters"
@@ -99,10 +99,10 @@ for i = 1:4
             param_idx(end) = true;
         end
         
-        complete_table([find(param_idx) + num_marginal_params + 2], (i - 1) * 3 + j + 1) = num2cell(thetaD_opt);
+        complete_table([find(param_idx) + num_marginal_params + 2], (i - 1) * 3 + j + 1) = num2cell(thetaD);
         
         % "LL Decomposition"
-        ll_values = [results(i, j).LL_marginal; results(i, j).LL_copula; results(i, j).fval];
+        ll_values = [results(i, j).LL_marginal; results(i, j).LL_copula; results(i, j).LL_total];
         complete_table((num_marginal_params  + num_dynamic_params + 4):end, (i - 1) * 3 + j + 1) = num2cell(ll_values);
     end
 end
