@@ -17,7 +17,14 @@ function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification
     et = outputs.rotated_returns;
     rt = outputs.returns;
 
+    %  optimization options
+    options = optimset('fmincon');
+    options.Display = 'off'; % 'iter'
+    options.Diagnostics = 'off'; % 'on'
+    options.Algorithm ='interior-point';%'sqp'
+
     % Initialize outputs
+    
     theta_vec = [];
     fval = [];
     Gt = [];
@@ -28,13 +35,15 @@ function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification
     try
         switch model
             case 'RBEKK'
-                [theta_vec, fval, Gt, VCV, Scores] = rarch(et, 1, 1, specification, '2-stage');
+                [theta_vec, fval, Gt, VCV, Scores] = rarch(et, 1, 1, specification, '2-stage',[],options);
+                %rarch(data,p,q,type,method,startingVals,options)
 
             case {'OGARCH', 'GOGARCH'}
-                [theta_vec, fval, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model);
+                [theta_vec, fval, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
+                %gogarch(data,p,q,gjrType,type,startingVals,options)
 
             case 'RDCC'
-                [theta_vec, fval, Gt, VCV, Scores]             = dcc(rt, []     , 1,[],1,1,0,1,2,'2-stage', 'Scalar', [], []);
+                [theta_vec, fval, Gt, VCV, Scores]             = dcc(rt, []     , 1,[],1,1,0,1,2,'2-stage', 'None', [], options);
                 %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
 
             otherwise
