@@ -34,7 +34,8 @@ function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification
                 [theta_vec, fval, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model);
 
             case 'RDCC'
-                [theta_vec, fval, Gt, VCV, Scores] = rdcc(rt, [], 1, [], 1, 1, 0, 1, 2, '2-stage', 'Scalar', [], []);
+                [theta_vec, fval, Gt, VCV, Scores]             = dcc(rt, []     , 1,[],1,1,0,1,2,'2-stage', 'Scalar', [], []);
+                %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
 
             otherwise
                 error('Unknown model: %s', model);
