@@ -77,18 +77,26 @@ try
             [results(i,j).theta, results(i,j).LL_total, outputs(i,j).Gt,outputs(i,j).VCV,outputs(i,j).Scores] = optimizeTheta(model, specification, outputs(i,j), initial_thetaD);
 
             switch model
-                case 'RDCC'
-                    % (3*d=(p+q+1)*d) 1 is for ω, p=1 for α_M and q=1 for β_M
-                    results(i,j).thetaM=results(i,j).theta(1:3*d); %3d elementos
-                    results(i,j).thetaS=results(i,j).theta((3*d+1):(d*d+5*d)/2);% hacer:thetaS tiene d*(d-1)/2 elementos
-                    results(i,j).thetaD=results(i,j).theta((((d*d+5*d)/2)+1):end);%2 elementos
-                otherwise
-                    % it is reported in the mfe functions documentation that 
-                    % the first d*(d+1)/2 elements are the inferior triangle of uncovariance matrix H_bar
-                    results(i,j).thetaS=results(i,j).theta(1:(d*(d+1))/2);
-                    results(i,j).thetaD=results(i,j).theta(((d*(d+1))/2+1):end);
-            end
+            case 'RBEKK'
+                idxS = (d * (d + 1)) / 2;
+                results(i, j).thetaS = theta(1:idxS);
+                results(i, j).thetaD = theta(idxS + 1:end);
 
+            case 'RDCC'
+                idxM = 3 * d;
+                idxS = (d * (d + 1)) / 2;
+                results(i, j).thetaM = theta(1:idxM);
+                results(i, j).thetaS = theta(idxM + 1:idxM + idxS);
+                results(i, j).thetaD = theta(idxM + idxS + 1:end);
+
+            case {'OGARCH', 'GOGARCH'}
+                idxS = (d * (d - 1)) / 2;
+                results(i, j).thetaS = theta(1:idxS);
+                results(i, j).thetaD = theta(idxS + 1:end);
+
+            otherwise
+                error('Model not supported');
+            end
             fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD));
             fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).LL_total));
 
