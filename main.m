@@ -92,7 +92,6 @@ try
             fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD));
             fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).LL_total));
 
-            
             % Calculate Qt, Qt_star and Ct
             %[outputs(i,j).Qt, outputs(i,j).Qt_star, outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD);
 
@@ -114,5 +113,4 @@ catch ME
 end
 
 % Terminar registro de errores y salida
-diary off;
-
+diary off; 
