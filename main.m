@@ -19,6 +19,7 @@ try
     alpha_init=0.01;
     beta_init=0.98;
 
+
     initials_thetaD= { [alpha_init, beta_init], [alpha_init*ones(1,d),beta_init*ones(1,d)],[alpha_init*ones(1,d), alpha_init+beta_init]};
 
     initial_delta=0.1; % only for 'GOGARCH' models
@@ -81,12 +82,12 @@ try
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-            [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L,outputs(i,j).L_marginal] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
+            [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L,outputs(i,j).L_marginal] = optimizeTheta(model, specification, outputs(i,j), initial_thetaD);
 
             % Storing LL_marginals in results
 
-            results(i,j).LL_marginal=sum(outputs(i,j).L_marginal)';
-            results(i,j).LL_copula=results(i,j).fval-sum(results(i,j).LL_marginal);
+            %results(i,j).LL_marginal=sum(outputs(i,j).L_marginal)';
+            %results(i,j).LL_copula=results(i,j).fval-sum(results(i,j).LL_marginal);
 
 
             fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
