@@ -43,7 +43,7 @@ num_dynamic_params = numel(dynamic_params);
 num_ll_decomposition_params = numel(ll_decomposition_params);
 
 % Inicialize a cell matrix for the complete table
-total_rows = num_marginal_params + num_dynamic_params + num_ll_decomposition_params + 3;
+total_rows = num_marginal_params + num_dynamic_params + num_ll_decomposition_params + 3; % 3 subtable titles
 total_cols = numel(models) * numel(specifications);
 complete_table = cell(total_rows, total_cols + 1);
 
@@ -73,7 +73,7 @@ end
 for i = 1:4
     for j = 1:3
         thetaD = results(i, j).thetaD';
-        thetaM = results(i, j).thetaM; % Vector columna [alpha1;beta1;alpha2;beta2;...;alphad;betad]
+        thetaM = results(i, j).thetaM; % Columns vector [alpha1;beta1;alpha2;beta2;...;alphad;betad]
 
         % "Marginal Parameters"
         if ~isempty(thetaM) && numel(thetaM) >= 2 * d
@@ -86,20 +86,31 @@ for i = 1:4
         end
         
         % "Dynamic Parameters"
-        param_idx = false(size(dynamic_params));
+        param_idx = false(size(dynamic_params)); % zero matriz with same size as dynamic params names
         switch specifications{j}
             case 'Scalar'
-                param_idx(1:2) = true;
+                % fills the two first rows 
+
+                param_idx(1:2) = true; 
             case 'Diagonal'
-                param_idx(3:(2*d+2)) = true;
+
+                % fills starting from 3rd row
+                param_idx(3:(2*d+2)) = true; %p=1 q=1 so 2=1+1
             case 'CP'
-                param_idx([3:(d+2),end-1]) = true;
+                % fills starting from 3rd row
+                % the end -1 param_idx is the lambda_cp place
+
+                param_idx([3:(d+2),end-1]) = true; 
         end
         if i == 3
+             % the last param_idx is the delta place
             param_idx(end) = true;
         end
-        
-        complete_table([find(param_idx) + num_marginal_params + 2], (i - 1) * 3 + j + 1) = num2cell(thetaD);
+
+        % search the right place to write thetaD vector
+
+        % number 2 stands for the 2 subtable title's places
+        complete_table([num_marginal_params+find(param_idx) + 2], (i - 1) * 3 + j + 1) = num2cell(thetaD');
         
         % "LL Decomposition"
         ll_values = [results(i, j).LL_marginal; results(i, j).LL_copula; results(i, j).LL_total];

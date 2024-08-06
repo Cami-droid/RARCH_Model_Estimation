@@ -38,10 +38,37 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
                 [theta_opt, LL_total, Gt, VCV, Scores] = rarch(et, 1, 1, specification, '2-stage',[],options);
                 %rarch(data,p,q,type,method,startingVals,options)
 
-            case {'OGARCH', 'GOGARCH'}
+            case 'OGARCH' 
+
+                %   OUTPUTS:
+                %   PARAMETERS   - Estimated parameters in the order:
+                %                    OGARCH:
+                %                    [vol(1) ... vol(K)]
+                %                    GOGARCH:
+                %                    [phi(1) ... phi(K(K-1)/2) vol(1) ... vol(K)]
+                %                    where vol(i) = [alpha(i,1) ... alpha(i,P(i)) beta(i,1) ... beta(i,Q(i))]
+                %                       as vol(i) are pairs alpha and beta, and we need first a vector of alphas and second a vector of betas
+                %                       it's need to rearrange the output parameter vector 
+
                 [theta_opt, LL_total, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
                 %gogarch(data,p,q,gjrType,type,startingVals,options)
 
+                theta_alphas=theta_opt(1:2:end);
+                theta_betas=theta_opt(2:2:end);
+                theta_opt=[theta_alphas,theta_betas];
+            case 'GOGARCH'
+
+                [theta_opt, LL_total, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
+
+                % rearranging theta_opt
+
+                theta_opt_phipart=theta_opt(1:(d*(d-1)/2));
+                theta_opt_volpart=theta_opt(((d*d-d+2)/2):end);
+                theta_alphas=theta_opt_volpart(1:2:end);
+                theta_betas=theta_opt_volpart(2:2:end);
+                theta_opt=[theta_opt_phipart,theta_alphas,theta_betas];
+
+            
             case 'RDCC'
                 [theta_opt, LL_total, Gt, VCV, Scores]             = dcc(rt, []  ,1,[],1,1,0,1,2,'2-stage', 'None', [], options);
                 %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
