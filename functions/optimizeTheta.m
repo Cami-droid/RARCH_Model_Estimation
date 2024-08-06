@@ -55,5 +55,4 @@ function [theta_vec, fval, Gt, VCV, Scores] = optimizeTheta(model, specification
 
     % Additional checks or calculations can be added here if needed
 
-end
-
+end 
