@@ -79,24 +79,39 @@ try
             switch model
             case 'RBEKK'
                 idxS = (d * (d + 1)) / 2;
-                results(i, j).thetaS = theta(1:idxS);
-                results(i, j).thetaD = theta(idxS + 1:end);
+                results(i, j).thetaS = results(i,j).theta(1:idxS);
+                results(i, j).thetaD = results(i,j).theta(idxS + 1:end);
 
             case 'RDCC'
                 idxM = 3 * d;
-                idxS = (d * (d + 1)) / 2;
-                results(i, j).thetaM = theta(1:idxM);
-                results(i, j).thetaS = theta(idxM + 1:idxM + idxS);
-                results(i, j).thetaD = theta(idxM + idxS + 1:end);
-
-            case {'OGARCH', 'GOGARCH'}
                 idxS = (d * (d - 1)) / 2;
-                results(i, j).thetaS = theta(1:idxS);
-                results(i, j).thetaD = theta(idxS + 1:end);
+                results(i, j).thetaM = results(i,j).theta(1:idxM);
+
+                % Generate the omega elements indexes to drop them: 1, 4, 7, 10, ...
+                omega_idx = 1:3:length(results(i,j).thetaM);
+
+                % Create a vector without the elements in omega positions;
+                
+                results(i,j).thetaM(omega_idx) = [];
+
+                results(i, j).thetaS = results(i,j).theta(idxM + 1:idxM + idxS);
+                results(i, j).thetaD = results(i,j).theta(idxM + idxS + 1:end);
+
+            case 'GOGARCH'
+                idxS = (d * (d - 1)) / 2;
+                results(i, j).thetaS = results(i,j).theta(1:idxS);
+                results(i, j).thetaD = results(i,j).theta(idxS + 1:end);
+            case 'OGARCH'
+                results(i, j).thetaD = results(i,j).theta;
 
             otherwise
                 error('Model not supported');
             end
+            if i==4
+                fprintf('the optimal thetaMs found are:%s\n', mat2str(results(i,j).thetaM));
+            end
+
+            fprintf('the optimal thetaSs found are:%s\n', mat2str(results(i,j).thetaS));
             fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD));
             fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).LL_total));
 

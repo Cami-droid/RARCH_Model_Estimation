@@ -36,10 +36,11 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
         switch model
             case 'RBEKK'
                 [theta_opt, LL_total, Gt, VCV, Scores] = rarch(et, 1, 1, specification, '2-stage',[],options);
+                theta_opt=theta_opt'; %the rarch function parameter output is a column vector, we need a row vector 
                 %rarch(data,p,q,type,method,startingVals,options)
 
             case 'OGARCH' 
-
+            
                 %   OUTPUTS:
                 %   PARAMETERS   - Estimated parameters in the order:
                 %                    OGARCH:
@@ -50,17 +51,16 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
                 %                       as vol(i) are pairs alpha and beta, and we need first a vector of alphas and second a vector of betas
                 %                       it's need to rearrange the output parameter vector 
 
-                [theta_opt, LL_total, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
-                %gogarch(data,p,q,gjrType,type,startingVals,options)
+                [theta_opt, LL_total, Gt, VCV, Scores] = gogarch_spec(et, 1, 1, [], model,[],options,specification);
 
                 theta_alphas=theta_opt(1:2:end);
                 theta_betas=theta_opt(2:2:end);
                 theta_opt=[theta_alphas,theta_betas];
             case 'GOGARCH'
 
-                [theta_opt, LL_total, Gt, VCV, Scores] = gogarch(et, 1, 1, [], model,[],options);
+                [theta_opt, LL_total, Gt, VCV, Scores] = gogarch_spec(et, 1, 1, [], model,[],options,specification);
 
-                % rearranging theta_opt
+                %rearranging theta_opt
 
                 theta_opt_phipart=theta_opt(1:(d*(d-1)/2));
                 theta_opt_volpart=theta_opt(((d*d-d+2)/2):end);
@@ -70,7 +70,7 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
 
             
             case 'RDCC'
-                [theta_opt, LL_total, Gt, VCV, Scores]             = dcc(rt, []  ,1,[],1,1,0,1,2,'2-stage', 'None', [], options);
+                [theta_opt, LL_total, Gt, VCV, Scores]             = rdcc_spec(rt, []  ,1,[],1,1,0,1,2,'2-stage', 'None', [], options,specification);
                 %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
 
             otherwise
