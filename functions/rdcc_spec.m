@@ -27,7 +27,6 @@ idxS = (d * (d - 1)) / 2; %correlations, diagonal is excluded
         scores=NaN;
         diagnostics=NaN;
         
-
         
         case 'CP'
         
@@ -39,8 +38,7 @@ idxS = (d * (d - 1)) / 2; %correlations, diagonal is excluded
         VCV=NaN;
         scores=NaN;
         diagnostics=NaN;
-          
-        
+                 
         otherwise
 
         error('Specification not supported');

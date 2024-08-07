@@ -70,7 +70,8 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
 
             
             case 'RDCC'
-                [theta_opt, LL_total, Gt, VCV, Scores]             = rdcc_spec(rt, []  ,1,[],1,1,0,1,2,'2-stage', 'None', [], options,specification);
+                %[theta_opt, LL_total, Gt, VCV, Scores]             = rdcc_spec(rt, []  ,1,[],1,1,0,1,2,'2-stage', 'None', [], options,specification);
+                [theta_opt, LL_total, Gt, VCV, Scores]              =rdcc     (rt      ,1, 1, 1, 1, '2-stage', 'None', specification, [], options)
                 %[parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options)
 
             otherwise

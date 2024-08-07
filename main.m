@@ -85,14 +85,14 @@ try
             case 'RDCC'
                 idxM = 3 * d;
                 idxS = (d * (d - 1)) / 2; % they are correlations, diagonal is excluded
-                results(i, j).thetaM = results(i,j).theta(1:idxM);
+                %results(i, j).thetaM = results(i,j).theta(1:idxM);
 
                 % Generate the omega elements indexes to drop them: 1, 4, 7, 10, ...
-                omega_idx = 1:3:length(results(i,j).thetaM);
+                %omega_idx = 1:3:length(results(i,j).thetaM);
 
                 % Create a thetaM vector without the elements in omega positions;
                 
-                results(i,j).thetaM(omega_idx) = [];
+                %results(i,j).thetaM(omega_idx) = [];
                 results(i, j).thetaS = results(i,j).theta(idxM + 1:idxM + idxS);
                 results(i, j).thetaD = results(i,j).theta(idxM + idxS + 1:end);
 
