@@ -6,6 +6,8 @@ d=size(data,2);
 % Specification could be 'Scalar','Diagonal','CP' which is common persistence. 'Diagonal' specification returns 
 % the same output as the original gogarch function.
 method='2-stage';
+idxM = 3 * d; 
+idxS = (d * (d - 1)) / 2; %correlations, diagonal is excluded
 
     switch specification
         case 'Scalar'
@@ -15,22 +17,20 @@ method='2-stage';
 
         case 'Diagonal'
 
-        idxM = 3 * d; 
-        idxS = (d * (d + 1)) / 2;
+        
         idxD = 2*d;
 
-        parameters=NaN(1,idxM+idxS+idxD); %momentaneo 
+        parameters=NaN(1,idxM+idxS+idxD); %momentaneo
         ll=NaN;
         Ht=NaN;
         VCV=NaN;
         scores=NaN;
         diagnostics=NaN;
+        
 
         
         case 'CP'
-
-        idxM = 3 * d; 
-        idxS = (d * (d + 1)) / 2;
+        
         idxD = d+1;
 
         parameters=NaN(1,idxM+idxS+idxD); %momentaneo 
@@ -39,12 +39,14 @@ method='2-stage';
         VCV=NaN;
         scores=NaN;
         diagnostics=NaN;
-    
+          
         
         otherwise
 
         error('Specification not supported');
 
     end
+
+    
         
 end

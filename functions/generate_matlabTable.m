@@ -7,13 +7,16 @@ specifications = {'Scalar', 'Diagonal', 'CP'};
 % Define parameter names
 
 marginal_params = {};
+
+% the table shows marginal parameter i pairs, hence the loop is in [alpha_i; beta_i ]pairs
+
 for i = 1:d
     marginal_params{end+1} = sprintf('alpha_%d', i);
     marginal_params{end+1} = sprintf('beta_%d', i);
 end
 
 %%  dynamic_params: dynamic parameter names that change according to d
-
+%% The table shows dynamic params first alphas and after betas, hence the loops for each one is separated
 
 dynamic_params = {'alpha', 'beta'}; % initializing cell with scalar dynamic parameters 
 
@@ -31,7 +34,6 @@ dynamic_params{end+1} = 'delta';
 
 % Show results
 disp(dynamic_params);
-
 
 %% 
 
@@ -86,7 +88,7 @@ for i = 1:4
         end
         
         % "Dynamic Parameters"
-        param_idx = false(size(dynamic_params)); % zero matriz with same size as dynamic params names
+        param_idx = false(size(dynamic_params)); % zero matrix with same size as dynamic params names
         switch specifications{j}
             case 'Scalar'
                 % fills the two first rows 
@@ -107,9 +109,8 @@ for i = 1:4
             param_idx(end) = true;
         end
 
-        % search the right place to write thetaD vector
-
-        % number 2 stands for the 2 subtable title's places
+        % find the right place to write thetaD vector.  Number 2 stands for the 2 subtable title's places
+        
         complete_table([num_marginal_params+find(param_idx) + 2], (i - 1) * 3 + j + 1) = num2cell(thetaD);
         
         % "LL Decomposition"
