@@ -60,6 +60,14 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
         offset = offset + count;
     end
 
+    if stage==3 && isJoint && l>0 % N only if 3 stage, joint and asymmetric
+    count = k*(k+1)/2;
+    N = parameters(offset + (1:count));
+    % Transform N to be a matrix
+    N = ivech(N);
+    offset = offset + count;
+    end
+
     switch specification
         case 'Scalar'
             a = parameters(offset + (1:m));
@@ -72,7 +80,8 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
         case 'CP'
             a = parameters(offset + (1:m*k));
             lambda_cp = parameters(offset + m*k + 1);
-            a = reshape(a, [k, m]);
+            b=(lambda_cp*ones(k,1)-a.^4).^(1/4);
+            
     end
 
     % Compute volatilities
@@ -109,10 +118,15 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
             intercept = intercept - N * sum(g);
         end
     else
-        scale = (1 - sum(a(:)) - sum(b(:))) - gScale * sum(g);
+        if l > 0 && exist('g', 'var')
+            scale = (1 - sum(a(:)) - sum(b(:))) - gScale * sum(g);
+        else
+            scale = 1 - sum(a(:)) - sum(b(:));
+        end
         scale = sqrt(scale);
         intercept = R .* (scale * scale');
     end
+
 
     % Check eigenvalues?
 
@@ -184,5 +198,5 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
     end
 end
 
-% Subfunciones requeridas como dcc_fit_variance, dcc_likelihood, hessian_2sided_nrows, gradient_2sided,
+% Subfunctions required as dcc_fit_variance, dcc_likelihood, hessian_2sided_nrows, gradient_2sided,
 % corr_vech, z2r, r2z, y otras se deben definir por separado o importar según sea necesario.

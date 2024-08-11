@@ -1,0 +1,223 @@
+[33mcommit dfb3a82032a0b38b6544772d5f1700c7547b034e[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Thu Aug 8 14:23:51 2024 -0300
+
+    ll values calculados para e_t (le saqué el termino que los lleva a valores para r_t, si querés ll_para r_t volvé al commit inmediatamente anterior
+
+[33mcommit 3ced1757e91215d3bdc2868071bd59b87c0f4c38[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Aug 7 06:29:05 2024 -0300
+
+    archivos de resultado del run, los tengo que mandar commit porque no me deja ir a la rama mfe_integration si no lo hago
+
+[33mcommit 791888d49cbcd2d789b06f554b9e0ba9e2c99e6f[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Aug 7 06:15:03 2024 -0300
+
+    resultados obtenidos bastante más aproximados, aúnque en gogarch los ll dan números extraños
+
+[33mcommit 7b8d2f42b0f11572b0a4773e2d561d96e097d279[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Aug 7 01:07:38 2024 -0300
+
+    vi en rarch_likelihood function del mfe que primero minimiza la versión positiva del ll y luego de encontrado el valor le cambia de signo a (-) cambié eso, dan mejores resultados los parámetros
+
+[33mcommit 6a78a10e4db7c74376aeddb61b5039f1edce1903[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 9a231e3 2835ee2
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Aug 6 23:16:16 2024 -0300
+
+    Merge branch 'main' of https://github.com/Cami-droid/RARCH_Model_Estimation
+
+[33mcommit 2835ee277330658b26c4045770bda25fd8f53b3d[m
+Author: Camilo Gustavo Manzur <62653877+Cami-droid@users.noreply.github.com>
+Date:   Tue Aug 6 22:43:04 2024 -0300
+
+    Initial commit
+
+[33mcommit 9a231e33634202d22956ffbc9475150e99e6733b[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Aug 5 19:18:41 2024 -0300
+
+    muchos cambios algunos buenos y otros malos, corregí errores por ejemplo PI_bar se debe calcular sobre st_returns y antes estaba igual a H_bar, tabién en las funciones,ll. Ahora da resultados espantosos porque cambié el lb de beta de 0.8 a 0. Si querés resultados razonables restaurá el umbral a 0.8
+
+[33mcommit ac88985bc4dcd49c203e7c3fa1daf171fcbceb7b[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Aug 5 02:30:16 2024 -0300
+
+    la verdad muchos cambios, todavía esto no termina. Cambios para hacer funcionar la tabla 5 y cambios para que log-ll de más cercano en todos los modelos, y cambios en las restricciones para que los parámetros tengan variabilidad
+
+[33mcommit aa4685798b1e96a4f2163b32e77062cc7246cc7d[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Sat Aug 3 21:09:53 2024 -0300
+
+     implemento muchos cambios para hacer funcionar la tabla 5, todavía no he terminado
+
+[33mcommit 9a7943bec769c26c45d536a79712ad6f4775494f[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Fri Aug 2 20:49:07 2024 -0300
+
+     nuevo cómputo de la tabla 2
+
+[33mcommit 41c093910d9ac396b8b6adfaaedec79cb9b78cb8[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Fri Aug 2 10:16:57 2024 -0300
+
+    cambios menores
+
+[33mcommit 93c2a8eb360599081cf3bc45557a58eeeba257c9[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Fri Aug 2 07:57:00 2024 -0300
+
+    trabajando con matlab project nomás
+
+[33mcommit 68b7a37f9c89226490e07eb1a62a679695561541[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Thu Aug 1 01:28:58 2024 -0300
+
+    agregué un archivo run para correr las tablas 2,4 y 5. No recomendable porque se ralentiza mucho la ejecución del código
+
+[33mcommit 48189af42806710fe42218b1b56203f5afaadc95[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 31 17:49:15 2024 -0300
+
+    enviada esta versión al cliente
+
+[33mcommit 94e3df4bb219bbcf83778085519bc6818d55adb3[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 31 17:46:02 2024 -0300
+
+    cambié la formula de ll ll_type_internal en ll_engine porque en ogarch estaba multiplicando la matriz U(δ) que es solo para el gogarch
+
+[33mcommit ddb561e3d61d8428f897b687c559d7ea7f3d8f52[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 31 17:31:52 2024 -0300
+
+    solucionados pequeños errores
+
+[33mcommit dfe96d6d7afb87c77b8dc8651ca7fafe206a8844[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 31 17:12:39 2024 -0300
+
+     en esta versión hice dos cosas, agregué los calculos de ll marginales y ll copulas que aparecen al final de la tabla, y agregué al principio de la tabla los parámetros marginales
+
+[33mcommit a5f7b8ade537cf5d90d4aded5e7c70f92f8ea8f9[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 30 11:35:39 2024 -0300
+
+     en la misma linea que el commit anterior
+
+[33mcommit 971b669271b40f9f77e29e9b3697a280d55b0467[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 30 11:17:00 2024 -0300
+
+     está presentable pero devuelve valores locos para algunas especiicaiones y modelos
+
+[33mcommit ea1b8dd639264b3d637c983fca239fc4f1aa4d04[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 30 09:34:18 2024 -0300
+
+    hasta acá genera una tabla solo con parámetros dinámicos thetaD, a partir de acá crearé la tabla completa con thetaM y ll_decomposition
+
+[33mcommit 4f3665bd55eb11f393da6640241f8bbc44b19bfd[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Sat Jul 27 23:48:27 2024 -0300
+
+    esta es la ultima versión que anda, ahora me voy a poner a cambiar calcGt porque me di cuenta que no multiplica et(t)'et(t) sino que lo hace con toda la serie y está mal
+
+[33mcommit fb0adb2258e3380500f96574aad95acd4d48c168[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Fri Jul 26 22:32:19 2024 -0300
+
+     cambios no significativos. Solo tienen que ver con el reordenamiento de algunas cosas
+
+[33mcommit d1a1f01d9d171e4065b91db427067407c3f946a1[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 24 23:06:22 2024 -0300
+
+     desde acá empiezo a modificar la tabla para que me genere un pdf via latex. Este instante es anterior a que comience
+
+[33mcommit b761b97cd9b81c69a282af8dd11fef40991e880c[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 24 17:54:53 2024 -0300
+
+    recapitulando, cambié de nombre a la rama en la cual trabajé últimamente por main, y a main la renombré como old_main. es decir que main es new_main. Hecha esta aclaración me retiro
+
+[33mcommit 3240df434127c704bda86ee17050f824e5272cac[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 24 02:45:28 2024 -0300
+
+    este es la ultima versión, me sale una tablita, los valores están un poquitin mejor pero siguen siendo un asco
+
+[33mcommit 50b88bb650d0711367ae2ea90f45af22facfcf32[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 24 02:19:03 2024 -0300
+
+    los resultados paramétricos son un asco, le pedí a gpt que me revise optimize_thetaD, esta es la última versión no tocada por gpt
+
+[33mcommit 69a5a390d5b8849d7b9bc018d9ec462046d0508a[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Wed Jul 24 01:06:13 2024 -0300
+
+    le cambié el nombre a la función loglikelihood_group por ll_engine.m
+
+[33mcommit 68de030154a322de925236b1757330240e9b1ef4[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 23 23:58:27 2024 -0300
+
+     le pedí a gpt que me la haga más linda
+
+[33mcommit 0fb42f417067bc0a9b7cda5be8b30bfcd2089109[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 23 23:57:35 2024 -0300
+
+     agregué la función loglikelihood_group que une las funciones que calculas Gt, Qt, Qt_star, Ct y ll_type y loglikelihood porque thetaD es la variable en común de todos ellos, es mejor tenerlo controlado en una sola GRAN función
+
+[33mcommit c3a97f10060257b50d2d37cd56943eab5ab1666e[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 23 20:35:55 2024 -0300
+
+    no se si sirve de algo pero este commit es anterior a que junte G_all con el calculo de Ct Qt y Qt_star, te debo los nombres exactos de esas funciones. Chau
+
+[33mcommit de7a51208d07626906f59cf0d2eeae6ae5b63ce7[m[33m ([m[1;31morigin/usando_passenger_Gt[m[33m)[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Tue Jul 23 09:45:18 2024 -0300
+
+    hasta acá Gt passenger, a partir de acá voy a buscar otra manera diferente
+
+[33mcommit dba284a16f9f9a67bf031876d18dabf46086554b[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Jul 22 20:44:11 2024 -0300
+
+     esto es nuevo
+
+[33mcommit 3471a31a2b54cc98663f83bcf287d6d6e1997af7[m[33m ([m[1;31morigin/optimizacion_con_regularizacion[m[33m)[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Jul 22 18:07:37 2024 -0300
+
+    acá termina mi aventura en esta rama, me voy a otra en donde trabajaré con el passenger_Gt una variable dentro de la output struct que he creado
+
+[33mcommit 00cfca5807df7c327fe1775397301960a695198a[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Jul 22 14:46:12 2024 -0300
+
+    agregué cosas de gpt ahora resuelvo los NaNs'
+    git status
+
+[33mcommit 451c121914be1390a014386fe4e39acb4392a0c0[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Jul 22 07:54:58 2024 -0300
+
+    mando cambios y ahora voy a confiar en chatGPT para la función logLIkelihood
+
+[33mcommit 6157647de6bee379d3fe5e06d3cf5aa8df68dc70[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Mon Jul 22 01:38:43 2024 -0300
+
+    muchos cambios se hicieron
+
+[33mcommit b5ff29ee15ca146293123fec5aa432434e13cf1e[m[33m ([m[1;31morigin/old_main[m[33m)[m
+Author: Cami-droid <camgmanzur@gmail.com>
+Date:   Fri Jul 19 19:05:08 2024 -0300
+
+    Initial commit

@@ -22,6 +22,7 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
     options.Display = 'off'; % 'iter'
     options.Diagnostics = 'off'; % 'on'
     options.Algorithm ='interior-point';%'sqp'
+    options.MaxIterations=100; 
 
     % Initialize outputs
     
