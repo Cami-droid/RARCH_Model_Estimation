@@ -75,6 +75,7 @@ try
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             % [theta_vec, fval, Gt, VCV, Scores]
             [results(i,j).theta, results(i,j).LL_total, outputs(i,j).Gt,outputs(i,j).VCV,outputs(i,j).Scores] = optimizeTheta(model, specification, outputs(i,j), initial_thetaD);
+            
 
             switch model
             case 'RBEKK'
@@ -91,7 +92,6 @@ try
                 %omega_idx = 1:3:length(results(i,j).thetaM);
 
                 % Create a thetaM vector without the elements in omega positions;
-                
                 %results(i,j).thetaM(omega_idx) = [];
                 results(i, j).thetaS = results(i,j).theta(idxM + 1:idxM + idxS);
                 results(i, j).thetaD = results(i,j).theta(idxM + idxS + 1:end);

@@ -53,6 +53,8 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
     else
         computeVol = false;
     end
+    
+    rarch_transform_parameters=parameters(offset+1:end);
 
     if stage <= 2 || isJoint
         count = k * (k - 1) / 2;
@@ -68,21 +70,21 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
     offset = offset + count;
     end
 
-    switch specification
-        case 'Scalar'
-            a = parameters(offset + (1:m));
-            b = parameters(offset + (m+1:m+n));
-        case 'Diagonal'
-            a = parameters(offset + (1:m*k));
-            b = parameters(offset + (m*k+1:m*k+n*k));
-            a = reshape(a, [k, m]);
-            b = reshape(b, [k, n]);
-        case 'CP'
-            a = parameters(offset + (1:m*k));
-            lambda_cp = parameters(offset + m*k + 1);
-            b=(lambda_cp*ones(k,1)-a.^4).^(1/4);
-            
-    end
+    r = sqrt(diag(R));
+    C = R .* (r*r');
+
+    type = find(strcmp({'Scalar', 'CP', 'Diagonal'}, specification));
+    isCChol= 0 ; % C isn't a Cholensky decomposition
+    [C,A,B] = rarch_parameter_transform(rarch_transform_parameters,m,n,k,C,type,isJoint,isCChol);
+    % Fix B in case of CP
+    B(B<0)= 0;
+    a=diag(A);
+    b=diag(B);
+
+
+    
+
+
 
     % Compute volatilities
     H = ones(T, k);
@@ -145,52 +147,38 @@ function [ll, lls, Rt] = dcc_spec_likelihood(parameters, data, dataAsym, m, l, n
     Rt = zeros(k, k, T);
     lls = zeros(T, 1);
 
-    for t = 1:T
-        Qt(:, :, t) = intercept;
-        for i = 1:m
-            if (t-i) > 0
-                if strcmp(specification, 'Scalar')
-                    Qt(:, :, t) = Qt(:, :, t) + a(i) * stdData(:, :, t-i);
-                else
-                    Qt(:, :, t) = Qt(:, :, t) + diag(a(:, i)) * stdData(:, :, t-i) * diag(a(:, i));
-                end
-            else
-                if strcmp(specification, 'Scalar')
-                    Qt(:, :, t) = Qt(:, :, t) + a(i) * backCast;
-                else
-                    Qt(:, :, t) = Qt(:, :, t) + diag(a(:, i)) * backCast * diag(a(:, i));
-                end
-            end
-        end
-
-        if strcmp(specification, 'CP')
-            for i = 1:n
-                if (t-i) > 0
-                    Qt(:, :, t) = Qt(:, :, t) + lambda_cp * Qt(:, :, t-i);
-                else
-                    Qt(:, :, t) = Qt(:, :, t) + lambda_cp * backCast;
-                end
-            end
+    for t=1:T
+    Qt(:,:,t) = intercept;
+    for i = 1:m
+        if (t-i)>0
+            Qt(:,:,t) = Qt(:,:,t) + A(i)*stdData(:,:,t-i)*A(i)';
         else
-            for i = 1:n
-                if (t-i) > 0
-                    Qt(:, :, t) = Qt(:, :, t) + diag(b(:, i)) * Qt(:, :, t-i) * diag(b(:, i));
-                else
-                    Qt(:, :, t) = Qt(:, :, t) + diag(b(:, i)) * backCast * diag(b(:, i));
-                end
-            end
-        end
-
-        q = sqrt(diag(Qt(:, :, t)));
-        Rt(:, :, t) = Qt(:, :, t) ./ (q * q');
-        if composite == 0
-            lls(t) = 0.5 * (likconst + logdetH(t) + log(det(Rt(:, :, t))) + sum(diag((Rt(:, :, t) \ I) * stdData(:, :, t))));
-        elseif composite
-            S = (sqrt(H(t, :))' * sqrt(H(t, :))) .* Rt(:, :, t);
-            lls(t) = composite_likelihood(S, data(:, :, t), indices);
+            Qt(:,:,t) = Qt(:,:,t) + A(i)*backCast*A(i)';
         end
     end
-
+    for i = 1:l
+        if (t-i)>0
+            Qt(:,:,t) = Qt(:,:,t) + g(i)*stdDataAsym(:,:,t-i);
+        else
+            Qt(:,:,t) = Qt(:,:,t) + g(i)*backCastAsym;
+        end
+    end
+    for i = 1:n
+        if (t-i)>0
+            Qt(:,:,t) = Qt(:,:,t) + B(i)'*Qt(:,:,t-i)*B(i)';
+        else
+            Qt(:,:,t) = Qt(:,:,t) + B(i)*backCast*B(i)';
+        end
+    end
+    q = sqrt(diag(Qt(:,:,t)));
+    Rt(:,:,t) = Qt(:,:,t)./ (q*q');
+    if composite == 0
+        lls(t) = 0.5*(likconst + logdetH(t) + log(det(Rt(:,:,t))) + sum(diag((Rt(:,:,t)\I)*stdData(:,:,t))));
+    elseif composite
+        S = (sqrt(H(t,:))'*sqrt(H(t,:))) .* Rt(:,:,t);
+        lls(t) = composite_likelihood(S,data(:,:,t),indices);
+    end
+end
     ll = sum(lls);
 
     if isnan(ll) || ~isreal(ll) || isinf(ll)

@@ -59,3 +59,4 @@ options = optimset( 'MaxIter', 30, 'MaxFunEvals', 200);
 specification='Diagonal';
 disp('inputs values charged in the worksapace. Please run this function:');
 disp('[parameters, ll ,Ht, VCV, scores, diagnostics]=rdcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options,specification)');
+

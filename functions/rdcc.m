@@ -462,7 +462,7 @@ else
     if (startingVals*A'-b) >= 0
         coef=(startingVals*A'-b)./b;
         startingVals=startingVals./coef; %to no obstaculize;
-        % error('STARTINGVALS for DCC parameters are not comparible with a positive definite intercept.')
+        % error('STARTINGVALS for DCC parameters are not compatible with a positive definite intercept.')
         clear coef;
     end
 
@@ -528,7 +528,7 @@ end
 
 isJoint = true;
 isInference = true;
-[ll,~,Rt] = dcc_likelihood(parameters,data,dataAsym,m,l,n,[],[],backCast,backCastAsym,stage,composite,isJoint,isInference,gScale,univariate);
+[ll,~,Rt] = dcc_spec_likelihood(parameters,data,dataAsym,m,l,n,[],[],backCast,backCastAsym,stage,composite,isJoint,isInference,gScale,univariate,specification);
 ll = -ll;
 Ht = zeros(k,k,T);
 for t=1:T
@@ -560,9 +560,9 @@ end
 if stage==2
     % 1. dcc_likelihood
     count = k*(k-1)/2 + m + l + n;
-    H = hessian_2sided_nrows(@dcc_likelihood,parameters',count,data,dataAsym,m,l,n,[],[],backCast,backCastAsym,stage,composite,isJoint,isInference,gScale,univariate);
+    H = hessian_2sided_nrows(@dcc_spec_likelihood,parameters',count,data,dataAsym,m,l,n,[],[],backCast,backCastAsym,stage,composite,isJoint,isInference,gScale,univariate,specification);
     A(offset+(1:count),:) = H/T;
-    [~,s]=gradient_2sided(@dcc_likelihood,parameters',data,dataAsym,m,l,n,[],[],backCast,backCastAsym,stage,composite,isJoint,isInference,gScale,univariate);
+    [~,s]=gradient_2sided(@dcc_spec_likelihood,parameters',data,dataAsym,m,l,n,[],[],backCast,backCastAsym,stage,composite,isJoint,isInference,gScale,univariate,specification);
     scores(:,offset+(1:count)) = s(:,offset+(1:count));
     B = cov(scores);
     Ainv = A\eye(v);
