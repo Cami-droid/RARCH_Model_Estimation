@@ -51,5 +51,5 @@ options = optimset( 'MaxIter', 30, 'MaxFunEvals', 200);
 %   SPECIFICATION -[OPTIONAL] String value, either 'Scalar'(Default),'Diagonal','CP' (Common Persistence). When 'CP' is selected, l is set to zero 
 specification='Diagonal';
 disp('inputs values charged in the worksapace. Please run this function:');
-disp('[parameters, ll ,Ht, VCV, scores, diagnostics]=rdcc(data,m,n,p,q,method,composite,startingVals,options,specification)');
+disp('[parameters, ll ,Ht, VCV, scores]=rdcc(data,m,n,p,q,method,composite,startingVals,options,specification)');
 

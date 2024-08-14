@@ -1,4 +1,4 @@
-function [parameters, ll ,Ht, VCV, scores, diagnostics]=rdcc(data,m,n,p,q,method,composite,startingVals,options,specification)
+function [parameters, ll ,Ht, VCV, scores]=rdcc(data,m,n,p,q,method,composite,startingVals,options,specification)
 % Estimation of scalar DCC(m,n) and ADCC(m,l,n) multivarate volatility model with with TARCH(p,o,q)
 % or GJRGARCH(p,o,q) conditional variances
 %
@@ -317,8 +317,6 @@ switch specification
         b = parameters(k*m+1:k*(m+n));
     case 'CP'
         a = parameters(1:m*k);
-        g = parameters(m*k+1:k*m);
-
         lambda_cp=parameters(m*k+1);
         b= lambda_cp - a;
 end
@@ -384,12 +382,14 @@ for i=1:k
 end
 
 % TODO : Better gradient function
+l=0;
 if stage==2
     % 1. dcc_likelihood
+    
     count = k*(k-1)/2 + m  + n;
-    H = hessian_2sided_nrows(@dcc_likelihood,parameters',count,data,[],m,l,n,[],[],backCast,[],stage,composite,isJoint,isInference,[],univariate);
+    H = hessian_2sided_nrows(@rdcc_likelihood,parameters',count,data,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
     A(offset+(1:count),:) = H/T;
-    [~,s]=gradient_2sided(@dcc_likelihood,parameters',data,[],m,l,n,[],[],backCast,[],stage,composite,isJoint,isInference,[],univariate);
+    [~,s]=gradient_2sided(@rdcc_likelihood,parameters',data,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
     scores(:,offset+(1:count)) = s(:,offset+(1:count));
     B = cov(scores);
     Ainv = A\eye(v);
@@ -400,19 +400,16 @@ elseif stage==3
     tempParams = parameters(1:offset+count);
     [~,s]=gradient_2sided(@dcc_inference_objective, tempParams', data,[],m,l,n,univariate);
     scores(:,offset+(1:count))=s(:,offset+(1:count));
-    H = hessian_2sided_nrows(@dcc_inference_objective, tempParams', count, data,[],m,0,n,univariate);
+    H = hessian_2sided_nrows(@dcc_inference_objective, tempParams', count, data,[],m,l,n,univariate);
     A(offset+(1:count),1:(count+offset)) = H/T;
     offset = offset + count;
     % 2. dcc_likelihood
-    count = m + 0 + n;
-    H = hessian_2sided_nrows(@dcc_likelihood,parameters',count,data,dataAsym,m,0,n,[],[],backCast,[],stage,composite,isJoint,isInference,[],univariate);
+    count = m + l + n;
+    H = hessian_2sided_nrows(@rdcc_likelihood,parameters',countdata,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
     A(offset+(1:count),:) = H/T;
-    [~,s]=gradient_2sided(@dcc_likelihood,parameters',data,[],m,0,n,[],[],backCast,[],stage,composite,isJoint,isInference,[],univariate);
+    [~,s]=gradient_2sided(@rdcc_likelihood,parameters',data,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
     scores(:,offset+(1:count)) = s(:,offset+(1:count));
     B = covnw(scores);
     Ainv = A\eye(v);
     VCV = Ainv*B*Ainv'/T;
 end
-
-diagnostics = [];
-diagnostics.gScale = gScale;

@@ -73,7 +73,7 @@ switch specification
 
     case 'Scalar'
         a = parameters(offset + (1:m));
-        b = parameters(offset + (m+l+1:m+l+n));
+        b = parameters(offset + (m+1:m+n));
   
     case 'Diagonal'
         a = parameters(offset + (1:m*k));
