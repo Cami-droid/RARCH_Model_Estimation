@@ -290,19 +290,31 @@ else
        case 'Diagonal'
             startingVals = [startingVals(1:m)*ones(1,k)/k , startingVals(1+m:m+n)*ones(1,k)/k];
        case 'CP'
-            startingVals = [startingVals(1:m)*ones(1,k)/k, (ones(1,m*k)-b)/k];
+            startingVals = [startingVals(1:m)*ones(1,k)/k, (a+b)/k];
     end
     
     
 
 LB = zeros(length(startingVals),1);
 UB = ones(length(startingVals),1);
-A = ones(1,length(startingVals));
-b = .99998;
+switch  specification
+case 'Scalar'
+A=horzcat(kron(eye(1),ones(1,m)),kron(eye(1),ones(1,n)));
+b = 0.99998;
 
-if (startingVals*A'-b) >= 0
-    error('STARTINGVALS for DCC parameters are not comparible with a positive definite intercept.')
+case 'Diagonal'
+A=horzcat(kron(eye(k),ones(1,m)),kron(eye(k),ones(1,n)));
+b = repmat(0.99998, k, 1);
+
+case 'CP'
+A=horzcat(kron(eye(k),ones(1,m)),ones(k,1));
+b = repmat(0.99998, k, 1);
 end
+
+
+%if (startingVals*A'-b) >= 0
+ %   error('STARTINGVALS for DCC parameters are not comparible with a positive definite intercept.')
+%end
 
 isJoint = false; % doesn't include volatility parameters
 isInference = false;
@@ -329,8 +341,8 @@ if stage==2
     
     LB = [-inf*ones(1,k*(k-1)/2) zeros(1,length(parameters))];
     UB = [inf*ones(1,k*(k-1)/2) ones(1,length(parameters))];
-    A = [zeros(1,k*(k-1)/2) A];
-    b = .99998;
+    A = [zeros(k,k*(k-1)/2) A];
+    b = repmat(0.99998, k, 1);;
     parameters = fmincon(@rdcc_likelihood,startingVals,A,b,[],[],LB,UB,[],options,stdData,m,n,R,backCast,2,composite,isJoint,isInference,[],specification);
     z = parameters(1:k*(k-1)/2);
     R = z2r(z);
@@ -398,14 +410,15 @@ elseif stage==3
     % 1. dcc_inference_objective
     count = k*(k-1)/2;
     tempParams = parameters(1:offset+count);
-    [~,s]=gradient_2sided(@dcc_inference_objective, tempParams', data,[],m,l,n,univariate);
+    DataAsym = zeros(k,k,T);
+    [~,s]=gradient_2sided(@dcc_inference_objective, tempParams', data,DataAsym,m,l,n,univariate);
     scores(:,offset+(1:count))=s(:,offset+(1:count));
-    H = hessian_2sided_nrows(@dcc_inference_objective, tempParams', count, data,[],m,l,n,univariate);
+    H = hessian_2sided_nrows(@dcc_inference_objective, tempParams', count, data,DataAsym,m,l,n,univariate);
     A(offset+(1:count),1:(count+offset)) = H/T;
     offset = offset + count;
     % 2. dcc_likelihood
     count = m + l + n;
-    H = hessian_2sided_nrows(@rdcc_likelihood,parameters',countdata,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
+    H = hessian_2sided_nrows(@rdcc_likelihood,parameters',count,data,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
     A(offset+(1:count),:) = H/T;
     [~,s]=gradient_2sided(@rdcc_likelihood,parameters',data,m,n,R,backCast,stage,composite,isJoint,isInference,univariate,specification);
     scores(:,offset+(1:count)) = s(:,offset+(1:count));
@@ -413,3 +426,5 @@ elseif stage==3
     Ainv = A\eye(v);
     VCV = Ainv*B*Ainv'/T;
 end
+
+

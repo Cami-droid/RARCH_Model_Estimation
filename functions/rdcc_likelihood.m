@@ -18,13 +18,11 @@ function [ll,lls,Rt] = rdcc_likelihood(parameters,data,m,n,R,backCast,stage,comp
 %   R            - K by K correlation matrix of standardized data
 %   N            - K by K matrix mean of asymmetric standardized data outer products
 %   BACKCAST     - K by K  matrix to use for back casting symetric terms
-%   BACKCASTASYM - K by K  matrix to use for back casting asymetric terms
 %   STAGE        - Integer, either 2 or 3 indicating whether 2-stage ro 3-stage estimator is being used
 %   COMPOSITE    - Integer, one of 0 (None, use QMLE), 1 (Use diagonal composite) or 2 (full composite)
 %   ISJOINT      - Boolean indicating whether PARAMETERS includes volatility parameters
 %   ISINFERENCE  - Boolean indicating whether likelihood is used for making inference, in which case
 %                    no transformations are made to parameters.
-%   GSCALE       - K by 1 vector used in 2-stage to scale the intercept.  See DCC.
 %   UNIVARIATE   - Cell array of structures containing information needed to compute volatilities.
 %
 % OUTPUTS:

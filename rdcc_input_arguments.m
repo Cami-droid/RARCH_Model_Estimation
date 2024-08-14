@@ -35,7 +35,7 @@ q=1;
 %   METHOD       - [OPTIONAL] String, one of '3-stage' (Default) or '2-stage'.  Determines whether
 %                    the model is estimated using the 3-stage estimator, or if the correlation intercepts
 %                    are jointly estimated along with the dynamic parameters.
-method='2-stage';
+method='3-stage';
 %   COMPOSITE    - [OPTIONAL] String value, either 'None' (Default), 'Diagonal' or 'Full'.  None
 %                    uses standard QMLE.  'Diagonal' and 'Full' both uses composite likelihood where
 %                    'Diagonal' uses all pairs of the form i,i+1 while 'Full' uses all pairs.
@@ -51,5 +51,5 @@ options = optimset( 'MaxIter', 30, 'MaxFunEvals', 200);
 %   SPECIFICATION -[OPTIONAL] String value, either 'Scalar'(Default),'Diagonal','CP' (Common Persistence). When 'CP' is selected, l is set to zero 
 specification='Diagonal';
 disp('inputs values charged in the worksapace. Please run this function:');
-disp('[parameters, ll ,Ht, VCV, scores]=rdcc(data,m,n,p,q,method,composite,startingVals,options,specification)');
+disp('[parameters, ll ,Ht, VCV, scores]=rdcc(data,m,n,p,q,method,composite,startingVals,options,specification);');
 
