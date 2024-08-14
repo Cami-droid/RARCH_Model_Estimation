@@ -1,4 +1,4 @@
-function [parameters, ll ,Ht, VCV, scores, diagnostics]=dcc(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options,specification)
+function [parameters, ll ,Ht, VCV, scores, diagnostics]=rdcc_spec(data,dataAsym,m,l,n,p,o,q,gjrType,method,composite,startingVals,options,specification)
 d=size(data,2);
 % the same dcc function in mfe toolkit with the specification as additional input 
 % and with a rotation of returns  after its standarization

@@ -237,8 +237,8 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Univariate volatility models
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-o=zeros(size(p));
-[H,univariate] = dcc_fit_variance(data2d,p,o,q,gjrType,tarchStartingVals); %starting_thetaM
+o=zeros(size(p))
+[H,univariate] = dcc_fit_variance(data2d,p,0,q,gjrType,tarchStartingVals); %starting_thetaM
 stdData = data;
 for t=1:T
     h = sqrt(H(t,:));
@@ -283,21 +283,41 @@ else
         end
     end
     a = startingVals(1);
-    b = startingVals(2);
-    startingVals = [a*ones(1,m)/m b*ones(1,n)/n];
+    if l>0
+        g = startingVals(2);
+        b = startingVals(3);
+        startingVals = [a*ones(1,m)/m g*ones(1,l)/l b*ones(1,n)/n];
         %added
-    switch specification
-       case 'Diagonal'
+        switch specification
+            case 'Diagonal'
+            startingVals = [startingVals(1:m)*ones(1,k), startingVals(1:l)*ones(1,k), startingVals(1:n)*ones(1,k)]
+            case 'CP'
+            startingVals = [startingVals(1:m)*ones(1,k), 1-b]
+        end
+
+    else
+        b = startingVals(2);
+        startingVals = [a*ones(1,m)/m b*ones(1,n)/n];
+        %added
+        switch specification
+            case 'Diagonal'
             startingVals = [startingVals(1:m)*ones(1,k)/k , startingVals(1+m:m+n)*ones(1,k)/k];
-       case 'CP'
+            case 'CP'
             startingVals = [startingVals(1:m)*ones(1,k)/k, (ones(1,m*k)-b)/k];
+        end
     end
-    
-    
+        
 
 LB = zeros(length(startingVals),1);
 UB = ones(length(startingVals),1);
 A = ones(1,length(startingVals));
+%added
+if strcmp(specification,'Scalar') || strcmp(specification,'CP')
+    A(m+1:m+l) = scale; %not added
+elseif strcmp(specification,'Diagonal')
+    A(m*k+1:k*(m+l)) = scale;
+end
+%added end
 b = .99998;
 
 if (startingVals*A'-b) >= 0
@@ -311,15 +331,17 @@ parameters = fmincon(@rdcc_likelihood,startingVals,A,b,[],[],LB,UB,[],options,st
 switch specification
     case 'Scalar'
         a = parameters(1:m);
-        b = parameters(m+1:m+n);
+        g = parameters(m+1:m+l);
+        b = parameters(m+l+1:m+l+n);
     case 'Diagonal'
         a = parameters(1:m*k);
-        b = parameters(k*m+1:k*(m+n));
+        g = parameters(m*k+1:k*(m+l));
+        b = parameters(k*(m+l)+1:k*(m+l+n));
     case 'CP'
         a = parameters(1:m*k);
-        g = parameters(m*k+1:k*m);
+        g = parameters(m*k+1:k*(m+l));
 
-        lambda_cp=parameters(m*k+1);
+        lambda_cp=parameters((m+l)*k+1);
         b= lambda_cp - a;
 end
 
@@ -386,7 +408,7 @@ end
 % TODO : Better gradient function
 if stage==2
     % 1. dcc_likelihood
-    count = k*(k-1)/2 + m  + n;
+    count = k*(k-1)/2 + m + l + n;
     H = hessian_2sided_nrows(@dcc_likelihood,parameters',count,data,[],m,l,n,[],[],backCast,[],stage,composite,isJoint,isInference,[],univariate);
     A(offset+(1:count),:) = H/T;
     [~,s]=gradient_2sided(@dcc_likelihood,parameters',data,[],m,l,n,[],[],backCast,[],stage,composite,isJoint,isInference,[],univariate);
@@ -397,6 +419,9 @@ if stage==2
 elseif stage==3
     % 1. dcc_inference_objective
     count = k*(k-1)/2;
+    if l>0
+        count = count + k*(k+1)/2;
+    end
     tempParams = parameters(1:offset+count);
     [~,s]=gradient_2sided(@dcc_inference_objective, tempParams', data,[],m,l,n,univariate);
     scores(:,offset+(1:count))=s(:,offset+(1:count));
