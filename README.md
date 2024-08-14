@@ -10,4 +10,7 @@ Los 4 modelos incluidos en la estimación comparativa son:
 -GOGARCH
 -RDCC
 
-Para correr el aplicativo debe ejecutarse el script run_rarchs(n);n=2,4,5. 
+Para correr el aplicativo debe ejecutarse deben cargarse a la consola matlab el archivo data_import_Table%n. script run_rarchs(n);n=2,4,5.
+
+Para hacerlo correr con datos propios deben cargarse los datos al entorno matlab, generar un array(T,d) T es el tiempo y d el número de series. 
+Las series deben ser de media 0. Luego ejecutar el archivo main.m
