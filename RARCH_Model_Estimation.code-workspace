@@ -13,5 +13,7 @@
 			"path": "../../mfe-toolbox-main/distributions"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.fontSize": 15
+	}
 }

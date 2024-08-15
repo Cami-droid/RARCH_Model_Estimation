@@ -71,8 +71,7 @@ function [theta_opt, LL_total, Gt, VCV, Scores] = optimizeTheta(model, specifica
 
             
             case 'RDCC'
-            [theta_opt, LL_total ,Gt, VCV, scores, ~]=rdcc(rt,[],1,0,1,1,0,1,2,'2-stage','None',[],options,specification);
-            
+            [theta_opt, LL_total ,Gt, VCV, scores, ~]=rdcc(rt,[],1,1,1,1,2,'3-stage','None',[],options,specification);
             otherwise
                 error('Unknown model: %s', model);
         end
