@@ -3,7 +3,7 @@ function [ll,lls,Rt] = rdcc_likelihood(parameters,data,m,n,R,backCast,stage,comp
 % with with TARCH(p,o,q) or GJRGARCH(p,o,q) conditional variances
 %
 % USAGE:
-%  [LL,LLS,RT] = dcc_likelihood(PARAMETERS,DATA,DATAASYM,M,L,N,R,N,BACKCAST,BACKCASTASYM,STAGE,COMPOSITE,ISJOINT,ISINFERENCE,GSCALE,UNIVARIATE)
+%  [LL,LLS,RT] = dcc_likelihood(PARAMETERS,DATA,M,L,N,R,N,BACKCAST,STAGE,COMPOSITE,ISJOINT,ISINFERENCE,UNIVARIATE)
 %
 % INPUTS:
 %   PARAMETERS   - Vector of ADCC parameters, and possibly volatility and intercept parameters, 
@@ -70,17 +70,25 @@ end
 switch specification
 
     case 'Scalar'
-        a = parameters(offset + (1:m));
-        b = parameters(offset + (m+1:m+n));
-  
+        a = parameters((1:m));
+        b = parameters(m+1:m+n);
+
+          
     case 'Diagonal'
-        a = parameters(offset + (1:m*k));
-        b = parameters(offset + (k*m+1:k*(m+n)));
+        a = parameters(1:m*k);
+        b = parameters(k*m+1:k*(m+n));
+
+        a=reshape(a,k,[]);
+        b=reshape(b,k,[]);
 
     case 'CP'
-        a = parameters(offset + (1:m*k));
-        lambda_cp=parameters(offset + m*k+1);
-        b=lambda_cp-a;
+        
+        a = parameters(1:m*k);
+        lambda_cp=parameters(m*k+1);
+        b=sqrt(lambda_cp-a.^2);
+
+        a=reshape(a,k,[]);
+        b=reshape(b,k,[]);
 
 end
 
@@ -143,17 +151,17 @@ for t=1:T
     Qt(:,:,t) = intercept;
     for i = 1:m
         if (t-i)>0
-            Qt(:,:,t) = Qt(:,:,t) + a(i).*stdData(:,:,t-i);
+            Qt(:,:,t) = Qt(:,:,t) +diag(a(:,i))*stdData(:,:,t-i)*diag(a(:,i))';
         else
-            Qt(:,:,t) = Qt(:,:,t) + a(i).*backCast;
+            Qt(:,:,t) = Qt(:,:,t) + diag(a(:,i))*backCast*diag(a(:,i))';
         end
     end
  
     for i = 1:n
         if (t-i)>0
-            Qt(:,:,t) = Qt(:,:,t) + b(i).*Qt(:,:,t-i);
+            Qt(:,:,t) = Qt(:,:,t) + diag(b(:,i))*Qt(:,:,t-i)*diag(b(:,i))';
         else
-            Qt(:,:,t) = Qt(:,:,t) + b(i).*backCast;
+            Qt(:,:,t) = Qt(:,:,t) + diag(b(:,i))*backCast*diag(b(:,i))';
         end
     end
     q = sqrt(diag(Qt(:,:,t)));
