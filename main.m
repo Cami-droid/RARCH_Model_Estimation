@@ -14,8 +14,8 @@ try
     I = length(models);
     J = length(specifications);
 
-    results(I, J) = struct('model', [], 'specification', [], 'thetaM',[],'thetaD_opt', [], 'fval', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
-    outputs(I, J) = struct('model', [], 'specification', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt', [],'returns', [],'std_returns',[], 'initials_thetaD',[],'rotated_returns', [], 'Dt', [], 'Ct', [], 'I', [], 'J', [], 'd', [], 'T', [],'L',[],'LL_marginal',[],'LL_copula',[]);
+    results(I, J) = struct('model', [], 'specification', [], 'theta',[],'thetaS',[],'thetaM',[],'thetaD', [], 'LL_total', [], 'Qt', [], 'Qt_star', [],'L',[],'LL_marginal',[],'LL_copula',[]);
+    outputs(I, J) = struct('model', [], 'specification', [] , 'I', [], 'J', [], 'd', [], 'T', [],'returns', [],'std_returns',[],'rotated_returns', [], 'P', [], 'Lambda', [], 'H_bar', [], 'Gt',[],'VCV',[],'Scores',[], 'initials_thetaD',[], 'Dt', [], 'Ct', [],'L',[],'LL_marginal',[],'LL_copula',[]);
     alpha_init=0.01;
     beta_init=0.98;
 
@@ -23,9 +23,7 @@ try
 
     initial_delta=0.1; % only for 'GOGARCH' models
 
-    
     for i = 1:I
-
         for j = 1:J
             outputs(i,j).I = I;
             outputs(i,j).J = J;
@@ -38,7 +36,6 @@ try
             if i==3
                 outputs(i,j).initials_thetaD=[initials_thetaD{j} initial_delta];
             end
-
         end
     end
     clear delta
@@ -50,7 +47,7 @@ try
         fprintf('*********************************** Estimating model: %s ****************************************\n', model);
         for j = 1:J
             % Load and prepare data
-            % Calculate the mean of  log returns
+            % Calculate the mean of log returns
             mean_log_returns = mean(log_returns);
 
             % Calculate residuals rt (zero mean)
@@ -60,7 +57,6 @@ try
 
             % Rotate data
             [outputs(i,j).rotated_returns, outputs(i,j).H_bar, outputs(i,j).Lambda, outputs(i,j).P,  outputs(i,j).PI_bar, outputs(i,j).Lambda_C, outputs(i,j).P_C] = rotate_data(outputs(i,j), model);
-
         end
 
         for j = 1:J
@@ -76,30 +72,53 @@ try
 
             fprintf('The initials thetaDs are: %s\n', mat2str(outputs(i,j).initials_thetaD));
 
-            % Estimate thetaD parameters
-            outputs(i,j).Gt= calc_all_Gts(model, specification, outputs(i,j), outputs(i,j).initials_thetaD, outputs(i,j).initial_Gt);
-
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  OPTIMIZATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            % [theta_vec, fval, Gt, VCV, Scores]
+            [results(i,j).theta, results(i,j).LL_total, outputs(i,j).Gt,outputs(i,j).VCV,outputs(i,j).Scores] = optimizeTheta(model, specification, outputs(i,j), initial_thetaD);
+            
 
-            [results(i,j).thetaD_opt, results(i,j).fval, exitflag, output, outputs(i,j).L,outputs(i,j).L_marginal] = optimizeThetaD(model, specification, outputs(i,j), initial_thetaD);
+            switch model
+            case 'RBEKK'
+                idxS = (d * (d + 1)) / 2;
+                results(i, j).thetaS = results(i,j).theta(1:idxS);
+                results(i, j).thetaD = results(i,j).theta(idxS + 1:end);
 
-            % Storing LL_marginals in results
+            case 'RDCC'
+                idxM = 3 * d;
+                idxS = (d * (d - 1)) / 2; % they are correlations, diagonal is excluded
+                %results(i, j).thetaM = results(i,j).theta(1:idxM);
 
-            results(i,j).LL_marginal=sum(outputs(i,j).L_marginal)';
-            results(i,j).LL_copula=results(i,j).fval-sum(results(i,j).LL_marginal);
+                % Generate the omega elements indexes to drop them: 1, 4, 7, 10, ...
+                %omega_idx = 1:3:length(results(i,j).thetaM);
 
+                % Create a thetaM vector without the elements in omega positions;
+                %results(i,j).thetaM(omega_idx) = [];
+                results(i, j).thetaS = results(i,j).theta(idxM + 1:idxM + idxS);
+                results(i, j).thetaD = results(i,j).theta(idxM + idxS + 1:end);
 
-            fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD_opt));
-            fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).fval));
+            case 'GOGARCH'
+                idxS= (d * (d + 1)) / 2;
+                idxPhis = (d * (d - 1)) / 2;
+                results(i, j).thetaS = results(i,j).theta(1:(idxS));
+                results(i, j).Phis= results(i,j).theta(idxS+1:(idxS+idxPhis));
+                results(i, j).thetaD = results(i,j).theta((idxS+idxPhis+1):end);
+            case 'OGARCH'
+                results(i, j).thetaS = results(i,j).theta(1:(idxS));
+                results(i, j).thetaD = results(i,j).theta((idxS + 1):end);
 
-            % calculate Gt at the optimum thetaD_opt
+            otherwise
+                error('Model not supported');
+            end
+            if i==4
+                fprintf('the optimal thetaMs found are:%s\n', mat2str(results(i,j).thetaM));
+            end
 
-            Id=eye(d);
-            output(i,j).Gt=calc_all_Gts(model, specification, outputs(i,j),results(i,j).thetaD_opt,Id);
+            fprintf('the optimal thetaSs found are:%s\n', mat2str(results(i,j).thetaS));
+            fprintf('The optimal thetaDs found are: %s\n', mat2str(results(i,j).thetaD));
+            fprintf('LogLikelihood value: %s\n', mat2str(results(i,j).LL_total));
 
             % Calculate Qt, Qt_star and Ct
-
-            [outputs(i,j).Qt, outputs(i,j).Qt_star outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD_opt);
+            %[outputs(i,j).Qt, outputs(i,j).Qt_star, outputs(i,j).Ct] = calcQt(model, specification, outputs(i,j), results(i,j).thetaD);
 
             % Store the results
             results(i,j).model = model;
@@ -119,4 +138,4 @@ catch ME
 end
 
 % Terminar registro de errores y salida
-diary off;
+diary off; 
