@@ -1,0 +1,11617 @@
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+Error optimizing model RDCC with specification Scalar: Too many input arguments.
+An error occurred: Index exceeds the number of array elements (0).
+Error occurred in:
+File: D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m, Line: 96
+File: D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m, Line: 31
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+Error optimizing model RDCC with specification Scalar: Too many output arguments.
+An error occurred: Index exceeds the number of array elements (0).
+Error occurred in:
+File: D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m, Line: 96
+File: D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m, Line: 31
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0116444278812327 0.976594647280416]
+LogLikelihood value: -8805.71355172785
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0116437852850482 2.1127615919385e-08 0.976596217238596 2.11276158950566e-08]
+LogLikelihood value: -8805.71355250834
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [3.96570399763287e-07 0.211314638639984 0.499997427485366]
+LogLikelihood value: -8815.2193053641
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>       <strong>RDCC_Diagonal</strong>         <strong>RDCC_CP</strong>    
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double   }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[     0.0790]}    {[     0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[     0.8990]}    {[     0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[     0.0460]}    {[     0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[     0.9470]}    {[     0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double   }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0120]}    {0×0 double   }    {0×0 double   }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9770]}    {0×0 double   }    {0×0 double   }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[     0.0120]}    {[          0]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[          0]}    {[     0.2110]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[     0.9770]}    {0×0 double   }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[          0]}    {0×0 double   }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double   }    {[     0.5000]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double   }    {0×0 double   }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double   }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-8.8152e+03]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-8.8152e+03]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-8.8152e+03]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-8.8152e+03]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0116444278812327 0.976594647280416]
+LogLikelihood value: -8805.71355172785
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0116437852850482 2.1127615919385e-08 0.976596217238596 2.11276158950566e-08]
+LogLikelihood value: -8805.71355250834
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.005 0.005 0.495]
+LogLikelihood value: -10000000
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>       <strong>RDCC_Diagonal</strong>        <strong>RDCC_CP</strong>   
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[     0.0790]}    {[   0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[     0.8990]}    {[   0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[     0.0460]}    {[   0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[     0.9470]}    {[   0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0120]}    {0×0 double   }    {0×0 double }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9770]}    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[     0.0120]}    {[   0.0050]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[          0]}    {[   0.0050]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[     0.9770]}    {0×0 double }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[          0]}    {0×0 double }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double   }    {[   0.4950]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-10000000]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-10000000]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-10000000]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8057e+03]}    {[-10000000]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0116444278812327 0.976594647280416]
+LogLikelihood value: -8805.71355172785
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0031
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0025
+    0.0108
+
+
+b =
+
+    0.0043
+    0.0042
+
+
+a =
+
+    0.0025
+    0.0108
+
+
+b =
+
+    0.0043
+    0.0042
+
+
+a =
+
+    0.0025
+    0.0108
+
+
+b =
+
+    0.0043
+    0.0042
+
+
+a =
+
+    0.0025
+    0.0108
+
+
+b =
+
+    0.0043
+    0.0042
+
+
+a =
+
+    0.0025
+    0.0108
+
+
+b =
+
+    0.0043
+    0.0042
+
+
+a =
+
+    0.0020
+    0.0482
+
+
+b =
+
+    0.0048
+    0.0043
+
+
+a =
+
+    0.0020
+    0.0482
+
+
+b =
+
+    0.0048
+    0.0043
+
+
+a =
+
+    0.0020
+    0.0482
+
+
+b =
+
+    0.0048
+    0.0043
+
+
+a =
+
+    0.0020
+    0.0482
+
+
+b =
+
+    0.0048
+    0.0043
+
+
+a =
+
+    0.0020
+    0.0482
+
+
+b =
+
+    0.0048
+    0.0043
+
+
+a =
+
+    0.0017
+    0.0629
+
+
+b =
+
+    0.0049
+    0.0043
+
+
+a =
+
+    0.0017
+    0.0629
+
+
+b =
+
+    0.0049
+    0.0043
+
+
+a =
+
+    0.0017
+    0.0629
+
+
+b =
+
+    0.0049
+    0.0043
+
+
+a =
+
+    0.0017
+    0.0629
+
+
+b =
+
+    0.0049
+    0.0043
+
+
+a =
+
+    0.0017
+    0.0629
+
+
+b =
+
+    0.0049
+    0.0043
+
+
+a =
+
+    0.0016
+    0.0763
+
+
+b =
+
+    0.0042
+    0.0038
+
+
+a =
+
+    0.0016
+    0.0763
+
+
+b =
+
+    0.0042
+    0.0038
+
+
+a =
+
+    0.0016
+    0.0763
+
+
+b =
+
+    0.0042
+    0.0038
+
+
+a =
+
+    0.0016
+    0.0763
+
+
+b =
+
+    0.0042
+    0.0038
+
+
+a =
+
+    0.0016
+    0.0763
+
+
+b =
+
+    0.0042
+    0.0038
+
+
+a =
+
+    0.0003
+    0.0803
+
+
+b =
+
+   1.0e-03 *
+
+    0.9297
+    0.8398
+
+
+a =
+
+    0.0003
+    0.0803
+
+
+b =
+
+   1.0e-03 *
+
+    0.9297
+    0.8398
+
+
+a =
+
+    0.0003
+    0.0803
+
+
+b =
+
+   1.0e-03 *
+
+    0.9297
+    0.8398
+
+
+a =
+
+    0.0003
+    0.0803
+
+
+b =
+
+   1.0e-03 *
+
+    0.9297
+    0.8398
+
+
+a =
+
+    0.0003
+    0.0803
+
+
+b =
+
+   1.0e-03 *
+
+    0.9297
+    0.8398
+
+
+a =
+
+    0.0003
+    0.0867
+
+
+b =
+
+   1.0e-03 *
+
+    0.9219
+    0.8275
+
+
+a =
+
+    0.0003
+    0.0835
+
+
+b =
+
+   1.0e-03 *
+
+    0.9258
+    0.8336
+
+
+a =
+
+    0.0003
+    0.0819
+
+
+b =
+
+   1.0e-03 *
+
+    0.9277
+    0.8367
+
+
+a =
+
+    0.0003
+    0.0811
+
+
+b =
+
+   1.0e-03 *
+
+    0.9287
+    0.8382
+
+
+a =
+
+    0.0003
+    0.0811
+
+
+b =
+
+   1.0e-03 *
+
+    0.9287
+    0.8382
+
+
+a =
+
+    0.0003
+    0.0811
+
+
+b =
+
+   1.0e-03 *
+
+    0.9287
+    0.8382
+
+
+a =
+
+    0.0003
+    0.0811
+
+
+b =
+
+   1.0e-03 *
+
+    0.9287
+    0.8382
+
+
+a =
+
+    0.0003
+    0.0811
+
+
+b =
+
+   1.0e-03 *
+
+    0.9287
+    0.8382
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-04 *
+
+    0.6325
+    0.5400
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-04 *
+
+    0.6325
+    0.5400
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-04 *
+
+    0.6325
+    0.5400
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-04 *
+
+    0.6327
+    0.5400
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-04 *
+
+    0.6325
+    0.5402
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.3163
+    0.2793
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.3163
+    0.2793
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.3163
+    0.2793
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.3312
+    0.2793
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.3163
+    0.2942
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9382
+    0.8411
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9382
+    0.8411
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9382
+    0.8411
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.1087
+    0.0841
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9382
+    0.9901
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.1087
+    0.0841
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.9900
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9385
+    0.8402
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9384
+    0.8406
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9384
+    0.8408
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9384
+    0.8409
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.1087
+    0.0841
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.9900
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.8410
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.1087
+    0.0841
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.9383
+    0.9900
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1683
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1683
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1683
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.3367
+    0.1683
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.3173
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.3367
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.3172
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+   -0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+   -0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.1399
+    0.0168
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+   -0.1023
+    0.0168
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+   -0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+   -0.4373
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.0188
+    0.1379
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-06 *
+
+    0.0188
+   -0.1043
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.7932
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.7738
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+   -0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+   -0.4179
+    0.1682
+
+
+a =
+
+    0.0000
+    0.0816
+
+
+b =
+
+   1.0e-07 *
+
+    0.1877
+   -0.4373
+
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [6.4803452577503e-09 0.0816108316408562 1.87668571019481e-08 1.68214139540115e-08]
+LogLikelihood value: -8819.75548879256
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.005 0.005 0.495]
+LogLikelihood value: -10000000
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>       <strong>RDCC_Diagonal</strong>        <strong>RDCC_CP</strong>   
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[     0.0790]}    {[   0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[     0.8990]}    {[   0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[     0.0460]}    {[   0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[     0.9470]}    {[   0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0120]}    {0×0 double   }    {0×0 double }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9770]}    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[          0]}    {[   0.0050]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[     0.0820]}    {[   0.0050]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[          0]}    {0×0 double }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[          0]}    {0×0 double }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double   }    {[   0.4950]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8057e+03]}    {[-8.8198e+03]}    {[-10000000]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0141226852292154 0.985634857192338]
+LogLikelihood value: -8808.36245219472
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.4900
+    0.4900
+
+
+a =
+
+    0.0031
+    0.0027
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0027
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0027
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0027
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0031
+    0.0027
+
+
+b =
+
+    0.0025
+    0.0025
+
+
+a =
+
+    0.0040
+    0.0046
+
+
+b =
+
+    0.0040
+    0.0040
+
+
+a =
+
+    0.0040
+    0.0046
+
+
+b =
+
+    0.0040
+    0.0040
+
+
+a =
+
+    0.0040
+    0.0046
+
+
+b =
+
+    0.0040
+    0.0040
+
+
+a =
+
+    0.0040
+    0.0046
+
+
+b =
+
+    0.0040
+    0.0040
+
+
+a =
+
+    0.0040
+    0.0046
+
+
+b =
+
+    0.0040
+    0.0040
+
+
+a =
+
+    0.0669
+    0.4242
+
+
+b =
+
+    0.0928
+    0.0926
+
+
+a =
+
+    0.0355
+    0.2144
+
+
+b =
+
+    0.0484
+    0.0483
+
+
+a =
+
+    0.0355
+    0.2144
+
+
+b =
+
+    0.0484
+    0.0483
+
+
+a =
+
+    0.0355
+    0.2144
+
+
+b =
+
+    0.0484
+    0.0483
+
+
+a =
+
+    0.0355
+    0.2144
+
+
+b =
+
+    0.0484
+    0.0483
+
+
+a =
+
+    0.0355
+    0.2144
+
+
+b =
+
+    0.0484
+    0.0483
+
+
+a =
+
+    0.1028
+    0.8242
+
+
+b =
+
+    0.1800
+    0.1721
+
+
+a =
+
+    0.0691
+    0.5193
+
+
+b =
+
+    0.1142
+    0.1102
+
+
+a =
+
+    0.0523
+    0.3668
+
+
+b =
+
+    0.0813
+    0.0793
+
+
+a =
+
+    0.0439
+    0.2906
+
+
+b =
+
+    0.0649
+    0.0638
+
+
+a =
+
+    0.1028
+    0.8242
+
+
+b =
+
+    0.1800
+    0.1721
+
+
+a =
+
+    0.0644
+    0.5416
+
+
+b =
+
+    0.1131
+    0.1089
+
+
+a =
+
+    0.0484
+    0.3935
+
+
+b =
+
+    0.0787
+    0.0765
+
+
+a =
+
+    0.0403
+    0.3179
+
+
+b =
+
+    0.0612
+    0.0600
+
+
+a =
+
+    0.0358
+    0.2763
+
+
+b =
+
+    0.0516
+    0.0509
+
+
+a =
+
+    0.0348
+    0.2463
+
+
+b =
+
+    0.0486
+    0.0482
+
+
+a =
+
+    0.0348
+    0.2463
+
+
+b =
+
+    0.0486
+    0.0482
+
+
+a =
+
+    0.0348
+    0.2463
+
+
+b =
+
+    0.0486
+    0.0482
+
+
+a =
+
+    0.0348
+    0.2463
+
+
+b =
+
+    0.0486
+    0.0482
+
+
+a =
+
+    0.0348
+    0.2463
+
+
+b =
+
+    0.0486
+    0.0482
+
+
+a =
+
+    0.0073
+    0.2510
+
+
+b =
+
+    0.0196
+    0.0156
+
+
+a =
+
+    0.0073
+    0.2510
+
+
+b =
+
+    0.0196
+    0.0156
+
+
+a =
+
+    0.0073
+    0.2510
+
+
+b =
+
+    0.0196
+    0.0156
+
+
+a =
+
+    0.0073
+    0.2510
+
+
+b =
+
+    0.0196
+    0.0156
+
+
+a =
+
+    0.0073
+    0.2510
+
+
+b =
+
+    0.0196
+    0.0156
+
+
+a =
+
+    0.0093
+    0.2405
+
+
+b =
+
+    0.0212
+    0.0189
+
+
+a =
+
+    0.0083
+    0.2458
+
+
+b =
+
+    0.0204
+    0.0172
+
+
+a =
+
+    0.0083
+    0.2458
+
+
+b =
+
+    0.0204
+    0.0172
+
+
+a =
+
+    0.0083
+    0.2458
+
+
+b =
+
+    0.0204
+    0.0172
+
+
+a =
+
+    0.0083
+    0.2458
+
+
+b =
+
+    0.0204
+    0.0172
+
+
+a =
+
+    0.0083
+    0.2458
+
+
+b =
+
+    0.0204
+    0.0172
+
+
+a =
+
+    0.0104
+    0.2493
+
+
+b =
+
+    0.0208
+    0.0200
+
+
+a =
+
+    0.0104
+    0.2493
+
+
+b =
+
+    0.0208
+    0.0200
+
+
+a =
+
+    0.0104
+    0.2493
+
+
+b =
+
+    0.0208
+    0.0200
+
+
+a =
+
+    0.0104
+    0.2493
+
+
+b =
+
+    0.0208
+    0.0200
+
+
+a =
+
+    0.0104
+    0.2493
+
+
+b =
+
+    0.0208
+    0.0200
+
+
+a =
+
+    0.0115
+    0.2486
+
+
+b =
+
+    0.0208
+    0.0192
+
+
+a =
+
+    0.0115
+    0.2486
+
+
+b =
+
+    0.0208
+    0.0192
+
+
+a =
+
+    0.0115
+    0.2486
+
+
+b =
+
+    0.0208
+    0.0192
+
+
+a =
+
+    0.0115
+    0.2486
+
+
+b =
+
+    0.0208
+    0.0192
+
+
+a =
+
+    0.0115
+    0.2486
+
+
+b =
+
+    0.0208
+    0.0192
+
+
+a =
+
+    0.0109
+    0.2484
+
+
+b =
+
+    0.0211
+    0.0201
+
+
+a =
+
+    0.0109
+    0.2484
+
+
+b =
+
+    0.0211
+    0.0201
+
+
+a =
+
+    0.0109
+    0.2484
+
+
+b =
+
+    0.0211
+    0.0201
+
+
+a =
+
+    0.0109
+    0.2484
+
+
+b =
+
+    0.0211
+    0.0201
+
+
+a =
+
+    0.0109
+    0.2484
+
+
+b =
+
+    0.0211
+    0.0201
+
+
+a =
+
+    0.0107
+    0.2493
+
+
+b =
+
+    0.0207
+    0.0194
+
+
+a =
+
+    0.0108
+    0.2489
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0108
+    0.2489
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0108
+    0.2489
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0108
+    0.2489
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0108
+    0.2489
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0110
+    0.2488
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0110
+    0.2488
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0110
+    0.2488
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0110
+    0.2488
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0110
+    0.2488
+
+
+b =
+
+    0.0209
+    0.0198
+
+
+a =
+
+    0.0044
+    0.2477
+
+
+b =
+
+    0.0065
+    0.0109
+
+
+a =
+
+    0.0045
+    0.2477
+
+
+b =
+
+    0.0065
+    0.0109
+
+
+a =
+
+    0.0044
+    0.2477
+
+
+b =
+
+    0.0065
+    0.0109
+
+
+a =
+
+    0.0044
+    0.2477
+
+
+b =
+
+    0.0065
+    0.0109
+
+
+a =
+
+    0.0044
+    0.2477
+
+
+b =
+
+    0.0065
+    0.0109
+
+
+a =
+
+    0.0048
+    0.2554
+
+
+b =
+
+    0.0074
+    0.0092
+
+
+a =
+
+    0.0048
+    0.2554
+
+
+b =
+
+    0.0074
+    0.0092
+
+
+a =
+
+    0.0048
+    0.2554
+
+
+b =
+
+    0.0074
+    0.0092
+
+
+a =
+
+    0.0048
+    0.2554
+
+
+b =
+
+    0.0074
+    0.0092
+
+
+a =
+
+    0.0048
+    0.2554
+
+
+b =
+
+    0.0074
+    0.0092
+
+
+a =
+
+    0.0049
+    0.2532
+
+
+b =
+
+    0.0104
+    0.0081
+
+
+a =
+
+    0.0049
+    0.2532
+
+
+b =
+
+    0.0104
+    0.0081
+
+
+a =
+
+    0.0049
+    0.2532
+
+
+b =
+
+    0.0104
+    0.0081
+
+
+a =
+
+    0.0049
+    0.2532
+
+
+b =
+
+    0.0104
+    0.0081
+
+
+a =
+
+    0.0049
+    0.2532
+
+
+b =
+
+    0.0104
+    0.0081
+
+
+a =
+
+    0.0051
+    0.2528
+
+
+b =
+
+    0.0087
+    0.0095
+
+
+a =
+
+    0.0050
+    0.2530
+
+
+b =
+
+    0.0095
+    0.0088
+
+
+a =
+
+    0.0050
+    0.2530
+
+
+b =
+
+    0.0095
+    0.0088
+
+
+a =
+
+    0.0050
+    0.2530
+
+
+b =
+
+    0.0095
+    0.0088
+
+
+a =
+
+    0.0050
+    0.2530
+
+
+b =
+
+    0.0095
+    0.0088
+
+
+a =
+
+    0.0050
+    0.2530
+
+
+b =
+
+    0.0095
+    0.0088
+
+
+a =
+
+    0.0050
+    0.2537
+
+
+b =
+
+    0.0094
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2537
+
+
+b =
+
+    0.0094
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2537
+
+
+b =
+
+    0.0094
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2537
+
+
+b =
+
+    0.0094
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2537
+
+
+b =
+
+    0.0094
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2533
+
+
+b =
+
+    0.0096
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2533
+
+
+b =
+
+    0.0096
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2533
+
+
+b =
+
+    0.0096
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2533
+
+
+b =
+
+    0.0096
+    0.0090
+
+
+a =
+
+    0.0050
+    0.2533
+
+
+b =
+
+    0.0096
+    0.0090
+
+
+a =
+
+    0.0030
+    0.2547
+
+
+b =
+
+    0.0053
+    0.0050
+
+
+a =
+
+    0.0030
+    0.2547
+
+
+b =
+
+    0.0053
+    0.0050
+
+
+a =
+
+    0.0030
+    0.2547
+
+
+b =
+
+    0.0053
+    0.0050
+
+
+a =
+
+    0.0030
+    0.2547
+
+
+b =
+
+    0.0053
+    0.0050
+
+
+a =
+
+    0.0030
+    0.2547
+
+
+b =
+
+    0.0053
+    0.0050
+
+
+a =
+
+    0.0024
+    0.2553
+
+
+b =
+
+    0.0045
+    0.0042
+
+
+a =
+
+    0.0024
+    0.2553
+
+
+b =
+
+    0.0045
+    0.0042
+
+
+a =
+
+    0.0024
+    0.2553
+
+
+b =
+
+    0.0045
+    0.0042
+
+
+a =
+
+    0.0024
+    0.2553
+
+
+b =
+
+    0.0045
+    0.0042
+
+
+a =
+
+    0.0024
+    0.2553
+
+
+b =
+
+    0.0045
+    0.0042
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0023
+    0.2554
+
+
+b =
+
+    0.0043
+    0.0041
+
+
+a =
+
+    0.0013
+    0.2571
+
+
+b =
+
+    0.0025
+    0.0015
+
+
+a =
+
+    0.0013
+    0.2571
+
+
+b =
+
+    0.0025
+    0.0015
+
+
+a =
+
+    0.0013
+    0.2571
+
+
+b =
+
+    0.0025
+    0.0015
+
+
+a =
+
+    0.0013
+    0.2571
+
+
+b =
+
+    0.0025
+    0.0015
+
+
+a =
+
+    0.0013
+    0.2571
+
+
+b =
+
+    0.0025
+    0.0015
+
+
+a =
+
+    0.0010
+    0.2568
+
+
+b =
+
+    0.0023
+    0.0019
+
+
+a =
+
+    0.0010
+    0.2568
+
+
+b =
+
+    0.0023
+    0.0019
+
+
+a =
+
+    0.0010
+    0.2568
+
+
+b =
+
+    0.0023
+    0.0019
+
+
+a =
+
+    0.0010
+    0.2568
+
+
+b =
+
+    0.0023
+    0.0019
+
+
+a =
+
+    0.0010
+    0.2568
+
+
+b =
+
+    0.0023
+    0.0019
+
+
+a =
+
+    0.0009
+    0.2558
+
+
+b =
+
+    0.0031
+    0.0012
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0027
+    0.0016
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0027
+    0.0016
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0027
+    0.0016
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0027
+    0.0016
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0027
+    0.0016
+
+
+a =
+
+    0.0008
+    0.2563
+
+
+b =
+
+    0.0023
+    0.0021
+
+
+a =
+
+    0.0008
+    0.2563
+
+
+b =
+
+    0.0023
+    0.0021
+
+
+a =
+
+    0.0008
+    0.2563
+
+
+b =
+
+    0.0023
+    0.0021
+
+
+a =
+
+    0.0008
+    0.2563
+
+
+b =
+
+    0.0023
+    0.0021
+
+
+a =
+
+    0.0008
+    0.2563
+
+
+b =
+
+    0.0023
+    0.0021
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0019
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0019
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0019
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0019
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0019
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0018
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0018
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0018
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0018
+
+
+a =
+
+    0.0009
+    0.2564
+
+
+b =
+
+    0.0024
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2564
+
+
+b =
+
+    0.0021
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2564
+
+
+b =
+
+    0.0021
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2564
+
+
+b =
+
+    0.0021
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2564
+
+
+b =
+
+    0.0021
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2564
+
+
+b =
+
+    0.0021
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0020
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0020
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0020
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0020
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0020
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2562
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0010
+    0.2563
+
+
+b =
+
+    0.0019
+    0.0018
+
+
+a =
+
+    0.0002
+    0.2571
+
+
+b =
+
+    0.0005
+    0.0016
+
+
+a =
+
+    0.0002
+    0.2571
+
+
+b =
+
+    0.0005
+    0.0016
+
+
+a =
+
+    0.0002
+    0.2571
+
+
+b =
+
+    0.0005
+    0.0016
+
+
+a =
+
+    0.0002
+    0.2571
+
+
+b =
+
+    0.0005
+    0.0016
+
+
+a =
+
+    0.0002
+    0.2571
+
+
+b =
+
+    0.0005
+    0.0016
+
+
+a =
+
+    0.0003
+    0.2555
+
+
+b =
+
+   1.0e-03 *
+
+    0.3625
+    0.0080
+
+
+a =
+
+    0.0002
+    0.2563
+
+
+b =
+
+   1.0e-03 *
+
+    0.4109
+    0.8004
+
+
+a =
+
+    0.0002
+    0.2563
+
+
+b =
+
+   1.0e-03 *
+
+    0.4109
+    0.8004
+
+
+a =
+
+    0.0002
+    0.2563
+
+
+b =
+
+   1.0e-03 *
+
+    0.4109
+    0.8004
+
+
+a =
+
+    0.0002
+    0.2563
+
+
+b =
+
+   1.0e-03 *
+
+    0.4109
+    0.8004
+
+
+a =
+
+    0.0002
+    0.2563
+
+
+b =
+
+   1.0e-03 *
+
+    0.4109
+    0.8004
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0008
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0008
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0008
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0008
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0008
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0004
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0012
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0011
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0010
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0010
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0010
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0010
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+    0.0007
+    0.0010
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+   1.0e-03 *
+
+    0.7566
+    0.9123
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+   1.0e-03 *
+
+    0.7566
+    0.9123
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+   1.0e-03 *
+
+    0.7566
+    0.9123
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+   1.0e-03 *
+
+    0.7567
+    0.9123
+
+
+a =
+
+    0.0005
+    0.2565
+
+
+b =
+
+   1.0e-03 *
+
+    0.7566
+    0.9123
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8304
+    0.7951
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8304
+    0.7951
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8304
+    0.7951
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8304
+    0.7951
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8304
+    0.7951
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8404
+    0.8075
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8404
+    0.8075
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8404
+    0.8075
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8404
+    0.8075
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8404
+    0.8075
+
+
+a =
+
+    0.0004
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8692
+    0.8334
+
+
+a =
+
+    0.0004
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8548
+    0.8204
+
+
+a =
+
+    0.0004
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8548
+    0.8204
+
+
+a =
+
+    0.0004
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8548
+    0.8204
+
+
+a =
+
+    0.0004
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8548
+    0.8204
+
+
+a =
+
+    0.0004
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8548
+    0.8204
+
+
+a =
+
+    0.0005
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8618
+    0.8133
+
+
+a =
+
+    0.0005
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8618
+    0.8133
+
+
+a =
+
+    0.0005
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8618
+    0.8133
+
+
+a =
+
+    0.0005
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8618
+    0.8133
+
+
+a =
+
+    0.0005
+    0.2567
+
+
+b =
+
+   1.0e-03 *
+
+    0.8618
+    0.8133
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8701
+    0.8149
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8701
+    0.8149
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8701
+    0.8149
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8701
+    0.8149
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8701
+    0.8150
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8725
+    0.8175
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8713
+    0.8162
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8753
+    0.8225
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8730
+    0.8191
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8719
+    0.8173
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8713
+    0.8165
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8706
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8708
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8157
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8156
+
+
+a =
+
+    0.0005
+    0.2566
+
+
+b =
+
+   1.0e-03 *
+
+    0.8707
+    0.8155
+
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.000458758134385851 0.256641985389239 0.000870713939536208 0.000815592737310362]
+LogLikelihood value: -8819.75553572519
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+
+a =
+
+    0.0050
+    0.0050
+
+
+b =
+
+    0.7000
+    0.7000
+
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.005 0.005 0.495]
+LogLikelihood value: -10000000
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>       <strong>RDCC_Diagonal</strong>        <strong>RDCC_CP</strong>   
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[     0.0790]}    {[   0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[     0.8990]}    {[   0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[     0.0460]}    {[   0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[     0.9470]}    {[   0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0140]}    {0×0 double   }    {0×0 double }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9860]}    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[          0]}    {[   0.0050]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[     0.2570]}    {[   0.0050]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[ 1.0000e-03]}    {0×0 double }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[ 1.0000e-03]}    {0×0 double }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double   }    {[   0.4950]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0141226852292154 0.985634857192338]
+LogLikelihood value: -8808.36245219472
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.000458758134385851 0.256641985389239 0.000870713939536208 0.000815592737310362]
+LogLikelihood value: -8819.75553572519
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.005 0.005 0.495]
+LogLikelihood value: -10000000
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>       <strong>RDCC_Diagonal</strong>        <strong>RDCC_CP</strong>   
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[     0.0790]}    {[   0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[     0.8990]}    {[   0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[     0.0460]}    {[   0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[     0.9470]}    {[   0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0140]}    {0×0 double   }    {0×0 double }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9860]}    {0×0 double   }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[          0]}    {[   0.0050]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[     0.2570]}    {[   0.0050]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[ 1.0000e-03]}    {0×0 double }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[ 1.0000e-03]}    {0×0 double }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double   }    {[   0.4950]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double   }    {0×0 double }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[-8.8198e+03]}    {[-10000000]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0141325547809274 0.985624444179307]
+LogLikelihood value: -8808.36245972885
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [3.43069823801558e-05 0.0200345305414929 0.52033173030723 0.635083707065857]
+LogLikelihood value: 7705985299.74998
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.005 0.005 0.495]
+LogLikelihood value: -10000000
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>      <strong>RDCC_Diagonal</strong>        <strong>RDCC_CP</strong>   
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>______________</strong>    <strong>_____________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double  }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[    0.0790]}    {[   0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[    0.8990]}    {[   0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[    0.0460]}    {[   0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[    0.9470]}    {[   0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double  }    {0×0 double }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0140]}    {0×0 double  }    {0×0 double }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9860]}    {0×0 double  }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[         0]}    {[   0.0050]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[    0.0200]}    {[   0.0050]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[    0.5200]}    {0×0 double }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[    0.6350]}    {0×0 double }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double  }    {[   0.4950]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double  }    {0×0 double }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double  }    {0×0 double }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[7.7060e+09]}    {[-10000000]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[7.7060e+09]}    {[-10000000]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[7.7060e+09]}    {[-10000000]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8084e+03]}    {[7.7060e+09]}    {[-10000000]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
+*********************************** Estimating model: RBEKK ****************************************
+Estimating model: RBEKK
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.22313595388884 0.970849418202645]
+LogLikelihood value: -5604.11406139197
+Estimating model: RBEKK
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.266751027114468 0.189536981928114 0.953784817302834 0.9800374524203]
+LogLikelihood value: -5595.82999955567
+Estimating model: RBEKK
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[1 1.79370871866732e-16 1]
+The optimal thetaDs found are: [0.233815979375532 0.20918968368153 0.996537858267793]
+LogLikelihood value: -5603.21543090383
+*********************************** Estimating model: OGARCH ****************************************
+Estimating model: OGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN]
+LogLikelihood value: NaN
+Estimating model: OGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.987957e+03     0.000e+00     1.000e+00     0.000e+00     1.714e+02  
+    1          18    2.987928e+03     0.000e+00     1.384e-02     1.771e-02     1.200e+02  
+    2          27    2.987897e+03     0.000e+00     1.176e-01     9.660e-03     1.628e+02  
+    3          36    2.987883e+03     0.000e+00     1.176e-01     1.312e-02     1.406e+02  
+    4          40    2.987788e+03     0.000e+00     7.000e-01     1.816e-02     5.982e+01  
+    5          43    2.987788e+03     0.000e+00     1.000e+00     1.342e-02     1.095e+02  
+    6          46    2.987671e+03     0.000e+00     1.000e+00     5.257e-03     1.139e+01  
+    7          49    2.987668e+03     0.000e+00     1.000e+00     1.057e-03     1.684e+00  
+    8          52    2.987668e+03     0.000e+00     1.000e+00     1.712e-04     4.398e-02  
+    9          55    2.987668e+03     0.000e+00     1.000e+00     4.248e-06     1.251e-03  
+   10          58    2.987668e+03     0.000e+00     1.000e+00     2.263e-08     9.766e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+ Iter  Func-count            Fval   Feasibility   Step Length       Norm of   First-order  
+                                                                       step    optimality
+    0           3    2.662229e+03     0.000e+00     1.000e+00     0.000e+00     1.740e+03  
+    1          16    2.661731e+03     0.000e+00     2.825e-02     3.740e-02     5.438e+02  
+    2          20    2.661684e+03     0.000e+00     7.000e-01     4.443e-02     2.410e+03  
+    3          28    2.659999e+03     0.000e+00     1.681e-01     1.270e-02     1.846e+02  
+    4          41    2.659574e+03     0.000e+00     2.825e-02     3.498e-02     2.587e+01  
+    5          44    2.659032e+03     0.000e+00     1.000e+00     1.141e-02     1.346e+02  
+    6          47    2.658964e+03     0.000e+00     1.000e+00     7.660e-03     5.123e+01  
+    7          50    2.658950e+03     0.000e+00     1.000e+00     2.540e-03     1.331e+01  
+    8          53    2.658950e+03     0.000e+00     1.000e+00     2.575e-04     2.405e+00  
+    9          56    2.658950e+03     0.000e+00     1.000e+00     8.742e-06     3.528e-01  
+   10          59    2.658950e+03     0.000e+00     1.000e+00     4.110e-06     1.465e-02  
+   11          62    2.658950e+03     0.000e+00     1.000e+00     8.456e-07     7.629e-04  
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">Local minimum possible. Constraints satisfied</a>.
+
+fmincon stopped because the <a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">size of the current step</a> is less than
+the value of the <a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">step size tolerance</a> and constraints are 
+satisfied to within the value of the <a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">constraint tolerance</a>.
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-06','0.000000e+00','1.000000e-06'},true,true);;">stopping criteria details</a>>
+the optimal thetaSs found are:[0.999999999999998 0.999999999999998 0.885009872277652]
+The optimal thetaDs found are: [0.934043183809331 -3.95526241537309e-17 0.0820912882359569 0.0598351853136181]
+LogLikelihood value: -5643.632147103
+Estimating model: OGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: GOGARCH ****************************************
+Estimating model: GOGARCH
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN]
+LogLikelihood value: NaN
+Estimating model: GOGARCH
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98 0.1]
+the optimal thetaSs found are:[1 1.79370871866732e-16 0.16863711046247]
+The optimal thetaDs found are: [0.884485494534576 1 0.0409779652058723 0.0880897323470696 NaN]
+LogLikelihood value: -5619.1946470305
+Estimating model: GOGARCH
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99 0.1]
+the optimal thetaSs found are:[NaN NaN NaN]
+The optimal thetaDs found are: [NaN NaN NaN NaN]
+LogLikelihood value: NaN
+*********************************** Estimating model: RDCC ****************************************
+Estimating model: RDCC
+Parameter specification: Scalar
+The initials thetaDs are: [0.01 0.98]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.0141325547809274 0.985624444179307]
+LogLikelihood value: -8821.74337530046
+Estimating model: RDCC
+Parameter specification: Diagonal
+The initials thetaDs are: [0.01 0.01 0.98 0.98]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [3.43069823801558e-05 0.0200345305414929 0.52033173030723 0.635083707065857]
+LogLikelihood value: -10000000
+Estimating model: RDCC
+Parameter specification: CP
+The initials thetaDs are: [0.01 0.01 0.99]
+[Warning: Matrix is singular to working precision.] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('rdcc', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m', 426)" style="font-weight:bold">rdcc</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\rdcc.m',426,0)">line 426</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('optimizeTheta', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m', 74)" style="font-weight:bold">optimizeTheta</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\functions\optimizeTheta.m',74,0)">line 74</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m', 77)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\main.m',77,0)">line 77</a>)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('run_rarchs', 'D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m', 31)" style="font-weight:bold">run_rarchs</a> (<a href="matlab: opentoline('D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\run_rarchs.m',31,0)">line 31</a>)
+] 
+the optimal thetaMs found are:[0.0793876531057377;0.898911829153735;0.0458204202182443;0.947130236948176]
+the optimal thetaSs found are:0.479235845550088
+The optimal thetaDs found are: [0.005 0.005 0.495]
+LogLikelihood value: -10000000
+    'alpha'    'beta'    'alpha_1'    'alpha_2'    'beta_1'    'beta_2'    'lambda_cp'    'delta'
+
+           <strong>Parameter</strong>            <strong>RBEKK_Scalar</strong>      <strong>RBEKK_Diagonal</strong>        <strong>RBEKK_CP</strong>        <strong>OGARCH_Scalar</strong>    <strong>OGARCH_Diagonal</strong>     <strong>OGARCH_CP</strong>      <strong>GOGARCH_Scalar</strong>    <strong>GOGARCH_Diagonal</strong>     <strong>GOGARCH_CP</strong>       <strong>RDCC_Scalar</strong>      <strong>RDCC_Diagonal</strong>       <strong>RDCC_CP</strong>   
+    <strong>_______________________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_______________</strong>    <strong>____________</strong>    <strong>______________</strong>    <strong>________________</strong>    <strong>____________</strong>    <strong>_______________</strong>    <strong>_____________</strong>    <strong>_____________</strong>
+
+    {'Marginal Parameters'}    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0790]}    {[   0.0790]}    {[   0.0790]}
+    {'beta_1'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.8990]}    {[   0.8990]}    {[   0.8990]}
+    {'alpha_2'            }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.0460]}    {[   0.0460]}    {[   0.0460]}
+    {'beta_2'             }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {[     0.9470]}    {[   0.9470]}    {[   0.9470]}
+    {'Dynamic Parameters' }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double }    {0×0 double }
+    {'alpha'              }    {[     0.2230]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.0140]}    {0×0 double }    {0×0 double }
+    {'beta'               }    {[     0.9710]}    {0×0 double   }    {0×0 double   }    {[     NaN]}     {0×0 double   }    {0×0 double}     {[     NaN]}     {0×0 double   }     {0×0 double}    {[     0.9860]}    {0×0 double }    {0×0 double }
+    {'alpha_1'            }    {0×0 double   }    {[     0.2670]}    {[     0.2340]}    {0×0 double}     {[     0.9340]}    {[     NaN]}     {0×0 double}     {[     0.8840]}     {[     NaN]}    {0×0 double   }    {[        0]}    {[   0.0050]}
+    {'alpha_2'            }    {0×0 double   }    {[     0.1900]}    {[     0.2090]}    {0×0 double}     {[          0]}    {[     NaN]}     {0×0 double}     {[          1]}     {[     NaN]}    {0×0 double   }    {[   0.0200]}    {[   0.0050]}
+    {'beta_1'             }    {0×0 double   }    {[     0.9540]}    {0×0 double   }    {0×0 double}     {[     0.0820]}    {0×0 double}     {0×0 double}     {[     0.0410]}     {0×0 double}    {0×0 double   }    {[   0.5200]}    {0×0 double }
+    {'beta_2'             }    {0×0 double   }    {[     0.9800]}    {0×0 double   }    {0×0 double}     {[     0.0600]}    {0×0 double}     {0×0 double}     {[     0.0880]}     {0×0 double}    {0×0 double   }    {[   0.6350]}    {0×0 double }
+    {'lambda_cp'          }    {0×0 double   }    {0×0 double   }    {[     0.9970]}    {0×0 double}     {0×0 double   }    {[     NaN]}     {0×0 double}     {0×0 double   }     {[     NaN]}    {0×0 double   }    {0×0 double }    {[   0.4950]}
+    {'delta'              }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {[     NaN]}     {[        NaN]}     {[     NaN]}    {0×0 double   }    {0×0 double }    {0×0 double }
+    {'LL Decomposition'   }    {0×0 double   }    {0×0 double   }    {0×0 double   }    {0×0 double}     {0×0 double   }    {0×0 double}     {0×0 double}     {0×0 double   }     {0×0 double}    {0×0 double   }    {0×0 double }    {0×0 double }
+    {'LL_1'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8217e+03]}    {[-10000000]}    {[-10000000]}
+    {'LL_2'               }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8217e+03]}    {[-10000000]}    {[-10000000]}
+    {'Copula_LL'          }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8217e+03]}    {[-10000000]}    {[-10000000]}
+    {'Total_LL'           }    {[-5.6041e+03]}    {[-5.5958e+03]}    {[-5.6032e+03]}    {[     NaN]}     {[-5.6436e+03]}    {[     NaN]}     {[     NaN]}     {[-5.6192e+03]}     {[     NaN]}    {[-8.8217e+03]}    {[-10000000]}    {[-10000000]}
+
+Outputs and results saved successfully in the "results" folder.
+Table has been successfully exported to D:\Documents\TRABAJO\Upwork\Rarch_model\work\RARCH_Model_Estimation\results\complete_Table2.xlsx
